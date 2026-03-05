@@ -92,7 +92,7 @@ Les événements sont récupérés via l'API **OpenAgenda**.
 
 Le périmètre de collecte est défini dans :
 
-docs/openagenda_scope.md
+- `docs/openagenda_scope.md`
 
 ### Localisation
 
@@ -106,6 +106,18 @@ Département de **l’Hérault (34), France**
 ### Type d'événements
 
 Tous les types d'événements sont inclus pour ce POC.
+
+---
+
+## Schéma du dataset
+
+La structure cible du dataset (champs obligatoires, optionnels, règles de normalisation et champ `retrieval_text`) est définie ici :
+
+- `docs/dataset_schema.md`
+
+Ce schéma décrit la structure du jeu de données **nettoyé et structuré** attendu à la fin de l’étape 2, prêt pour l’indexation vectorielle (étape 3).
+
+---
 
 Les données récupérées seront ensuite :
 
