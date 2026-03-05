@@ -13,7 +13,7 @@ Le système s’appuie sur :
 
 ---
 
-# Pipeline du projet
+## Pipeline du projet
 
 Le projet est organisé en plusieurs étapes :
 
@@ -26,14 +26,14 @@ Le projet est organisé en plusieurs étapes :
 
 ---
 
-# Prérequis
+## Prérequis
 
 - Python >= 3.8
 - Git
 
 ---
 
-# Installation
+## Installation
 
 
 Cloner le dépôt :
@@ -68,7 +68,7 @@ Note : `requirements.txt` a été généré via `pip freeze` pour garantir la re
 
 ---
 
-# Test de l'environnement
+## Test de l'environnement
 
 
 Vérifier que les dépendances sont correctement installées :
@@ -86,7 +86,7 @@ Ce script vérifie les imports des bibliothèques principales :
 
 ---
 
-# Collecte des événements OpenAgenda
+## Collecte des événements OpenAgenda
 
 Les événements sont récupérés via l'API **OpenAgenda**.
 
@@ -126,9 +126,29 @@ Les données récupérées seront ensuite :
 3. préparées pour la vectorisation
 4. indexées dans FAISS
 
+
+## Paramètres d’ingestion OpenAgenda
+
+Les paramètres utilisés pour récupérer les événements via l’API OpenAgenda sont documentés dans :
+
+- `docs/openagenda_query_params.md`
+
+Ce document décrit :
+
+- l’endpoint utilisé
+- les filtres géographiques (département de l’Hérault)
+- la période des événements
+- la stratégie de pagination
+- la convention de sauvegarde des données brutes
+
+Les données brutes récupérées depuis l’API sont stockées localement dans :
+
+data/raw/
+
+Chaque événement est sauvegardé au format JSONL afin de conserver une copie brute des données avant toute transformation.
 ---
 
-# Secrets
+## Secrets
 
 Ne pas versionner la clé API Mistral.
 
@@ -136,4 +156,6 @@ Créer un fichier `.env` (ignoré par Git) ou utiliser une variable d’environn
 
 Exemple :
 
-MISTRAL_API_KEY=...
+```env
+MISTRAL_API_KEY=your_api_key_here
+```
