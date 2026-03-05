@@ -9,23 +9,33 @@ Authentification : *aucune*
 
 # Paramètres utilisés
 
-## Localisation
+## Filtrage géographique
+Le filtrage géographique est appliqué via la clause *where* :
 
 Filtrer les événements situés dans :
-- refine.location_department=Hérault (département de l’Hérault)
 
-## Période
+```sql
+location_countrycode = "FR"
+AND location_department = "Hérault"
+```
 
-Filtrage basé sur la date de début de l'événement :
+## Filtrage temporel
+
+Filtrage basé sur :
 
 `firstdate_begin`
 
-Période ciblée :
+Période :
 
 - `aujourd’hui - 365 jours`
 - `aujourd’hui + 365 jours`
 
-Le filtre temporel sera appliqué via un *where* sur *firstdate_begin* (date de début)
+Condition utilisée :
+
+```sql
+firstdate_begin >= date'YYYY-MM-DD'
+AND firstdate_begin <= date'YYYY-MM-DD'
+```
 
 ## Pagination
 
@@ -41,6 +51,10 @@ Pagination :
 Tri recommandé :
 `order_by = firstdate_begin ASC`
 
+## Gestion des erreurs
+- **429** → *attente puis retry*
+- **400** → *arrêt propre (souvent lié à pagination ou filtre invalide)*
+
 ## Sauvegarde des données RAW
 
 Les événements récupérés seront stockés dans :
@@ -51,3 +65,5 @@ Format :
 1 ligne JSON = 1 événement tel que renvoyé par l’API.
 
 Aucune transformation n’est appliquée à ce stade.
+
+---
