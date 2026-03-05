@@ -17,6 +17,7 @@ from datetime import datetime, timedelta, timezone
 
 
 PROCESSED_DIR = "data/processed/"
+REPORT_MD_FILENAME = "data_quality_report.md"
 
 IMPORTANT_FIELDS = [
     "title",
@@ -71,6 +72,69 @@ def _parse_iso_datetime(dt_str: str) -> datetime:
         dt = dt.replace(tzinfo=timezone.utc)
     return dt
 
+
+def report_to_markdown(report: dict) -> str:
+    '''Convertit le rapport de validation en format Markdown pour une lecture plus facile.
+    Args:
+        report (dict): Dictionnaire contenant les résultats de la validation de la qualité du dataset.
+        Returns:
+        str: Rapport formaté en Markdown.
+        '''
+    total = report["dataset_summary"]["total_events"]
+
+    # Missing fields table
+    missing_rows = []
+    for field, stats in report["missing_fields"].items():
+        missing_rows.append((field, stats["count"], stats["rate"]))
+
+    missing_rows.sort(key=lambda x: x[2], reverse=True)  # tri par taux décroissant
+
+    # Date + Geo
+    date_val = report["date_validation"]
+    geo_val = report["geo_validation"]
+    geo_details = geo_val.get("details", {})
+
+    md = []
+    md.append("# Data Quality Report\n")
+    md.append("## Dataset summary\n")
+    md.append("| Metric | Value |\n|---|---|\n")
+    md.append(f"| Total events | {total} |\n")
+
+    md.append("\n## Missing fields\n")
+    md.append("| Field | Missing | Rate |\n|---|---:|---:|\n")
+    for field, count, rate in missing_rows:
+        md.append(f"| {field} | {count} | {rate:.4f} |\n")
+
+    md.append("\n## Date validation\n")
+    md.append("| Metric | Value |\n|---|---|\n")
+    md.append(f"| Invalid dates | {date_val['invalid_dates']} |\n")
+    md.append(f"| Rate | {date_val['rate']:.4f} |\n")
+    window = date_val.get("window_utc", {})
+    if window:
+        md.append(f"| Window (UTC) | {window.get('date_min')} → {window.get('date_max')} |\n")
+
+    md.append("\n## Geographic validation\n")
+    md.append("| Metric | Value |\n|---|---|\n")
+    md.append(f"| Inconsistent geo | {geo_val['inconsistent_geo']} |\n")
+    md.append(f"| Rate | {geo_val['rate']:.4f} |\n")
+
+    if geo_details:
+        md.append("\n### Geo details\n")
+        md.append("| Check | Count |\n|---|---:|\n")
+        md.append(f"| dept_not_34 | {geo_details.get('dept_not_34', 0)} |\n")
+        md.append(f"| bbox_outside | {geo_details.get('bbox_outside', 0)} |\n")
+        md.append(f"| geo_parse_error | {geo_details.get('geo_parse_error', 0)} |\n")
+
+        bbox = geo_details.get("bbox", {})
+        if bbox:
+            md.append("\n### BBox\n")
+            md.append("| Param | Value |\n|---|---|\n")
+            md.append(f"| lat_min | {bbox.get('lat_min')} |\n")
+            md.append(f"| lat_max | {bbox.get('lat_max')} |\n")
+            md.append(f"| lon_min | {bbox.get('lon_min')} |\n")
+            md.append(f"| lon_max | {bbox.get('lon_max')} |\n")
+
+    return "".join(md)
 
 def validate_dataset_quality(input_file: str, output_file: str) -> None:
     """
@@ -179,10 +243,15 @@ def validate_dataset_quality(input_file: str, output_file: str) -> None:
 
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(report, f, indent=4, ensure_ascii=False)
+        md_path = os.path.join(os.path.dirname(output_file), REPORT_MD_FILENAME)
+        md_content = report_to_markdown(report)
+        with open(md_path, "w", encoding="utf-8") as f:
+            f.write(md_content)
 
     print("Validation qualité terminée")
     print(f"Fichier analysé : {input_file}")
     print(f"Rapport généré  : {output_file}")
+    print(f"Rapport Markdown : {md_path}")
 
 
 def main() -> None:
