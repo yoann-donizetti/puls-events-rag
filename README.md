@@ -233,6 +233,58 @@ Voir le rapport complet : [docs/data_quality_report_example.md](docs/data_qualit
 
 ---
 
+## Schéma du dataset
+
+docs/dataset_schema.md
+
+---
+
+## Validation qualité des données
+
+Un script vérifie automatiquement la qualité des données normalisées :
+
+- champs manquants
+- validité des dates
+- cohérence géographique
+
+Le rapport est généré dans :
+
+data/processed/data_quality_report.json
+
+---
+
+## Tests
+
+Une suite de tests permet de vérifier automatiquement la validité du pipeline de collecte et de préparation des données.
+
+Les tests sont situés dans :
+
+tests/
+
+Ils vérifient :
+
+- connexion à l’API OpenAgenda
+- filtrage temporel des événements
+- filtrage géographique (département de l’Hérault)
+- présence des champs obligatoires du dataset
+- volumétrie minimale du dataset
+- absence de doublons d’événements
+
+### Lancer les tests
+Installer pytest si nécessaire
+
+```bash
+pip install pytest
+```
+
+pui exécuter les tests :
+```bash
+pytest
+```
+
+
+---
+
 ## Architecture RAG
 
 Le système RAG fonctionne selon le pipeline suivant :
