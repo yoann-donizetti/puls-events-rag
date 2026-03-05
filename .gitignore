@@ -1,4 +1,6 @@
-env/
 __pycache__/
 *.pyc
 .venv/
+data/raw/
+.env
+data/processed/
