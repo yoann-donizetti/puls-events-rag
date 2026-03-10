@@ -17,23 +17,38 @@ Le système s’appuie sur :
 
 ```bash
 puls-events-rag/
+
 ├── src/
 │   ├── ingestion/
 │   │   └── fetch_openagenda_events.py
+│   │
 │   ├── processing/
 │   │   ├── normalize_openagenda_events.py
 │   │   └── validate_dataset_quality.py
+│   │
+│   ├── embeddings/
+│   │   ├── prepare_documents.py
+│   │   ├── chunk_documents.py
+│   │   ├── generate_embeddings.py
+│   │   └── build_faiss_index.py
+│   │
+│   ├── retrieval/
+│   │   └── semantic_search_demo.py
+│   │
 │   ├── rag/
 │   └── api/
 │
-├── data/
-│   ├── raw/
-│   └── processed/
+├── tests/
+│   ├── test_pipeline.py
+│   ├── test_vector_pipeline.py
+│   └── data/
+│       └── sample_events.jsonl
 │
 ├── docs/
 │   ├── dataset_schema.md
 │   ├── openagenda_scope.md
-│   └── openagenda_query_params.md
+│   ├── openagenda_query_params.md
+│   └── data_quality_report_example.md
 │
 ├── requirements.txt
 └── README.md
@@ -162,8 +177,8 @@ Chaque événement est sauvegardé au format JSONL afin de conserver une copie b
 ## Schéma du dataset
 
 La structure cible du dataset (champs obligatoires, optionnels, règles de normalisation et champ `retrieval_text`) est définie ici :
+- [docs/data_quality_report_example.md](docs/dataset_schema.md)
 
-- `docs/dataset_schema.md`
 
 Ce schéma décrit la structure du jeu de données **nettoyé et structuré** attendu à la fin de l’étape 2, prêt pour l’indexation vectorielle (étape 3).
 
@@ -233,35 +248,85 @@ Une étape de validation vérifie l'intégrité du dataset normalisé :
 Voir le rapport complet : [docs/data_quality_report_example.md](docs/data_quality_report_example.md)
 
 ---
+## Vectorisation et indexation FAISS
 
-## Schéma du dataset
+Les événements normalisés sont transformés en représentations vectorielles (embeddings) afin de permettre une recherche sémantique.
 
-docs/dataset_schema.md
+Le pipeline de vectorisation est le suivant :
 
----
+events → documents → chunks → embeddings → index FAISS
 
-## Validation qualité des données
+### Découpage des textes
 
-Un script vérifie automatiquement la qualité des données normalisées :
+Les textes sont découpés avant vectorisation avec les paramètres :
 
-- champs manquants
-- validité des dates
-- cohérence géographique
+- chunk_size = 500
+- chunk_overlap = 50
 
-Le rapport est généré dans :
+Ce découpage permet :
 
-data/processed/data_quality_report.json
+- d’améliorer la précision de la recherche sémantique
+- de limiter la taille des textes envoyés au modèle d’embedding
+- de conserver du contexte entre les segments de texte
+
+### Modèle d’embedding utilisé
+
+sentence-transformers/all-MiniLM-L6-v2
+Ce modèle produit des vecteurs de dimension **384** optimisés pour la similarité sémantique.
+
+### Construction de l’index
+
+Les embeddings sont indexés dans **FAISS** afin de permettre une recherche rapide par similarité vectorielle.
+
+Commande :
+
+```bash
+python -m src.embeddings.build_faiss_index
+```
+
+L’index est sauvegardé localement dans :
+
+data/vectorstore
+
+## Test de recherche sémantique
+
+Un script permet de tester la pertinence de la recherche vectorielle.
+
+Script :
+
+src/retrieval/semantic_search_demo.py
+
+Exécution :
+
+```bash
+python -m src.retrieval.semantic_search_demo
+```
+Exemples de requêtes testées :
+- concert à Montpellier
+- emploi tourisme Hérault
+- atelier cuisine Béziers
+- événement en ligne
+- salon voyage
+
+Le script affiche :
+- le titre de l’événement
+- la ville
+- la date
+- l’URL
+- un extrait du texte indexé
 
 ---
 
 ## Tests
 
-Une suite de tests permet de vérifier automatiquement la validité du pipeline de collecte et de préparation des données.
+Une suite de tests permet de vérifier automatiquement la validité du pipeline.
+
 
 Les tests sont situés dans :
 
 tests/
 
+### Tests pipeline data
 Ils vérifient :
 
 - connexion à l’API OpenAgenda
@@ -270,6 +335,16 @@ Ils vérifient :
 - présence des champs obligatoires du dataset
 - volumétrie minimale du dataset
 - absence de doublons d’événements
+
+### Tests pipeline vectoriel
+
+Vérifients :
+- génération des chunks
+- création de l’index FAISS
+- recherche sémantique
+- présence des métadonnées
+
+Les tests utilisent un **dataset fictif versionné** (`tests/data/sample_events.jsonl`) afin de garantir la reproductibilité du projet.
 
 ### Lancer les tests
 Installer pytest si nécessaire
@@ -332,6 +407,18 @@ Exemple :
 MISTRAL_API_KEY=your_api_key_here
 ```
 
+
+## Dataset
+
+Les données OpenAgenda récupérées ne sont pas versionnées dans le dépôt afin de limiter la taille du repository.
+
+Un dataset fictif minimal est fourni dans :
+
+tests/data/sample_events.jsonl
+
+
+Il permet d’exécuter les tests sans dépendre de l’API OpenAgenda.
+
 ## Roadmap
 
 Étapes du projet :
@@ -339,8 +426,8 @@ MISTRAL_API_KEY=your_api_key_here
 - [x] Ingestion OpenAgenda
 - [x] Normalisation du dataset
 - [x] Validation qualité des données
-- [ ] Vectorisation
-- [ ] Index FAISS
+- [x] Vectorisation
+- [x] Index FAISS
 - [ ] Pipeline RAG
 - [ ] API
 - [ ] Évaluation
