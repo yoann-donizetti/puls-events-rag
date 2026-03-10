@@ -15,6 +15,7 @@ Le système s’appuie sur :
 
 ## Structure du projet
 
+```bash
 puls-events-rag/
 ├── src/
 │   ├── ingestion/
@@ -36,7 +37,7 @@ puls-events-rag/
 │
 ├── requirements.txt
 └── README.md
-
+```
 ---
 
 

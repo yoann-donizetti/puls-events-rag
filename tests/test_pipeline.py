@@ -44,14 +44,23 @@ def load_events():
 def test_date_filter():
     events = load_events()
 
-    today = datetime.now(timezone.utc).date()
-    date_min = today - timedelta(days=365)
-    date_max = today + timedelta(days=365)
+    live_mode = os.getenv("OPENAGENDA_LIVE", "0") == "1"
+
+    if live_mode:
+        reference_date = datetime.now(timezone.utc).date()
+    else:
+        # Date fixe adaptée au sample
+        reference_date = datetime(2026, 3, 5, tzinfo=timezone.utc).date()
+
+    date_min = reference_date - timedelta(days=365)
+    date_max = reference_date + timedelta(days=365)
 
     for event in events:
         start_dt = datetime.fromisoformat(event["start_datetime"].replace("Z", "+00:00"))
         start_date = start_dt.date()
+
         assert date_min <= start_date <= date_max
+        
 
 
 def test_location_filter():
