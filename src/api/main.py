@@ -1,7 +1,9 @@
 from fastapi import FastAPI, HTTPException
-
-from src.api.schemas import AskRequest, AskResponse
+from fastapi.responses import RedirectResponse
+from src.api.schemas import AskRequest, AskResponse,RebuildResponse
 from src.rag.rag_pipeline import ask_rag
+from src.pipelines.vector_pipeline import main as rebuild_vectorstore
+
 
 app = FastAPI(
     title="Puls-Events RAG API",
@@ -10,9 +12,9 @@ app = FastAPI(
 )
 
 
-@app.get("/")
+@app.get("/",include_in_schema=False)
 def root():
-    return {"message": "API Puls-Events RAG opérationnelle"}
+    return RedirectResponse(url="/docs")
 
 
 @app.post("/ask", response_model=AskResponse)
@@ -29,3 +31,11 @@ def ask_question(request: AskRequest):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+@app.post("/rebuild", response_model=RebuildResponse)
+def rebuild_vectorstore_endpoint():
+    try:
+        rebuild_vectorstore()
+        return RebuildResponse(status="success", message="Index FAISS reconstruit avec succès")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erreur lors de la reconstruction de l'index FAISS: {str(e)}")
