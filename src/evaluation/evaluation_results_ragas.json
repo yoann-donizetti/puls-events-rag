@@ -1,0 +1,74 @@
+[
+  {
+    "user_input":"Quels concerts sont prévus à Montpellier ?",
+    "retrieved_contexts":[
+      "Concert \"Douce dame sans pitié\" | Montpellier | 2025-09-21T13:00:00+00:00 | https:\/\/openagenda.com\/jep\/events\/concert-douce-dame-sans-pitie",
+      "La Nuit Batucada : Rythmes de Bahia à Montpellier | Montpellier | 2025-06-21T16:00:00+00:00 | https:\/\/openagenda.com\/fetedelamusique2025\/events\/fete-de-la-musique-2025-batucada-bahia",
+      "Immersion : Vivez l'expérience métier en direct ! | Montpellier | 2025-09-19T07:00:00+00:00 | https:\/\/openagenda.com\/francetravail\/events\/immersion-vivez-lexperience-metier-en-direct-806460"
+    ],
+    "response":"D'après le contexte fourni, deux concerts sont prévus à Montpellier :\n\n1. **Concert \"Douce dame sans pitié\"** le 21 septembre 2025 à 13h00, avec Cristina Alis Raurich (organetto) et Brice Duisit (chant, vièle).\n2. **La Nuit Batucada : Rythmes de Bahia** le 21 juin 2025 à partir de 22h, avec une ambiance festive et conviviale.\n\nAucune autre information sur des concerts n'est présente dans le contexte.",
+    "reference":"Le système doit identifier les événements musicaux organisés à Montpellier présents dans la base.",
+    "faithfulness":0.625,
+    "semantic_similarity":0.5077338663
+  },
+  {
+    "user_input":"Y a-t-il des événements liés au tourisme dans l'Hérault ?",
+    "retrieved_contexts":[
+      "Visite de la préfecture de l'Hérault | Montpellier | 2025-09-20T08:00:00+00:00 | https:\/\/openagenda.com\/jep\/events\/visite-de-la-prefecture-de-lherault-9830536",
+      "Atelier \"Mets en scène ta ville de demain\" | Montpellier | 2025-10-17T07:30:00+00:00 | https:\/\/openagenda.com\/planlibre\/events\/atelier-mets-en-scene-ta-ville-de-demain",
+      "Tourisme et mobilité : métiers et activités en Occitanie | Montpellier | 2025-03-21T09:00:00+00:00 | https:\/\/openagenda.com\/semaine-des-metiers-du-tourisme\/events\/tourisme-et-mobilite-metiers-et-activites-en-occitanie"
+    ],
+    "response":"Oui, il y a un événement lié au tourisme dans l'Hérault :\n- **Tourisme et mobilité : métiers et activités en Occitanie** (Montpellier, 2025-03-21).\n\nLes autres événements mentionnés ne sont pas directement liés au tourisme.",
+    "reference":"Le système doit proposer les événements liés au tourisme présents dans les données.",
+    "faithfulness":0.8,
+    "semantic_similarity":0.6983181773
+  },
+  {
+    "user_input":"Existe-t-il des événements en ligne ?",
+    "retrieved_contexts":[
+      "Forum de Formation : Rencontrez les Experts et Boostez Votre Carrière ! | Saint-Jean-de-Védas | 2025-09-25T07:30:00+00:00 | https:\/\/openagenda.com\/francetravail\/events\/forum-de-formation-rencontrez-les-experts-et-boostez-votre-carriere",
+      "Conférence alimentation & écologie suivie d'un apéro-buffet (repas partagé) vegan | Montpellier | 2025-06-06T17:00:00+00:00 | https:\/\/openagenda.com\/jna2025\/events\/conference-alimentation-and-ecologie-suivie-dapero-buffet-repas-partage-vegan",
+      "Je participe aux ateliers de réparations collectives | Montpellier | 2025-10-18T07:00:00+00:00 | https:\/\/openagenda.com\/repaircafe\/events\/je-participe-aux-ateliers-de-reparations-collectives"
+    ],
+    "response":"Non, aucun des événements mentionnés dans le contexte n'est en ligne. Tous sont des événements physiques se déroulant dans des lieux spécifiques (Saint-Jean-de-Védas, Montpellier).",
+    "reference":"Le système doit identifier les événements disponibles en ligne présents dans la base.",
+    "faithfulness":1.0,
+    "semantic_similarity":0.6130115005
+  },
+  {
+    "user_input":"Quels événements sont organisés à Béziers ?",
+    "retrieved_contexts":[
+      "Visite de l'usine OI de Béziers | Béziers | 2025-11-19T08:00:00+00:00 | https:\/\/openagenda.com\/semaine-industrie-2025\/events\/visite-de-lusine-oi-de-beziers",
+      "IMMERSION DANS LES METIERS DE LA CONSTRUCTION DE MAISONS INDIVIDUELLES | Béziers | 2025-09-16T07:00:00+00:00 | https:\/\/openagenda.com\/francetravail\/events\/immersion-dans-les-metiers-de-la-construction-de-maisons-individuelles",
+      "Immersions & emplois | Béziers | 2025-09-11T07:00:00+00:00 | https:\/\/openagenda.com\/francetravail\/events\/immersions-and-emplois"
+    ],
+    "response":"Les événements organisés à Béziers sont :\n1. **Visite de l'usine OI de Béziers** (19 novembre 2025, 08:00-10:00)\n2. **Immersion dans les métiers de la construction de maisons individuelles** (16 septembre 2025, 07:00-08:30)\n3. **Immersions & emplois** (11 septembre 2025, 07:00-08:15)",
+    "reference":"Le système doit proposer les événements présents à Béziers dans les données.",
+    "faithfulness":0.5,
+    "semantic_similarity":0.6741442889
+  },
+  {
+    "user_input":"Quels salons liés au voyage sont organisés dans la région ?",
+    "retrieved_contexts":[
+      "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER | Montpellier | 2026-02-13T08:30:00+00:00 | https:\/\/openagenda.com\/semaine-des-metiers-du-tourisme-2026\/events\/salon-du-voyage-drom-com-lycee-georges-freche-montpellier-8804554",
+      "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER | Montpellier | 2026-02-14T08:00:00+00:00 | https:\/\/openagenda.com\/semaine-des-metiers-du-tourisme-2026\/events\/salon-du-voyage-drom-com-lycee-georges-freche-montpellier",
+      "SALON DU VOYAGE : Les destinations au départ de Montpellier ! | Montpellier | 2025-03-07T08:30:00+00:00 | https:\/\/openagenda.com\/semaine-des-metiers-du-tourisme\/events\/salon-du-voyage-les-destinations-au-depart-de-montpellier"
+    ],
+    "response":"Dans la région de Montpellier, les salons liés au voyage organisés sont :\n\n1. **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER** (2026-02-13 et 2026-02-14) – Axé sur le \"Patrimoine culturel et immatériel des DROM-COM\", organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n2. **SALON DU VOYAGE : Les destinations au départ de Montpellier !** (2025-03-07 et 2025-03-08) – 11ème édition organisée par les étudiants en 1ère année de BTS Tourisme, avec des stands dédiés à 10 destinations au départ de Montpellier.\n\nAucune autre information n'est disponible dans le contexte fourni.",
+    "reference":"Le système doit identifier les événements liés au voyage présents dans le dataset.",
+    "faithfulness":0.25,
+    "semantic_similarity":0.3407236126
+  },
+  {
+    "user_input":"Existe-t-il un festival manga sous-marin à Lodève ?",
+    "retrieved_contexts":[
+      "Club Manga | Mauguio | 2025-10-04T13:00:00+00:00 | https:\/\/openagenda.com\/biblis-en-folie-2025\/events\/club-manga-2280018",
+      "Escape game au Musée de Lodève | Lodève | 2025-09-21T12:00:00+00:00 | https:\/\/openagenda.com\/jep\/events\/escape-game-au-musee-de-lodeve-4759851",
+      "Atelier : Le traitement des végétaux et des plantes dans l'Antiquité | Loupian | 2025-09-20T08:00:00+00:00 | https:\/\/openagenda.com\/jep\/events\/le-traitement-des-vegetaux-et-des-plantes-dans-lantiquite"
+    ],
+    "response":"Non, le contexte ne mentionne aucun festival manga sous-marin à Lodève. L'événement présent à Lodève est un \"Escape game au Musée de Lodève\".",
+    "reference":"Il n'existe pas d'événement correspondant dans les données. Le système doit indiquer qu'il ne trouve pas d'information pertinente.",
+    "faithfulness":1.0,
+    "semantic_similarity":0.3244209589
+  }
+]
