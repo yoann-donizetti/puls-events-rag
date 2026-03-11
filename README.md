@@ -20,28 +20,34 @@ Le système s’appuie sur :
 puls-events-rag/
 
 ├── src/
-│   ├── ingestion/
-│   │   └── fetch_openagenda_events.py
-│   │
-│   ├── processing/
-│   │   ├── normalize_openagenda_events.py
-│   │   └── validate_dataset_quality.py
-│   │
-│   ├── embeddings/
-│   │   ├── prepare_documents.py
-│   │   ├── chunk_documents.py
-│   │   ├── generate_embeddings.py
-│   │   └── build_faiss_index.py
-│   │
-│   ├── retrieval/
-│   │   └── semantic_search_demo.py
-│   │
-|   ├── pipelines/
-|   │   ├── data_pipeline.py
-|   │   └── vector_pipeline.py
-│   │
-│   ├── rag/
-│   └── api/
+│
+├── ingestion/
+│   └── fetch_openagenda_events.py
+│
+├── processing/
+│   ├── normalize_openagenda_events.py
+│   └── validate_dataset_quality.py
+│
+├── embeddings/
+│   ├── prepare_documents.py
+│   ├── chunk_documents.py
+│   ├── generate_embeddings.py
+│   └── build_faiss_index.py
+│
+├── retrieval/
+│   └── semantic_search_demo.py
+│
+├── pipelines/
+│   ├── data_pipeline.py
+│   ├── vector_pipeline.py
+│   └── rag_demo_pipeline.py
+│
+├── rag/
+│   ├── prompt_builder.py
+│   ├── mistral_client.py
+│   └── rag_pipeline.py
+│
+└── api/
 ```
 ---
 
@@ -264,6 +270,52 @@ Le script affiche :
 
 ---
 
+
+## Pipeline RAG
+
+Le projet intègre désormais un pipeline RAG (Retrieval-Augmented Generation) permettant de générer une réponse naturelle à partir des événements retrouvés dans l’index FAISS.
+
+Le fonctionnement est le suivant :
+
+question utilisateur  
+↓  
+recherche sémantique dans FAISS  
+↓  
+récupération des chunks les plus pertinents  
+↓  
+construction d’un contexte  
+↓  
+génération d’une réponse avec Mistral  
+
+### Composants
+
+Le pipeline RAG est structuré dans :
+
+- `src/rag/rag_pipeline.py`
+- `src/rag/prompt_builder.py`
+- `src/rag/mistral_client.py`
+
+Un script de démonstration permet de tester localement le chatbot :
+
+```bash
+python -m src.pipelines.rag_demo_pipeline
+```
+### Sortie du pipeline
+
+Le pipeline retourne une structure exploitable par l’API :
+- question
+- answer
+- sources
+- n_results
+
+### Gestion des cas particuliers
+Le pipeline gère également :
+- les questions vides
+- les cas où aucun contexte exploitable n’est disponible
+- le formatage des sources pour l’affichage
+
+---
+
 ## Pipelines automatisés
 
 Afin de simplifier l’exécution du projet, deux pipelines permettent d’enchaîner automatiquement les différentes étapes.
@@ -303,7 +355,32 @@ python -m src.pipelines.vector_pipeline
 ```
 Ce pipeline permet de reconstruire l’index vectoriel à partir du dataset traité.
 
+
+### Pipeline RAG
+
+Le pipeline RAG permet de tester le chatbot en combinant :
+
+- la recherche sémantique dans FAISS
+- la construction du contexte
+- la génération de réponse avec le LLM Mistral
+
+Script :
+
+src/pipelines/rag_demo_pipeline.py
+
+Exécution :
+
+```bash
+python -m src.pipelines.rag_demo_pipeline
+```
+
+Ce script permet de tester le chatbot localement avec une question exemple et d’observer :
+- la question
+- la réponse générée
+- les sources utilisées
+
 ### Vue d’ensemble du système
+
 OpenAgenda API
 ↓
 Data pipeline
@@ -317,6 +394,7 @@ Index FAISS
 Recherche sémantique
 ↓
 LLM (Mistral)
+
 ---
 
 ## Tests
@@ -357,15 +435,17 @@ Le système RAG fonctionne selon le pipeline suivant :
 
 
 Question utilisateur
-      ↓
+↓
 Embedding de la question
-      ↓
+↓
 Recherche vectorielle FAISS
-      ↓
-Documents pertinents
-      ↓
-Contexte envoyé au LLM (Mistral)
-      ↓
+↓
+Chunks les plus pertinents
+↓
+Construction du contexte
+↓
+LLM Mistral
+↓
 Réponse générée
 
 ---
@@ -396,6 +476,6 @@ Il permet d’exécuter les tests sans dépendre de l’API.
 [x] Validation qualité des données
 [x] Vectorisation
 [x] Index FAISS
-[ ] Pipeline RAG
+[ x] Pipeline RAG
 [ ] API
 [ ] Évaluation
