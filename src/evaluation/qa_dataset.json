@@ -1,0 +1,32 @@
+[
+  {
+    "question": "Quels concerts sont prévus à Montpellier ?",
+    "reference_answer": "Le système doit identifier les événements musicaux organisés à Montpellier présents dans la base.",
+    "type": "positive"
+  },
+  {
+    "question": "Y a-t-il des événements liés au tourisme dans l'Hérault ?",
+    "reference_answer": "Le système doit proposer les événements liés au tourisme présents dans les données.",
+    "type": "positive"
+  },
+  {
+    "question": "Existe-t-il des événements en ligne ?",
+    "reference_answer": "Le système doit identifier les événements disponibles en ligne présents dans la base.",
+    "type": "positive"
+  },
+  {
+    "question": "Quels événements sont organisés à Béziers ?",
+    "reference_answer": "Le système doit proposer les événements présents à Béziers dans les données.",
+    "type": "positive"
+  },
+  {
+    "question": "Quels salons liés au voyage sont organisés dans la région ?",
+    "reference_answer": "Le système doit identifier les événements liés au voyage présents dans le dataset.",
+    "type": "positive"
+  },
+  {
+    "question": "Existe-t-il un festival manga sous-marin à Lodève ?",
+    "reference_answer": "Il n'existe pas d'événement correspondant dans les données. Le système doit indiquer qu'il ne trouve pas d'information pertinente.",
+    "type": "negative"
+  }
+]

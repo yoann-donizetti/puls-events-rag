@@ -1,0 +1,170 @@
+[
+  {
+    "question": "Quels concerts sont prévus à Montpellier ?",
+    "reference_answer": "Le système doit identifier les événements musicaux organisés à Montpellier présents dans la base.",
+    "type": "positive",
+    "generated_answer": "D'après le contexte fourni, deux concerts sont prévus à Montpellier :\n\n1. **Concert \"Douce dame sans pitié\"** (2025-09-21 à 13h00)\n   - Artistes : Cristina Alis Raurich (organetto) et Brice Duisit (chant, vièle)\n   - Lieu : Salle Pétrarque - Hôtel de Varennes\n   - URL : [Lien](https://openagenda.com/jep/events/concert-douce-dame-sans-pitie)\n\n2. **La Nuit Batucada : Rythmes de Bahia** (2025-06-21 à partir de 22h)\n   - Événement festif avec cuivres et ambiance conviviale\n   - URL : [Lien](https://openagenda.com/fetedelamusique2025/events/fete-de-la-musique-2025-batucada-bahia)\n\nL'événement \"Immersion : Vivez l'expérience métier en direct !\" n'est pas un concert.",
+    "sources": [
+      {
+        "title": "Concert \"Douce dame sans pitié\"",
+        "city": "Montpellier",
+        "start_datetime": "2025-09-21T13:00:00+00:00",
+        "url": "https://openagenda.com/jep/events/concert-douce-dame-sans-pitie"
+      },
+      {
+        "title": "La Nuit Batucada : Rythmes de Bahia à Montpellier",
+        "city": "Montpellier",
+        "start_datetime": "2025-06-21T16:00:00+00:00",
+        "url": "https://openagenda.com/fetedelamusique2025/events/fete-de-la-musique-2025-batucada-bahia"
+      },
+      {
+        "title": "Immersion : Vivez l'expérience métier en direct !",
+        "city": "Montpellier",
+        "start_datetime": "2025-09-19T07:00:00+00:00",
+        "url": "https://openagenda.com/francetravail/events/immersion-vivez-lexperience-metier-en-direct-806460"
+      }
+    ],
+    "n_results": 3,
+    "auto_label": "success"
+  },
+  {
+    "question": "Y a-t-il des événements liés au tourisme dans l'Hérault ?",
+    "reference_answer": "Le système doit proposer les événements liés au tourisme présents dans les données.",
+    "type": "positive",
+    "generated_answer": "Oui, il y a un événement lié au tourisme dans l'Hérault :\n- **Tourisme et mobilité : métiers et activités en Occitanie** (Montpellier, 2025-03-21).\n\nLes autres événements mentionnés ne sont pas directement liés au tourisme.",
+    "sources": [
+      {
+        "title": "Visite de la préfecture de l'Hérault",
+        "city": "Montpellier",
+        "start_datetime": "2025-09-20T08:00:00+00:00",
+        "url": "https://openagenda.com/jep/events/visite-de-la-prefecture-de-lherault-9830536"
+      },
+      {
+        "title": "Atelier \"Mets en scène ta ville de demain\"",
+        "city": "Montpellier",
+        "start_datetime": "2025-10-17T07:30:00+00:00",
+        "url": "https://openagenda.com/planlibre/events/atelier-mets-en-scene-ta-ville-de-demain"
+      },
+      {
+        "title": "Tourisme et mobilité : métiers et activités en Occitanie",
+        "city": "Montpellier",
+        "start_datetime": "2025-03-21T09:00:00+00:00",
+        "url": "https://openagenda.com/semaine-des-metiers-du-tourisme/events/tourisme-et-mobilite-metiers-et-activites-en-occitanie"
+      }
+    ],
+    "n_results": 3,
+    "auto_label": "success"
+  },
+  {
+    "question": "Existe-t-il des événements en ligne ?",
+    "reference_answer": "Le système doit identifier les événements disponibles en ligne présents dans la base.",
+    "type": "positive",
+    "generated_answer": "Non, le contexte fourni ne mentionne aucun événement en ligne. Tous les événements listés sont des événements physiques.",
+    "sources": [
+      {
+        "title": "Forum de Formation : Rencontrez les Experts et Boostez Votre Carrière !",
+        "city": "Saint-Jean-de-Védas",
+        "start_datetime": "2025-09-25T07:30:00+00:00",
+        "url": "https://openagenda.com/francetravail/events/forum-de-formation-rencontrez-les-experts-et-boostez-votre-carriere"
+      },
+      {
+        "title": "Conférence alimentation & écologie suivie d'un apéro-buffet (repas partagé) vegan",
+        "city": "Montpellier",
+        "start_datetime": "2025-06-06T17:00:00+00:00",
+        "url": "https://openagenda.com/jna2025/events/conference-alimentation-and-ecologie-suivie-dapero-buffet-repas-partage-vegan"
+      },
+      {
+        "title": "Je participe aux ateliers de réparations collectives",
+        "city": "Montpellier",
+        "start_datetime": "2025-10-18T07:00:00+00:00",
+        "url": "https://openagenda.com/repaircafe/events/je-participe-aux-ateliers-de-reparations-collectives"
+      }
+    ],
+    "n_results": 3,
+    "auto_label": "success"
+  },
+  {
+    "question": "Quels événements sont organisés à Béziers ?",
+    "reference_answer": "Le système doit proposer les événements présents à Béziers dans les données.",
+    "type": "positive",
+    "generated_answer": "Les événements organisés à Béziers sont :\n1. **Visite de l'usine OI de Béziers** (2025-11-19)\n2. **Immersion dans les métiers de la construction de maisons individuelles** (2025-09-16)\n3. **Immersions & emplois** (2025-09-11)",
+    "sources": [
+      {
+        "title": "Visite de l'usine OI de Béziers",
+        "city": "Béziers",
+        "start_datetime": "2025-11-19T08:00:00+00:00",
+        "url": "https://openagenda.com/semaine-industrie-2025/events/visite-de-lusine-oi-de-beziers"
+      },
+      {
+        "title": "IMMERSION DANS LES METIERS DE LA CONSTRUCTION DE MAISONS INDIVIDUELLES",
+        "city": "Béziers",
+        "start_datetime": "2025-09-16T07:00:00+00:00",
+        "url": "https://openagenda.com/francetravail/events/immersion-dans-les-metiers-de-la-construction-de-maisons-individuelles"
+      },
+      {
+        "title": "Immersions & emplois",
+        "city": "Béziers",
+        "start_datetime": "2025-09-11T07:00:00+00:00",
+        "url": "https://openagenda.com/francetravail/events/immersions-and-emplois"
+      }
+    ],
+    "n_results": 3,
+    "auto_label": "success"
+  },
+  {
+    "question": "Quels salons liés au voyage sont organisés dans la région ?",
+    "reference_answer": "Le système doit identifier les événements liés au voyage présents dans le dataset.",
+    "type": "positive",
+    "generated_answer": "D'après le contexte fourni, les salons liés au voyage organisés dans la région de Montpellier sont :\n\n1. **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER** (2026-02-13 et 2026-02-14) – Axé sur le \"Patrimoine culturel et immatériel des DROM-COM\", organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n2. **SALON DU VOYAGE : Les destinations au départ de Montpellier !** (2025-03-07) – 11ème édition, avec des stands dédiés à 10 destinations au départ de Montpellier, organisé par les étudiants en 1ère année de BTS Tourisme.\n\nSi d'autres salons existent, ils ne sont pas mentionnés dans le contexte fourni.",
+    "sources": [
+      {
+        "title": "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER",
+        "city": "Montpellier",
+        "start_datetime": "2026-02-13T08:30:00+00:00",
+        "url": "https://openagenda.com/semaine-des-metiers-du-tourisme-2026/events/salon-du-voyage-drom-com-lycee-georges-freche-montpellier-8804554"
+      },
+      {
+        "title": "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER",
+        "city": "Montpellier",
+        "start_datetime": "2026-02-14T08:00:00+00:00",
+        "url": "https://openagenda.com/semaine-des-metiers-du-tourisme-2026/events/salon-du-voyage-drom-com-lycee-georges-freche-montpellier"
+      },
+      {
+        "title": "SALON DU VOYAGE : Les destinations au départ de Montpellier !",
+        "city": "Montpellier",
+        "start_datetime": "2025-03-07T08:30:00+00:00",
+        "url": "https://openagenda.com/semaine-des-metiers-du-tourisme/events/salon-du-voyage-les-destinations-au-depart-de-montpellier"
+      }
+    ],
+    "n_results": 3,
+    "auto_label": "success"
+  },
+  {
+    "question": "Existe-t-il un festival manga sous-marin à Lodève ?",
+    "reference_answer": "Il n'existe pas d'événement correspondant dans les données. Le système doit indiquer qu'il ne trouve pas d'information pertinente.",
+    "type": "negative",
+    "generated_answer": "Non, il n'existe pas de festival manga sous-marin à Lodève dans le contexte fourni. L'événement mentionné à Lodève est un \"Escape game au Musée de Lodève\".",
+    "sources": [
+      {
+        "title": "Club Manga",
+        "city": "Mauguio",
+        "start_datetime": "2025-10-04T13:00:00+00:00",
+        "url": "https://openagenda.com/biblis-en-folie-2025/events/club-manga-2280018"
+      },
+      {
+        "title": "Escape game au Musée de Lodève",
+        "city": "Lodève",
+        "start_datetime": "2025-09-21T12:00:00+00:00",
+        "url": "https://openagenda.com/jep/events/escape-game-au-musee-de-lodeve-4759851"
+      },
+      {
+        "title": "Atelier : Le traitement des végétaux et des plantes dans l'Antiquité",
+        "city": "Loupian",
+        "start_datetime": "2025-09-20T08:00:00+00:00",
+        "url": "https://openagenda.com/jep/events/le-traitement-des-vegetaux-et-des-plantes-dans-lantiquite"
+      }
+    ],
+    "n_results": 3,
+    "auto_label": "success"
+  }
+]
