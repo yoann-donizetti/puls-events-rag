@@ -7,6 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
+
   tests:
     runs-on: ubuntu-latest
 
@@ -41,3 +42,20 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t puls-events-rag .
+
+      - name: Run Docker container
+        run: |
+          docker run -d -p 8000:8000 --name puls-events-rag-container puls-events-rag
+
+      - name: Wait for API startup
+        run: |
+          sleep 10
+
+      - name: Test API availability
+        run: |
+          curl --fail http://127.0.0.1:8000/openapi.json
+
+      - name: Stop Docker container
+        run: |
+          docker stop puls-events-rag-container
+          docker rm puls-events-rag-container
