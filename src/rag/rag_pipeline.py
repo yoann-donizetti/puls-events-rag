@@ -6,6 +6,7 @@ from src.rag.mistral_client import generate_answer
 
 MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 INDEX_DIR = "data/vectorstore"
+DEFAULT_TOP_K = 3
 
 
 def load_vectorstore():
@@ -23,7 +24,7 @@ def load_vectorstore():
     return vectorstore
 
 
-def retrieve_context(question: str, k: int = 3):
+def retrieve_context(question: str, k: int = DEFAULT_TOP_K):
     """
     Récupère les k chunks les plus pertinents depuis FAISS.
     """
@@ -54,18 +55,60 @@ Contenu : {doc.page_content}
     return "\n\n".join(context_parts)
 
 
-def ask_rag(question: str) -> dict:
+def format_sources(results) -> list[dict]:
+    """
+    Formate les sources retournées pour avoir une sortie propre.
+    """
+    sources = []
 
-    results = retrieve_context(question)
+    for doc in results:
+        sources.append(
+            {
+                "title": doc.metadata.get("title"),
+                "city": doc.metadata.get("city"),
+                "start_datetime": doc.metadata.get("start_datetime"),
+                "url": doc.metadata.get("url"),
+            }
+        )
+
+    return sources
+
+
+def ask_rag(question: str, k: int = DEFAULT_TOP_K) -> dict:
+    """
+    Pipeline RAG complet :
+    question -> retrieval -> contexte -> prompt -> génération
+    """
+    if not question or not question.strip():
+        return {
+            "question": question,
+            "answer": "La question est vide. Merci de saisir une demande.",
+            "sources": [],
+        }
+
+    results = retrieve_context(question.strip(), k=k)
+
+    if not results:
+        return {
+            "question": question,
+            "answer": "Je n'ai trouvé aucun événement correspondant à votre demande.",
+            "sources": [],
+        }
 
     context = build_context(results)
 
-    prompt = build_prompt(question, context)
+    if not context.strip():
+        return {
+            "question": question,
+            "answer": "Je n'ai pas pu construire de contexte exploitable à partir des résultats trouvés.",
+            "sources": [],
+        }
 
+    prompt = build_prompt(question, context)
     answer = generate_answer(prompt)
 
     return {
         "question": question,
         "answer": answer,
-        "sources": results
+        "sources": format_sources(results),
     }

@@ -2,10 +2,9 @@ from src.rag.rag_pipeline import ask_rag
 
 
 def main():
+    question = ""
 
-    question = "concert à Montpellier"
-
-    result = ask_rag(question)
+    result = ask_rag(question, k=3)
 
     print("\nQUESTION")
     print(result["question"])
@@ -14,8 +13,8 @@ def main():
     print(result["answer"])
 
     print("\nSOURCES")
-    for doc in result["sources"]:
-        print("-", doc.metadata.get("title"))
+    for source in result["sources"]:
+        print("-", source["title"], "|", source["city"], "|", source["start_datetime"])
 
 
 if __name__ == "__main__":
