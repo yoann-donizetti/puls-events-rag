@@ -1,0 +1,9 @@
+.venv
+__pycache__
+*.pyc
+.git
+.gitignore
+.env
+mlruns
+artifacts
+.ipynb_checkpoints
