@@ -47,10 +47,17 @@ puls-events-rag/
 │   │   ├── mistral_client.py
 │   │   └── rag_pipeline.py
 │
-│   └── api/
-│       ├── main.py
-│       ├── schemas.py
-│       └── manual_api_check.py
+│   ├── api/
+│   │   ├── main.py
+│   │   ├── schemas.py
+│   │   └── manual_api_check.py
+│
+│   └── evaluation/
+│       ├── qa_dataset.json
+│       ├── evaluate_rag.py
+│       ├── evaluation_results.json
+│       ├── evaluate_rag_ragas.py
+│       └── evaluation_results_ragas.json
 │
 ├── tests/
 │   ├── test_pipeline.py
@@ -559,6 +566,79 @@ LLM Mistral
 Réponse générée
 
 ---
+
+## Évaluation du système RAG
+
+Afin d'évaluer automatiquement la qualité des réponses générées par le système RAG, une étape d'évaluation a été mise en place à l'aide de la bibliothèque **Ragas**.
+
+L'objectif est de mesurer la pertinence des réponses produites par le chatbot par rapport aux questions utilisateurs et aux réponses de référence.
+
+### Jeu de test
+
+Un dataset de questions-réponses a été créé dans :
+src/evaluation/qa_dataset.json
+
+
+Chaque entrée contient :
+```json
+{ "question": "...", "reference_answer": "...", "type": "positive | negative" }
+```
+
+
+- **positive** : la réponse doit être trouvée dans les données
+- **negative** : la réponse doit indiquer qu'aucune information pertinente n'existe
+
+
+
+### Métriques utilisées
+
+Deux métriques Ragas ont été sélectionnées :
+
+**Faithfulness**
+
+Mesure si la réponse générée est fidèle au contexte récupéré par le système de recherche vectorielle.
+
+Un score élevé signifie que la réponse ne contient pas d'information inventée par le modèle.
+
+**Semantic Similarity**
+
+Mesure la similarité sémantique entre la réponse générée et la réponse de référence annotée par un humain.
+
+Un score élevé signifie que la réponse générée correspond au sens attendu.
+
+
+
+### Exécution de l'évaluation
+
+Le script d'évaluation est situé dans :
+src/evaluation/evaluate_rag_ragas.py
+Copier le code
+
+Lancer l'évaluation :
+
+```bash
+python -m src.evaluation.evaluate_rag_ragas
+```
+Les résultats sont sauvegardés dans :
+
+
+src/evaluation/evaluation_results_ragas.json
+
+### Interprétation des résultats
+L'évaluation permet d'analyser deux aspects du système :
+- la fidélité de la réponse au contexte récupéré
+- la pertinence de la réponse par rapport à la question utilisateur
+
+Les résultats montrent que le système produit généralement des réponses fidèles au contexte récupéré, ce qui indique un faible niveau d'hallucination du modèle.
+
+Cependant, certaines questions présentent des scores de similarité sémantique plus faibles, ce qui suggère que la phase de récupération des documents (retrieval) peut être améliorée.
+
+### Pistes d'amélioration
+Plusieurs améliorations sont possibles :
+- enrichir le champ retrieval_text utilisé pour la vectorisation
+- améliorer le filtrage des résultats récupérés par FAISS
+- augmenter le nombre de chunks pertinents transmis au LLM
+- enrichir le dataset d'évaluation avec davantage de questions métier
 
 ## Secrets
 Ne pas versionner la clé API Mistral.
