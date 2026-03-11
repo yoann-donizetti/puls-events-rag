@@ -12,6 +12,8 @@ DEFAULT_TOP_K = 3
 def load_vectorstore():
     """
     Charge l'index FAISS sauvegardé localement.
+    raise une erreur si l'index n'est pas trouvé ou si la désérialisation échoue.
+        
     """
     embeddings_model = HuggingFaceEmbeddings(model_name=MODEL_NAME)
 
@@ -58,6 +60,7 @@ Contenu : {doc.page_content}
 def format_sources(results) -> list[dict]:
     """
     Formate les sources retournées pour avoir une sortie propre.
+    sortie : une liste de dictionnaires avec les champs title, city, start_datetime et url.
     """
     sources = []
 
@@ -78,7 +81,11 @@ def ask_rag(question: str, k: int = DEFAULT_TOP_K) -> dict:
     """
     Pipeline RAG complet :
     question -> retrieval -> contexte -> prompt -> génération
+    retourne un dictionnaire avec les champs question, answer, sources et n_results.
+    gère les cas où la question est vide, où aucun résultat n'est trouvé ou où le contexte ne peut pas être construit.
+    dans ces cas, retourne une réponse informative sans appeler le LLM.
     """
+
     if not question or not question.strip():
         return {
             "question": question,

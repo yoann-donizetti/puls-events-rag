@@ -11,6 +11,7 @@ MODEL = "mistral-small-latest"
 def generate_answer(prompt: str) -> str:
     """
     Envoie le prompt au modèle Mistral et retourne la réponse générée.
+    raise une erreur si la clé API n'est pas trouvée dans le fichier .env.
     """
     if not API_KEY:
         raise ValueError("MISTRAL_API_KEY introuvable dans le fichier .env")
