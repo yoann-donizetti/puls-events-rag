@@ -55,16 +55,17 @@ Contenu : {doc.page_content}
 
 
 def ask_rag(question: str) -> dict:
-    """
-    Pipeline RAG complet.
-    """
+
     results = retrieve_context(question)
+
     context = build_context(results)
+
     prompt = build_prompt(question, context)
+
+    answer = generate_answer(prompt)
 
     return {
         "question": question,
-        "context": context,
-        "prompt": prompt,
-        "sources": results,
+        "answer": answer,
+        "sources": results
     }
