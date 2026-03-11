@@ -61,10 +61,10 @@ def ask_rag(question: str) -> dict:
     results = retrieve_context(question)
     context = build_context(results)
     prompt = build_prompt(question, context)
-    answer = generate_answer(prompt)
 
     return {
         "question": question,
-        "answer": answer,
+        "context": context,
+        "prompt": prompt,
         "sources": results,
     }

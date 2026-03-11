@@ -1,27 +1,18 @@
-from src.rag.rag_pipeline import retrieve_context, build_context
+from src.rag.rag_pipeline import ask_rag
 
 
 def main():
     question = "concert à Montpellier"
-
-    results = retrieve_context(question, k=3)
+    result = ask_rag(question)
 
     print("\nQUESTION")
-    print(question)
+    print(result["question"])
 
-    print("\nRÉSULTATS BRUTS")
-    for i, doc in enumerate(results, start=1):
-        print(f"\nRésultat {i}")
-        print("Titre :", doc.metadata.get("title"))
-        print("Ville :", doc.metadata.get("city"))
-        print("Date :", doc.metadata.get("start_datetime"))
-        print("URL :", doc.metadata.get("url"))
-        print("Extrait :", doc.page_content[:200], "...")
+    print("\nCONTEXTE")
+    print(result["context"][:1200])
 
-    context = build_context(results)
-
-    print("\nCONTEXTE CONSTRUIT")
-    print(context[:1000])
+    print("\nPROMPT FINAL")
+    print(result["prompt"][:2000])
 
 
 if __name__ == "__main__":
