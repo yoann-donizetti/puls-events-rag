@@ -111,4 +111,5 @@ def ask_rag(question: str, k: int = DEFAULT_TOP_K) -> dict:
         "question": question,
         "answer": answer,
         "sources": format_sources(results),
+        "n_results": len(results),
     }
