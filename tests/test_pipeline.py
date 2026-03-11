@@ -44,13 +44,7 @@ def load_events():
 def test_date_filter():
     events = load_events()
 
-    live_mode = os.getenv("OPENAGENDA_LIVE", "0") == "1"
-
-    if live_mode:
-        reference_date = datetime.now(timezone.utc).date()
-    else:
-        # Date fixe adaptée au sample
-        reference_date = datetime(2026, 3, 5, tzinfo=timezone.utc).date()
+    reference_date = datetime(2026, 3, 5, tzinfo=timezone.utc).date()
 
     date_min = reference_date - timedelta(days=365)
     date_max = reference_date + timedelta(days=365)
