@@ -3,7 +3,7 @@
     "question": "Quels concerts sont prévus à Montpellier ?",
     "reference_answer": "Le système doit identifier les événements musicaux organisés à Montpellier présents dans la base.",
     "type": "positive",
-    "generated_answer": "D'après le contexte fourni, deux concerts sont prévus à Montpellier :\n\n1. **Concert \"Douce dame sans pitié\"**\n   - **Date** : 21 septembre 2025 à 13h00\n   - **Lieu** : Salle Pétrarque - Hôtel de Varennes\n   - **Artistes** : Cristina Alis Raurich (organetto) et Brice Duisit (chant, vièle)\n   - **URL** : [Lien](https://openagenda.com/jep/events/concert-douce-dame-sans-pitie)\n\n2. **La Nuit Batucada : Rythmes de Bahia**\n   - **Date** : 21 juin 2025 à partir de 22h\n   - **Lieu** : Non précisé (événement festif en extérieur)\n   - **Description** : Soirée conviviale avec cuivres, danse et musique\n   - **URL** : [Lien](https://openagenda.com/fetedelamusique2025/events/fete-de-la-musique-2025-batucada-bahia)\n\n*Aucune autre information sur d'autres concerts n'est disponible dans le contexte fourni.*",
+    "generated_answer": "D'après le contexte fourni, deux concerts sont prévus à Montpellier :\n\n1. **Concert \"Douce dame sans pitié\"** (2025-09-21 à 13h00)\n   - Artistes : Cristina Alis Raurich (organetto) et Brice Duisit (chant, vièle)\n   - Lieu : Salle Pétrarque - Hôtel de Varennes\n   - URL : [Lien](https://openagenda.com/jep/events/concert-douce-dame-sans-pitie)\n\n2. **La Nuit Batucada : Rythmes de Bahia** (2025-06-21 à partir de 22h)\n   - Événement festif avec cuivres et ambiance conviviale\n   - URL : [Lien](https://openagenda.com/fetedelamusique2025/events/fete-de-la-musique-2025-batucada-bahia)\n\nL'événement \"Immersion : Vivez l'expérience métier en direct !\" n'est pas un concert.",
     "sources": [
       {
         "title": "Concert \"Douce dame sans pitié\"",
@@ -24,7 +24,8 @@
         "url": "https://openagenda.com/francetravail/events/immersion-vivez-lexperience-metier-en-direct-806460"
       }
     ],
-    "n_results": 3
+    "n_results": 3,
+    "auto_label": "success"
   },
   {
     "question": "Y a-t-il des événements liés au tourisme dans l'Hérault ?",
@@ -51,7 +52,8 @@
         "url": "https://openagenda.com/semaine-des-metiers-du-tourisme/events/tourisme-et-mobilite-metiers-et-activites-en-occitanie"
       }
     ],
-    "n_results": 3
+    "n_results": 3,
+    "auto_label": "success"
   },
   {
     "question": "Existe-t-il des événements en ligne ?",
@@ -78,13 +80,14 @@
         "url": "https://openagenda.com/repaircafe/events/je-participe-aux-ateliers-de-reparations-collectives"
       }
     ],
-    "n_results": 3
+    "n_results": 3,
+    "auto_label": "success"
   },
   {
     "question": "Quels événements sont organisés à Béziers ?",
     "reference_answer": "Le système doit proposer les événements présents à Béziers dans les données.",
     "type": "positive",
-    "generated_answer": "Les événements organisés à Béziers sont :\n1. **Visite de l'usine OI de Béziers** (19 novembre 2025, 08:00-10:00)\n2. **Immersion dans les métiers de la construction de maisons individuelles** (16 septembre 2025, 07:00-08:30)\n3. **Immersions & emplois** (11 septembre 2025, 07:00-08:15)",
+    "generated_answer": "Les événements organisés à Béziers sont :\n1. **Visite de l'usine OI de Béziers** (2025-11-19)\n2. **Immersion dans les métiers de la construction de maisons individuelles** (2025-09-16)\n3. **Immersions & emplois** (2025-09-11)",
     "sources": [
       {
         "title": "Visite de l'usine OI de Béziers",
@@ -105,13 +108,14 @@
         "url": "https://openagenda.com/francetravail/events/immersions-and-emplois"
       }
     ],
-    "n_results": 3
+    "n_results": 3,
+    "auto_label": "success"
   },
   {
     "question": "Quels salons liés au voyage sont organisés dans la région ?",
     "reference_answer": "Le système doit identifier les événements liés au voyage présents dans le dataset.",
     "type": "positive",
-    "generated_answer": "D'après le contexte fourni, les salons liés au voyage organisés dans la région de Montpellier sont :\n\n1. **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER** (2026-02-13 et 2026-02-14)\n   - Thème : Patrimoine culturel et immatériel des DROM-COM\n   - Organisé par les étudiants de BTS Tourisme 1ère année du lycée Georges Frêche.\n\n2. **SALON DU VOYAGE : Les destinations au départ de Montpellier !** (2025-03-07)\n   - Thème : Destinations au départ de Montpellier\n   - Organisé par les étudiants en 1ère année de BTS Tourisme.\n\nAucune autre information n'est disponible dans le contexte fourni.",
+    "generated_answer": "D'après le contexte fourni, les salons liés au voyage organisés dans la région de Montpellier sont :\n\n1. **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER** (2026-02-13 et 2026-02-14) – Axé sur le \"Patrimoine culturel et immatériel des DROM-COM\", organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n2. **SALON DU VOYAGE : Les destinations au départ de Montpellier !** (2025-03-07) – 11ème édition, avec des stands dédiés à 10 destinations au départ de Montpellier, organisé par les étudiants en 1ère année de BTS Tourisme.\n\nSi d'autres salons existent, ils ne sont pas mentionnés dans le contexte fourni.",
     "sources": [
       {
         "title": "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER",
@@ -132,7 +136,8 @@
         "url": "https://openagenda.com/semaine-des-metiers-du-tourisme/events/salon-du-voyage-les-destinations-au-depart-de-montpellier"
       }
     ],
-    "n_results": 3
+    "n_results": 3,
+    "auto_label": "success"
   },
   {
     "question": "Existe-t-il un festival manga sous-marin à Lodève ?",
@@ -159,6 +164,7 @@
         "url": "https://openagenda.com/jep/events/le-traitement-des-vegetaux-et-des-plantes-dans-lantiquite"
       }
     ],
-    "n_results": 3
+    "n_results": 3,
+    "auto_label": "success"
   }
 ]
