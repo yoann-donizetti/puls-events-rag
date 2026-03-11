@@ -7,7 +7,6 @@ on:
     branches: [ main ]
 
 jobs:
-
   tests:
     runs-on: ubuntu-latest
 
@@ -47,15 +46,21 @@ jobs:
         run: |
           docker run -d -p 8000:8000 --name puls-events-rag-container puls-events-rag
 
-      - name: Wait for API startup
+      - name: Wait for API to be ready
         run: |
-          sleep 10
-
-      - name: Test API availability
-        run: |
-          curl --fail http://127.0.0.1:8000/openapi.json
+          for i in {1..20}; do
+            if curl -s http://127.0.0.1:8000/openapi.json > /dev/null; then
+              echo "API is ready"
+              exit 0
+            fi
+            echo "Waiting for API..."
+            sleep 2
+          done
+          echo "API did not start in time"
+          exit 1
 
       - name: Stop Docker container
+        if: always()
         run: |
-          docker stop puls-events-rag-container
-          docker rm puls-events-rag-container
+          docker stop puls-events-rag-container || true
+          docker rm puls-events-rag-container || true
