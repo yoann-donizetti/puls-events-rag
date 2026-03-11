@@ -21,33 +21,56 @@ puls-events-rag/
 
 ├── src/
 │
-├── ingestion/
-│   └── fetch_openagenda_events.py
+│   ├── ingestion/
+│   │   └── fetch_openagenda_events.py
 │
-├── processing/
-│   ├── normalize_openagenda_events.py
-│   └── validate_dataset_quality.py
+│   ├── processing/
+│   │   ├── normalize_openagenda_events.py
+│   │   └── validate_dataset_quality.py
 │
-├── embeddings/
-│   ├── prepare_documents.py
-│   ├── chunk_documents.py
-│   ├── generate_embeddings.py
-│   └── build_faiss_index.py
+│   ├── embeddings/
+│   │   ├── prepare_documents.py
+│   │   ├── chunk_documents.py
+│   │   ├── generate_embeddings.py
+│   │   └── build_faiss_index.py
 │
-├── retrieval/
-│   └── semantic_search_demo.py
+│   ├── retrieval/
+│   │   └── semantic_search_demo.py
 │
-├── pipelines/
-│   ├── data_pipeline.py
-│   ├── vector_pipeline.py
-│   └── rag_demo_pipeline.py
+│   ├── pipelines/
+│   │   ├── data_pipeline.py
+│   │   ├── vector_pipeline.py
+│   │   └── rag_demo_pipeline.py
 │
-├── rag/
-│   ├── prompt_builder.py
-│   ├── mistral_client.py
-│   └── rag_pipeline.py
+│   ├── rag/
+│   │   ├── prompt_builder.py
+│   │   ├── mistral_client.py
+│   │   └── rag_pipeline.py
 │
-└── api/
+│   └── api/
+│       ├── main.py
+│       ├── schemas.py
+│       └── manual_api_check.py
+│
+├── tests/
+│   ├── test_pipeline.py
+│   ├── test_vector_pipeline.py
+│   ├── test_rag_pipeline.py
+│   ├── test_api.py
+│   └── data/
+│       └── sample_events.jsonl
+│
+├── docs/
+│   ├── dataset_schema.md
+│   ├── openagenda_scope.md
+│   ├── openagenda_query_params.md
+│   └── data_quality_report_example.md
+│
+├── requirements.txt
+├── README.md
+└── .env (non versionné)
+
+
 ```
 ---
 
@@ -397,6 +420,64 @@ LLM (Mistral)
 
 ---
 
+## API REST
+
+Le système RAG est exposé via une API REST construite avec FastAPI afin de permettre aux équipes produit et métier de tester facilement le chatbot.
+L’API permet de poser une question sur les événements culturels et de recevoir une réponse générée à partir des données indexées.
+
+### Lancer l'API
+```bash
+uvicorn src.api.main:app --reload
+```
+
+L'API est accessible par défaut sur :
+http://127.0.0.1:8000
+
+La codumentation interactive est disponible ici :
+
+http://127.0.0.1:8000/docs
+
+Cette interface Swagger permet de tester les endpoints directement depuis le navigateur.
+
+### Endpoints disponibles
+#### **POST /ask**
+Permet de poser une question au système RAG.
+Exemple de requête
+```Json
+
+{
+  "question": "concert à Montpellier"
+}
+```
+Exemple de réponse
+
+```Json
+{
+  "question": "concert à Montpellier",
+  "answer": "Voici les concerts à Montpellier mentionnés dans le contexte...",
+  "sources": [
+    {
+      "title": "Concert par l'ensemble instrumental universitaire de Montpellier",
+      "city": "Montpellier",
+      "start_datetime": "2025-09-21T16:30:00+00:00"
+    }
+  ],
+  "n_results": 3
+}
+```
+#### **POST /rebuild**
+Permet de reconstruire l’index vectoriel FAISS à partir du dataset traité.
+Cela exécute automatiquement le pipeline de vectorisation.
+Exemple de réponse
+```Json
+{
+  "status": "vector index rebuilt successfully"
+}
+```
+
+
+---
+
 ## Tests
 Les tests sont situés dans :
 
@@ -419,10 +500,39 @@ Ils vérifient :
 - recherche sémantique
 - présence des métadonnées
 
+
+
+### Tests pipeline RAG
+Ils vérifient :
+- le fonctionnement de la fonction centrale ask_rag()
+- la récupération des documents pertinents depuis FAISS
+- la construction correcte du contexte envoyé au LLM
+- la structure de la réponse générée (question, answer, sources, n_results)
+
+Pour garantir la reproductibilité des tests, l’appel au modèle Mistral est mocké afin d’éviter une dépendance à l’API externe.
+
+
+### Tests API
+Ils vérifient :
+- le bon fonctionnement du endpoint POST /ask
+- la validation des requêtes (ex : question vide)
+- la structure des réponses renvoyées par l’API
+- le fonctionnement du endpoint POST /rebuild
+
+Ces tests utilisent **FastAPI TestClient** afin de tester l’API sans avoir besoin de lancer un serveur.
+
+
+### Dataset de test
 Les tests utilisent un dataset fictif versionné :
 
 
 tests/data/sample_events.jsonl
+
+Cela permet :
+- d’exécuter les tests sans dépendre de l’API OpenAgenda
+- d’assurer la reproductibilité des tests
+- de réduire le temps d’exécution du pipeline
+
 
 ### Lancer les tests
 ```bash
