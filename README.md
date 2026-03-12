@@ -1,5 +1,33 @@
-
 # Puls-Events — POC RAG
+
+
+![CI](https://github.com/yoann-donizetti/puls-events-rag/actions/workflows/ci.yml/badge.svg)
+![Python](https://img.shields.io/badge/python-3.10-blue)
+![Tests](https://img.shields.io/badge/tests-pytest-green)
+![Vector Search](https://img.shields.io/badge/vector%20search-FAISS-purple)
+![RAG](https://img.shields.io/badge/RAG-LangChain-orange)
+![LLM](https://img.shields.io/badge/LLM-Mistral-red)
+![API](https://img.shields.io/badge/API-FastAPI-009688)
+![Docker](https://img.shields.io/badge/docker-ready-blue)
+
+
+POC de système **Retrieval Augmented Generation (RAG)** permettant de répondre à des questions en langage naturel sur des événements culturels à partir des données OpenAgenda.
+
+Le système combine :
+
+- recherche vectorielle **FAISS**
+- orchestration **LangChain**
+- génération **Mistral**
+- API **FastAPI**
+- conteneurisation **Docker**
+
+## Démo rapide
+
+```bash
+docker build -t puls-events-rag .
+docker run --env-file .env -p 8000:8000 puls-events-rag
+```
+
 
 ## Objectif
 
@@ -440,7 +468,7 @@ uvicorn src.api.main:app --reload
 L'API est accessible par défaut sur :
 http://127.0.0.1:8000
 
-La codumentation interactive est disponible ici :
+La documentation interactive est disponible ici :
 
 http://127.0.0.1:8000/docs
 
@@ -546,6 +574,78 @@ Cela permet :
 python -m pytest
 ```
 ---
+
+## Architecture globale 
+
+Et si tu veux une version **plus complète** qui montre tout le projet, prends plutôt celle-ci :
+
+
+
+
+```text
+OpenAgenda API
+    ↓
+Ingestion
+(fetch_openagenda_events.py)
+    ↓
+Normalisation
+(normalize_openagenda_events.py)
+    ↓
+Validation qualité
+(validate_dataset_quality.py)
+    ↓
+Documents
+(prepare_documents.py)
+    ↓
+Chunks
+(chunk_documents.py)
+    ↓
+Embeddings
+(generate_embeddings.py)
+    ↓
+Index FAISS
+(build_faiss_index.py)
+    ↓
+Pipeline RAG
+(rag_pipeline.py)
+    ├── recherche sémantique
+    ├── construction du contexte
+    └── génération de réponse Mistral
+    ↓
+API FastAPI
+(/ask, /rebuild)
+    ↓
+Utilisateur
+```
+
+---
+
+## Schéma UML de l’architecture
+
+```mermaid
+flowchart TD
+    U[Utilisateur] --> A[API FastAPI]
+    A --> H[/GET health/]
+    A --> Q[/POST ask/]
+    A --> R[/POST rebuild/]
+
+    Q --> RP[RAG Pipeline]
+    RP --> RET[Retrieval FAISS]
+    RP --> PB[Prompt Builder]
+    RP --> MC[Mistral Client]
+    RET --> VS[Index vectoriel FAISS]
+    VS --> DOC[Documents et chunks OpenAgenda]
+    MC --> ANS[Réponse générée]
+
+    R --> VP[Vector Pipeline]
+    VP --> PD[Préparation des documents]
+    PD --> CH[Découpage en chunks]
+    CH --> EMB[Embeddings]
+    EMB --> VS
+```
+---
+
+
 
 ## Architecture RAG
 Le système RAG fonctionne selon le pipeline suivant :
@@ -659,6 +759,84 @@ tests/data/sample_events.jsonl
 Il permet d’exécuter les tests sans dépendre de l’API.
 
 
+---
+
+## Exécution avec Docker
+
+Le projet peut être exécuté localement via un conteneur Docker afin de garantir un environnement reproductible.
+
+### Prérequis
+Docker installé sur la machine.
+
+Vérifier l'installation :
+
+```bash
+docker --version
+```
+
+### Construction de l'image
+
+Depuis la racine du projet
+
+```bash
+docker build -t puls-events-rag .
+```
+Cette commande :
+- installe les dépendances Python
+- copie le projet dans l’image
+- configure l’API FastAPI
+
+### Lancer le conteneur
+
+La clé API Mistral n'est pas incluse dans l'image Docker pour des raisons de sécurité.
+Créer un fichier .env :
+
+```env
+MISTRAL_API_KEY=your_api_key_here
+```
+Puis lancer le conteneur  :
+
+```bash
+docker run --name puls-events-rag-container --env-file .env -p 8000:8000 puls-events-rag
+```
+
+### Accès à l'API
+
+Une fois le conteneur lancé :
+API FastAPI :
+
+http://localhost:8000
+
+Documentation Swagger :
+http://localhost:8000/docs
+
+Cette interface Swagger permet de tester directement les endpoints.
+
+### Reconstruction de l’index vectoriel
+Si nécessaire, l’index FAISS peut être reconstruit via l’API :
+
+POST /rebuild
+
+Cela exécute automatiquement le pipeline de vectorisation.
+
+---
+
+### Démonstration type 
+
+Exemple de requête :
+```json
+{
+  "question": "atelier cuisine à Béziers"
+}
+```
+
+Le système :
+- recherche les événements pertinents dans l’index FAISS
+- construit un contexte
+- génère une réponse avec le modèle Mistral
+
+---
+
 ## Roadmap
 Étapes du projet :
 [x] Ingestion OpenAgenda
@@ -666,6 +844,7 @@ Il permet d’exécuter les tests sans dépendre de l’API.
 [x] Validation qualité des données
 [x] Vectorisation
 [x] Index FAISS
-[ x] Pipeline RAG
-[ ] API
-[ ] Évaluation
+[x] Pipeline RAG
+[x] API
+[x] Évaluation
+[x] Dockerisation
