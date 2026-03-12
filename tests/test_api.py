@@ -46,3 +46,8 @@ def test_rebuild_endpoint():
 
     assert data["status"] == "success"
     assert "message" in data
+
+def test_health():
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok"}

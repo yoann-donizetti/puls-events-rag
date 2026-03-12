@@ -17,6 +17,11 @@ def root():
     return RedirectResponse(url="/docs")
 
 
+@app.get("/health", tags=["Health"])
+def health_check():
+    return {"status": "ok"}
+
+
 @app.post("/ask", response_model=AskResponse)
 def ask_question(request: AskRequest):
     question = request.question.strip()
