@@ -4,7 +4,14 @@ from pathlib import Path
 from dotenv import load_dotenv
 from datasets import Dataset
 from ragas import evaluate
-from ragas.metrics import faithfulness, SemanticSimilarity
+from ragas.metrics import answer_similarity
+from ragas.metrics import (
+    Faithfulness,
+    AnswerSimilarity,
+    ContextPrecision,
+    ContextRecall,
+    _ContextRelevance,
+)
 from ragas.llms import LangchainLLMWrapper
 from ragas.embeddings import LangchainEmbeddingsWrapper
 
@@ -84,13 +91,16 @@ def main() -> None:
     )
     evaluator_embeddings = LangchainEmbeddingsWrapper(hf_embeddings)
 
-    semantic_similarity = SemanticSimilarity()
+    
 
     result = evaluate(
         dataset=ragas_dataset,
         metrics=[
-            faithfulness,
-            semantic_similarity,
+            Faithfulness(),
+            AnswerSimilarity(),
+            ContextPrecision(),
+            ContextRecall(),
+            _ContextRelevance(),
         ],
         llm=evaluator_llm,
         embeddings=evaluator_embeddings,
