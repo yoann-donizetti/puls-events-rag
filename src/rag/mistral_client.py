@@ -6,6 +6,9 @@ load_dotenv()
 
 API_KEY = os.getenv("MISTRAL_API_KEY")
 MODEL = "mistral-small-latest"
+TEMPERATURE = 0.2
+TOP_P = 0.9
+MAX_TOKENS = 300
 
 
 def generate_answer(prompt: str) -> str:
@@ -20,12 +23,10 @@ def generate_answer(prompt: str) -> str:
 
     response = client.chat.complete(
         model=MODEL,
-        messages=[
-            {
-                "role": "user",
-                "content": prompt,
-            }
-        ],
+        messages=[{"role": "user", "content": prompt}],
+        temperature=TEMPERATURE,
+        top_p=TOP_P,
+        max_tokens=MAX_TOKENS
     )
 
     return response.choices[0].message.content
