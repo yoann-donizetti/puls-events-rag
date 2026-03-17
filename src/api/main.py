@@ -1,9 +1,11 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import RedirectResponse
+from mistralai.models.sdkerror import SDKError
 
 from src.api.schemas import AskRequest, AskResponse, RebuildResponse
 from src.rag.rag_pipeline import ask_rag
 from src.pipelines.vector_pipeline import main as rebuild_vectorstore
+import time
 
 app = FastAPI(
     title="Puls-Events RAG API",
@@ -22,6 +24,8 @@ def health_check():
     return {"status": "ok"}
 
 
+
+
 @app.post("/ask", response_model=AskResponse)
 def ask_question(request: AskRequest):
     question = request.question.strip()
@@ -35,6 +39,20 @@ def ask_question(request: AskRequest):
     try:
         result = ask_rag(question)
         return result
+
+    except SDKError as e:
+        error_msg = str(e).lower()
+
+        if "429" in error_msg or "rate limit" in error_msg:
+            raise HTTPException(
+                status_code=429,
+                detail="Limite de requêtes atteinte côté Mistral. Réessaie dans quelques secondes."
+            )
+
+        raise HTTPException(
+            status_code=500,
+            detail="Erreur SDK Mistral lors de la génération de la réponse."
+        )
 
     except Exception:
         raise HTTPException(
