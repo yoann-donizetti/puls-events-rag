@@ -8,7 +8,7 @@
     ],
     "response":"Voici les événements liés au tourisme organisés à Montpellier selon les données disponibles :\n\n- **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER**\n  - Ville : Montpellier\n  - Date et heure : 13 février 2026 à 08h30\n  - Description courte : Salon du voyage sur le thème *\"Patrimoine culturel et immatériel des DROM-COM\"*, organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n- **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER**\n  - Ville : Montpellier\n  - Date et heure : 14 février 2026 à 08h00\n  - Description courte : Salon du voyage sur le thème *\"Patrimoine culturel et immatériel des DROM-COM\"*, organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n- **Tourisme et mobilité : métiers et activités en Occitanie**\n  - Ville : Montpellier\n  - Date et heure : 21 mars 2025 à 09h00\n  - Description courte : Réunion d'information sur les métiers et activités du tourisme en Occitanie, incluant des opportunités d'emploi et des informations sur les formations.",
     "reference":"Des événements liés au tourisme sont organisés à Montpellier, notamment des salons du voyage et des rencontres autour des métiers du tourisme.",
-    "faithfulness":0.5714285714,
+    "faithfulness":0.5,
     "answer_similarity":0.6805584527,
     "context_precision":1.0,
     "context_recall":1.0
@@ -22,7 +22,7 @@
     ],
     "response":"- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Cessenon-sur-Orb\n  - Date et heure : 2025-09-21T12:30:00+00:00\n  - Description courte : Visite guidée de l’église Saint-Pierre Saint-Paul mettant en avant le mobilier liturgique restauré et l’exposition de l’œuvre *\"L’eau à la bouche\"* de Valérie du Chéné (17 pierres peintes en hommage aux 17 communes du Sud-Hérault).",
     "reference":"Des événements culturels sont organisés dans l’Hérault, incluant des visites patrimoniales, des expositions et des manifestations artistiques.",
-    "faithfulness":0.3333333333,
+    "faithfulness":0.375,
     "answer_similarity":0.520095157,
     "context_precision":0.0,
     "context_recall":0.0
@@ -66,7 +66,7 @@
     "reference":"Oui, des événements intergénérationnels sont organisés à Montpellier, notamment des activités favorisant les échanges entre générations.",
     "faithfulness":1.0,
     "answer_similarity":0.6358358586,
-    "context_precision":0.3333333333,
+    "context_precision":0.5833333333,
     "context_recall":1.0
   },
   {
@@ -92,7 +92,7 @@
     ],
     "response":"- **Hors Cadre - Festival de photographie à Béziers**\n  - Ville : Béziers\n  - Date et heure : 2025-10-10T08:00:00+00:00\n  - Description courte : La Mediatèca du CIRDOC participe à la deuxième édition avec l'exposition d'Alice Traisnel.",
     "reference":"Des événements liés à la photographie sont organisés à Béziers, notamment des festivals dédiés à cet art.",
-    "faithfulness":0.3333333333,
+    "faithfulness":0.6,
     "answer_similarity":0.7170820018,
     "context_precision":0.9999999999,
     "context_recall":1.0

@@ -45,8 +45,19 @@ def deduplicate_results(results):
 
 def simple_score(question: str, doc) -> int:
     q_words = set(question.lower().split())
+    
+    title = doc.metadata.get("title", "").lower()
     content = doc.page_content.lower()
-    return sum(1 for w in q_words if w in content)
+
+    score = 0
+
+    # boost titre
+    score += sum(2 for w in q_words if w in title)
+
+    # contenu normal
+    score += sum(1 for w in q_words if w in content)
+
+    return score
 
 
 
