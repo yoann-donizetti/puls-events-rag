@@ -19,38 +19,33 @@ Ce dataset servira de base à l’indexation vectorielle et au système RAG.
 
 ---
 
-## Champs obligatoires
-
-| Champ | Type | Description | Exemple |
-|------|------|-------------|---------|
-| event_id | string | ID stable OpenAgenda | "12345678" |
-| title | string | Titre de l’événement | "Concert Jazz" |
-| description | string | Description textuelle (nettoyée) | "Soirée jazz..." |
-| start_datetime | string (ISO 8601) | Début | "2026-03-10T20:30:00+01:00" |
-| end_datetime | string (ISO 8601) | Fin (si dispo) | "2026-03-10T22:30:00+01:00" |
-| location_name | string | Nom du lieu | "Zénith Sud" |
-| city | string | Ville | "Montpellier" |
-| postal_code | string | Code postal (si dispo) | "34000" |
-| department_code | string | Code département | "34" |
-| lat | float | Latitude (si dispo) | 43.6119 |
-| lon | float | Longitude (si dispo) | 3.8772 |
-| url | string | URL publique de l’événement | "https://..." |
-| tags | array[string] | Mots-clés / catégories | ["musique", "jazz"] |
-| source | string | Source des données | "openagenda" |
-
----
-
-## Champs optionnels (si disponibles)
+## Champs du dataset
 
 | Champ | Type | Description |
 |------|------|-------------|
-| summary | string | résumé court |
-| organizer | string | organisateur |
-| image_url | string | image principale |
-| price | string | information tarifaire |
-| accessibility | string | accessibilité |
-| updated_at | string (ISO 8601) | dernière mise à jour |
-| language | string | langue dominante du contenu |
+| event_id | string | Identifiant unique OpenAgenda |
+| title | string | Titre nettoyé |
+| summary | string | Résumé (description_fr) |
+| description | string | Description longue |
+| start_datetime | string | Date début |
+| end_datetime | string | Date fin (optionnel) |
+| location_name | string | Nom du lieu |
+| city | string | Ville |
+| postal_code | string | Code postal (optionnel) |
+| department_code | string | Toujours "34" |
+| lat | float | Latitude (optionnel) |
+| lon | float | Longitude (optionnel) |
+| url | string | URL publique |
+| tags | array | Liste de catégories |
+| source | string | "openagenda" |
+| organizer | string | Organisateur (optionnel) |
+| image_url | string | Image (optionnel) |
+| price | string | Tarif (optionnel) |
+| accessibility | string | Accessibilité (optionnel) |
+| updated_at | string | Mise à jour (optionnel) |
+| language | string | "fr" |
+| retrieval_text | string | Texte pour RAG |
+
 
 ---
 
@@ -61,14 +56,16 @@ Ce dataset servira de base à l’indexation vectorielle et au système RAG.
 **Type : string**
 
 Texte concaténé qui servira à l’indexation vectorielle.
-Construit à partir de champs fiables :
-
-- title
-- description
+Construit à partir de :
+- title (doublé)
+- city
 - location_name
-- city + postal_code + department_code
-- start_datetime / end_datetime
 - tags
+- summary
+- description
+- start_datetime
+
+Objectif : améliorer la recherche vectorielle.
 
 **Objectif** : *maximiser la pertinence sémantique lors des recherches.*
 

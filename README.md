@@ -577,10 +577,6 @@ python -m pytest
 
 ## Architecture globale 
 
-Et si tu veux une version **plus complète** qui montre tout le projet, prends plutôt celle-ci :
-
-
-
 
 ```text
 OpenAgenda API
@@ -669,9 +665,13 @@ Réponse générée
 
 ## Évaluation du système RAG
 
-Afin d'évaluer automatiquement la qualité des réponses générées par le système RAG, une étape d'évaluation a été mise en place à l'aide de la bibliothèque **Ragas**.
+Afin d’évaluer automatiquement la qualité des réponses générées par le système RAG, une étape d’évaluation a été mise en place avec la bibliothèque **Ragas**.
 
-L'objectif est de mesurer la pertinence des réponses produites par le chatbot par rapport aux questions utilisateurs et aux réponses de référence.
+L’objectif est de mesurer :
+
+- la fidélité des réponses au contexte récupéré
+- la pertinence des réponses générées
+- la qualité du retrieval (précision et rappel)
 
 ### Jeu de test
 
@@ -692,19 +692,17 @@ Chaque entrée contient :
 
 ### Métriques utilisées
 
-Deux métriques Ragas ont été sélectionnées :
+Quatre métriques principales ont été utilisées :
 
-**Faithfulness**
-
-Mesure si la réponse générée est fidèle au contexte récupéré par le système de recherche vectorielle.
-
-Un score élevé signifie que la réponse ne contient pas d'information inventée par le modèle.
-
-**Semantic Similarity**
-
-Mesure la similarité sémantique entre la réponse générée et la réponse de référence annotée par un humain.
-
-Un score élevé signifie que la réponse générée correspond au sens attendu.
+**Faithfulness** : 
+- Mesure si la réponse générée est fidèle au contexte récupéré.
+- Un score élevé signifie peu d’hallucinations.
+**Answer Similarity**
+- Mesure la similarité sémantique entre la réponse générée et la réponse de référence.
+**Context Precision**
+- Mesure la proportion de documents récupérés réellement utiles.
+**Context Recall**
+- Mesure la capacité à retrouver les bons documents.
 
 
 
@@ -724,21 +722,62 @@ Les résultats sont sauvegardés dans :
 
 src/evaluation/evaluation_results_ragas.json
 
+
+### Optimisation réalisées
+
+Plusieurs améliorations ont été testées de manière itérative.
+**Retrieval** : 
+- enrichissement du champ retrieval_text
+- duplication du titre pour renforcer son poids sémantique
+- séparation des champs city et location_name
+- ajustement du paramètre top_k
+- ajout d’un reranking simple avec pondération du titre
+**Génération** :
+- amélioration du prompt pour limiter les hallucinations
+- réglage de la température pour stabiliser les réponses
+
+### Configuration retenue 
+
+La meilleure configuration observée est :
+- top_k = 3
+- temperature ≈ 0 – 0.2
+- titre renforcé dans le retrieval
+- reranking avec boost sur le titre
+
+Exemple de résultats :
+```json
+{
+  "faithfulness": 0.7308,
+  "answer_similarity": 0.6529,
+  "context_precision": 0.4583,
+  "context_recall": 0.6000
+}
+```
+
+
 ### Interprétation des résultats
-L'évaluation permet d'analyser deux aspects du système :
-- la fidélité de la réponse au contexte récupéré
-- la pertinence de la réponse par rapport à la question utilisateur
 
-Les résultats montrent que le système produit généralement des réponses fidèles au contexte récupéré, ce qui indique un faible niveau d'hallucination du modèle.
+**Points forts** :
+- bonne fidélité → peu d’hallucinations
+- réponses globalement pertinentes
+- recall correct → les bons documents sont souvent retrouvés
+**Limites** :
+- context_precision moyenne → présence de bruit dans les résultats
+- sens correct mais formulation parfois différente des réponses de référence
+- variations de scores dues au rebuild de FAISS (non versionné)
 
-Cependant, certaines questions présentent des scores de similarité sémantique plus faibles, ce qui suggère que la phase de récupération des documents (retrieval) peut être améliorée.
+
+Le principal axe d’amélioration est le **retrieval**.
+Le modèle génère correctement à partir du contexte, mais la sélection des documents peut encore être optimisée.
 
 ### Pistes d'amélioration
 Plusieurs améliorations sont possibles :
-- enrichir le champ retrieval_text utilisé pour la vectorisation
-- améliorer le filtrage des résultats récupérés par FAISS
-- augmenter le nombre de chunks pertinents transmis au LLM
-- enrichir le dataset d'évaluation avec davantage de questions métier
+- reranking avancé (cross-encoder)
+- filtrage plus strict des documents
+- amélioration du chunking
+- enrichissement du dataset d’évaluation
+- ajout de métriques Ragas supplémentaires
+- meilleure reproductibilité des index FAISS
 
 ## Secrets
 Ne pas versionner la clé API Mistral.
