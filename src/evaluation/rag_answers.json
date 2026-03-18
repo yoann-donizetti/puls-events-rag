@@ -1,7 +1,7 @@
 [
   {
     "question": "Quels événements liés au tourisme sont organisés à Montpellier ?",
-    "answer": "- **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER**\n  - Ville : Montpellier\n  - Date et heure : 13 février 2026 à 08h30\n  - Description courte : Salon du voyage sur le thème *\"Patrimoine culturel et immatériel des DROM-COM\"*, organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n- **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER**\n  - Ville : Montpellier\n  - Date et heure : 14 février 2026 à 08h00\n  - Description courte : Salon du voyage sur le thème *\"Patrimoine culturel et immatériel des DROM-COM\"*, organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n- **Tourisme et mobilité : métiers et activités en Occitanie**\n  - Ville : Montpellier\n  - Date et heure : 21 mars 2025 à 09h00\n  - Description courte : Réunion d'information sur les métiers et activités du tourisme et de la mobilité en Occitanie, ouverte à tous les publics.",
+    "answer": "- **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER**\n  - Ville : Montpellier\n  - Date et heure : 13 février 2026 à 09h30\n  - Description courte : Salon du voyage sur le thème *\"Patrimoine culturel et immatériel des DROM-COM\"*, organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n- **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER**\n  - Ville : Montpellier\n  - Date et heure : 14 février 2026 à 09h00\n  - Description courte : Salon du voyage sur le thème *\"Patrimoine culturel et immatériel des DROM-COM\"*, organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n- **Tourisme et mobilité : métiers et activités en Occitanie**\n  - Ville : Montpellier\n  - Date et heure : 21 mars 2025 à 10h00\n  - Description courte : Réunion d'information sur les métiers et activités du tourisme et de la mobilité en Occitanie, ouverte à tous les publics.",
     "contexts": [
       {
         "title": "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER",
@@ -26,7 +26,7 @@
   },
   {
     "question": "Quels événements culturels ont lieu dans l’Hérault ?",
-    "answer": "- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Cessenon-sur-Orb\n  - Date et heure : 2025-09-21T12:30:00+00:00\n  - Description courte : Visite guidée de l’église Saint-Pierre Saint-Paul mettant en avant le mobilier liturgique restauré dans le cadre du Plan-objet Sud-Hérault, avec une exposition de l’œuvre *\"L’eau à la bouche\"* de Valérie du Chéné.",
+    "answer": "- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Cessenon-sur-Orb\n  - Date et heure : 21 septembre 2025 à 12h30\n  - Description courte : Visite guidée de l’église Saint-Pierre Saint-Paul mettant en avant le mobilier liturgique restauré et l’exposition de l’œuvre *\"L’eau à la bouche\"* de Valérie du Chéné (17 pierres peintes en hommage aux 17 communes du territoire).",
     "contexts": [
       {
         "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
@@ -101,7 +101,7 @@
   },
   {
     "question": "Y a-t-il des événements intergénérationnels à Montpellier ?",
-    "answer": "- **Avec Ensemble2générations Montpellier - Jeux Intergénérationnels à la médiathèque Émile Zola de Montpellier Méditerranée Métropole**\n  - Ville : Montpellier\n  - Date et heure : 2025-04-29T11:00:00+00:00\n  - Description courte : Jeux intergénérationnels à la médiathèque Émile Zola.",
+    "answer": "Voici l'événement intergénérationnel à Montpellier :\n\n- **Avec Ensemble2générations Montpellier - Jeux Intergénérationnels à la médiathèque Émile Zola de Montpellier Méditerranée Métropole**\n  - Ville : Montpellier\n  - Date et heure : 2025-04-29T11:00:00+00:00\n  - Description courte : Jeux intergénérationnels à la médiathèque Émile Zola (Espace Ludothèque), entrée libre.",
     "contexts": [
       {
         "title": "Conférence historique « Montpellier, siège de la Cour des Comptes, Aydes et Finances, de sa création à la Révolution française »",
@@ -126,7 +126,7 @@
   },
   {
     "question": "Quels événements autour du patrimoine sont proposés dans l’Hérault ?",
-    "answer": "Voici les événements autour du patrimoine proposés dans l’Hérault selon les données disponibles :\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Cessenon-sur-Orb\n  - Date et heure : 21 septembre 2025 à 12h30\n  - Description courte : Visite guidée autour du Plan-Objet Sud-Hérault (Patrimoine).\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Quarante\n  - Date et heure : 21 septembre 2025 à 8h00\n  - Description courte : Visite guidée autour du Plan-Objet Sud-Hérault (Patrimoine).\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Saint-Chinian\n  - Date et heure : 20 septembre 2025 à 8h30\n  - Description courte : Visite guidée autour du Plan-Objet Sud-Hérault.",
+    "answer": "Voici les événements autour du patrimoine proposés dans l’Hérault selon les données disponibles :\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  Ville : Cessenon-sur-Orb\n  Date et heure : 21 septembre 2025 à 12h30\n  Description courte : Visite guidée autour du Plan-Objet Sud-Hérault (Patrimoine).\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  Ville : Quarante\n  Date et heure : 21 septembre 2025 à 08h00\n  Description courte : Visite guidée autour du Plan-Objet Sud-Hérault (Patrimoine).\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  Ville : Saint-Chinian\n  Date et heure : 20 septembre 2025 à 08h30\n  Description courte : Visite guidée autour du Plan-Objet Sud-Hérault.",
     "contexts": [
       {
         "title": "Visite guidée autour du Plan-Objet Sud-Hérault",

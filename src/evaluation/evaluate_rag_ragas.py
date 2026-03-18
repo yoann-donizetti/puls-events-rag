@@ -106,7 +106,18 @@ def main() -> None:
     print(result)
 
     df = result.to_pandas()
-    df.to_json(OUTPUT_PATH, orient="records", force_ascii=False, indent=2)
+    global_scores = df.mean(numeric_only=True).to_dict()
+
+    print("\n===== SCORES GLOBAUX =====\n")
+    print(global_scores)
+
+    output = {
+        "global_scores": global_scores,
+        "detailed_results": df.to_dict(orient="records"),
+    }
+
+    with OUTPUT_PATH.open("w", encoding="utf-8") as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
 
     print(f"\nRésultats sauvegardés dans : {OUTPUT_PATH}")
 
