@@ -1,63 +1,163 @@
 [
   {
-    "question": "Quels événements professionnels sont organisés à Montpellier ?",
-    "answer": "Je ne trouve pas cette information dans les données disponibles.",
+    "question": "Quels événements liés au tourisme sont organisés à Montpellier ?",
+    "answer": "Voici les événements liés au tourisme organisés à Montpellier selon les données disponibles :\n\n- **Journée portes ouvertes avec Appart'City Montpellier Millénaire**\n  - Ville : Montpellier\n  - Date et heure : 2026-02-02 à 09:00\n  - Description courte : Immersion dans les métiers de l'hôtellerie avec Appart'City (réception, ménage, etc.).\n\n- **Salon du voyage \"Patrimoine culturel et immatériel des DROM-COM\" (2 jours)**\n  - Ville : Montpellier\n  - Dates et heures :\n    - 2026-02-13 à 08:30\n    - 2026-02-14 à 08:00\n  - Description courte : Salon organisé par les étudiants de BTS Tourisme du lycée Georges Frêche, mettant en avant les DROM-COM.",
     "contexts": [
       {
-        "title": "Conférence historique « Montpellier, siège de la Cour des Comptes, Aydes et Finances, de sa création à la Révolution française »",
+        "title": "Journée portes ouvertes avec Appart'City Montpellier Millénaire (34070)",
         "city": "Montpellier",
-        "start_datetime": "2025-09-20T12:00:00+00:00",
-        "url": "https://openagenda.com/jep/events/conference-historique-montpellier-siege-de-la-cour-des-comptes-aydes-et-finances-de-sa-creation-a-la-revolution-francaise"
-      },
-      {
-        "title": "Visite guidée de la Faculté de Droit de Montpellier",
-        "city": "Montpellier",
-        "start_datetime": "2025-09-20T08:00:00+00:00",
-        "url": "https://openagenda.com/jep/events/la-faculte-de-droit-de-montpellier-7513991"
-      },
-      {
-        "title": "Visites commentées de la Faculté de Droit de Montpellier",
-        "city": "Montpellier",
-        "start_datetime": "2025-09-20T08:00:00+00:00",
-        "url": "https://openagenda.com/jep/events/visites-commentees-6179204"
-      }
-    ],
-    "ground_truth": "Des événements professionnels sont organisés à Montpellier, incluant des salons, forums et rencontres liés à l'emploi et aux entreprises."
-  },
-  {
-    "question": "Y a-t-il des événements liés au tourisme à Montpellier ?",
-    "answer": "- **Comment l’œnotourisme - levier de développement durable et culturel pour les territoires - peut-il offrir des perspectives pour les jeunes diplômés ?**\n  - Ville / lieu : Montpellier (Lycée Georges Frêche)\n  - Date et heure : 18 février 2026, 08:00\n  - Description courte : Journée de réflexion et d’échanges sur l’œnotourisme comme levier de développement durable et culturel, ouverte aux étudiants en tourisme et sommellerie.\n\n- **Tourisme et mobilité : métiers et activités en Occitanie**\n  - Ville / lieu : Montpellier\n  - Date et heure : 21 mars 2025, 09:00\n  - Description courte : Découverte des métiers du tourisme et de la mobilité en Occitanie, ouvert à tout public.\n\n- **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER**\n  - Ville / lieu : Montpellier (Lycée Georges Frêche)\n  - Date et heure : 13 février 2026, 08:30\n  - Description courte : Salon du voyage axé sur le patrimoine culturel et immatériel des DROM-COM, organisé par les étudiants de BTS Tourisme.",
-    "contexts": [
-      {
-        "title": "Comment l’œnotourisme - levier de développement durable et culturel pour les territoires - peut-il offrir des perspectives pour les jeunes diplômés ?",
-        "city": "Montpellier",
-        "start_datetime": "2026-02-18T08:00:00+00:00",
-        "url": "https://openagenda.com/semaine-des-metiers-du-tourisme-2026/events/comment-loenotourisme-levier-de-developpement-durable-et-culturel-pour-les-territoires-peut-il-offrir-des-perspectives-pour-les-jeunes-diplomes"
-      },
-      {
-        "title": "Tourisme et mobilité : métiers et activités en Occitanie",
-        "city": "Montpellier",
-        "start_datetime": "2025-03-21T09:00:00+00:00",
-        "url": "https://openagenda.com/semaine-des-metiers-du-tourisme/events/tourisme-et-mobilite-metiers-et-activites-en-occitanie"
+        "start_datetime": "2026-02-02T09:00:00+00:00",
+        "url": "https://openagenda.com/semaine-des-metiers-du-tourisme-2026/events/journee-portes-ouvertes-avec-appartcity-montpellier-millenaire-34070"
       },
       {
         "title": "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER",
         "city": "Montpellier",
         "start_datetime": "2026-02-13T08:30:00+00:00",
         "url": "https://openagenda.com/semaine-des-metiers-du-tourisme-2026/events/salon-du-voyage-drom-com-lycee-georges-freche-montpellier-8804554"
+      },
+      {
+        "title": "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER",
+        "city": "Montpellier",
+        "start_datetime": "2026-02-14T08:00:00+00:00",
+        "url": "https://openagenda.com/semaine-des-metiers-du-tourisme-2026/events/salon-du-voyage-drom-com-lycee-georges-freche-montpellier"
       }
     ],
-    "ground_truth": "Des événements liés au tourisme sont présents à Montpellier, notamment des salons ou rencontres autour du voyage et de l’attractivité touristique."
+    "ground_truth": "Des événements liés au tourisme sont organisés à Montpellier, notamment des salons du voyage et des rencontres autour des métiers du tourisme."
   },
   {
-    "question": "Quels événements ont lieu à Béziers ?",
-    "answer": "- **Visite de l'usine OI de Béziers**\n  - Ville / lieu : Béziers\n  - Date et heure : 19 novembre 2025 à 08:00\n  - Description courte : Visite de l'usine et présentation du groupe OI.\n\n- **PORTES OUVERTES TRIANGLE INTERIM BEZIERS**\n  - Ville / lieu : Béziers\n  - Date et heure : 23 septembre 2025 à 07:00\n  - Description courte : Découverte de l'agence intérim TRIANGLE à Béziers, présentation des métiers et des profils recherchés (manutentionnaire, chaudronnier, chauffeur SPL, électricien, maçon, commercial, etc.).\n\n- **ATELIERS OUVERTS**\n  - Ville / lieu : Béziers (Purple Campus Béziers)\n  - Date et heure : 18 novembre 2025 à 08:00\n  - Description courte : Échanges avec les apprentis sur leur métier, leur entreprise et leur formation. Animations en direct pour découvrir les métiers (maintenance, électrotechnique, technicien, énergies).",
+    "question": "Quels événements culturels ont lieu dans l’Hérault ?",
+    "answer": "- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Cessenon-sur-Orb\n  - Date et heure : 21 septembre 2025 à 12h30\n  - Description courte : Visite guidée de l’église Saint-Pierre Saint-Paul mettant en avant le mobilier liturgique restauré dans le cadre du Plan-objet Sud-Hérault, avec présentation de l’œuvre *\"L’eau à la bouche\"* de Valérie du Chéné (17 pierres peintes en hommage aux 17 communes du territoire).\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Saint-Chinian\n  - Date et heure : 20 septembre 2025 à 8h30\n  - Description courte : Visite guidée de l’église Notre-Dame-de-la-Barthe avec focus sur le mobilier liturgique restauré, et présentation de l’œuvre *\"L’eau à la bouche\"* de Valérie du Chéné.\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Villespassans\n  - Date et heure : 20 septembre 2025 à 14h00\n  - Description courte : Visite guidée de l’église Notre-Dame-de-l'Assomption avec mise en valeur du mobilier liturgique restauré",
     "contexts": [
       {
-        "title": "Visite de l'usine OI de Béziers",
+        "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
+        "city": "Cessenon-sur-Orb",
+        "start_datetime": "2025-09-21T12:30:00+00:00",
+        "url": "https://openagenda.com/jep-2025-occitanie/events/visite-guidee-autour-du-plan-objet-sud-herault-3388744"
+      },
+      {
+        "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
+        "city": "Saint-Chinian",
+        "start_datetime": "2025-09-20T08:30:00+00:00",
+        "url": "https://openagenda.com/jep-2025-occitanie/events/visite-guidee-autour-du-plan-objet-sud-herault-4720333"
+      },
+      {
+        "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
+        "city": "Villespassans",
+        "start_datetime": "2025-09-20T14:00:00+00:00",
+        "url": "https://openagenda.com/jep-2025-occitanie/events/visite-guidee-autour-du-plan-objet-sud-herault-4910125"
+      }
+    ],
+    "ground_truth": "Des événements culturels sont organisés dans l’Hérault, incluant des visites patrimoniales, des expositions et des manifestations artistiques."
+  },
+  {
+    "question": "Quels événements sont proposés à Béziers ?",
+    "answer": "- **PORTES OUVERTES TRIANGLE INTERIM BEZIERS**\n  - Ville : Béziers\n  - Date et heure : 23 septembre 2025 à 07:00\n  - Description courte : Découverte de l'agence intérim TRIANGLE à Béziers, présentation des métiers et profils recherchés (manutentionnaire, chaudronnier, chauffeur SPL, électricien, maçon, commercial, etc.).\n\n- **Soirée Delpastre**\n  - Ville : Béziers\n  - Date et heure : 26 novembre 2025 à 17:30\n  - Description courte : Événement culturel au CIRDÒC - Institut occitan de cultura.\n\n- **Cine Òc - Du côté de Germont**\n  - Ville : Béziers\n  - Date et heure : 26 mars 2025 à 17:30\n  - Description courte : Projection cinématographique au CIRDÒC - Institut occitan de cultura.",
+    "contexts": [
+      {
+        "title": "PORTES OUVERTES TRIANGLE INTERIM BEZIERS",
         "city": "Béziers",
-        "start_datetime": "2025-11-19T08:00:00+00:00",
-        "url": "https://openagenda.com/semaine-industrie-2025/events/visite-de-lusine-oi-de-beziers"
+        "start_datetime": "2025-09-23T07:00:00+00:00",
+        "url": "https://openagenda.com/francetravail/events/portes-ouvertes-triangle-interim-beziers"
+      },
+      {
+        "title": "Soirée Delpastre",
+        "city": "Béziers",
+        "start_datetime": "2025-11-26T17:30:00+00:00",
+        "url": "https://openagenda.com/o-agenda-des-tiers-lieux/events/serada-delpastre"
+      },
+      {
+        "title": "Cine Òc - Du côté de Germont",
+        "city": "Béziers",
+        "start_datetime": "2025-03-26T17:30:00+00:00",
+        "url": "https://openagenda.com/centenaire-marcelle-delpastre/events/cine-oc-du-cote-de-germont"
+      }
+    ],
+    "ground_truth": "Plusieurs événements sont proposés à Béziers, notamment des portes ouvertes, des festivals et des événements culturels."
+  },
+  {
+    "question": "Quels événements ont lieu en mars 2025 à Montpellier ?",
+    "answer": "Je ne trouve pas cette information dans les données disponibles.",
+    "contexts": [
+      {
+        "title": "La Fresque du patrimoine, une ressource pour la ville durable",
+        "city": "Montpellier",
+        "start_datetime": "2025-09-20T07:30:00+00:00",
+        "url": "https://openagenda.com/jep-2025-occitanie/events/la-fresque-du-patrimoine-une-ressource-pour-la-ville-durable"
+      },
+      {
+        "title": "Créateur d'entreprise depuis moins de 3 ans",
+        "city": "Montpellier",
+        "start_datetime": "2025-09-05T07:30:00+00:00",
+        "url": "https://openagenda.com/francetravail/events/createur-dentreprise-depuis-moins-de-3-ans-314910"
+      },
+      {
+        "title": "Visites de l'église du Saint-Esprit, labellisée Architecture Contemporaine Remarquable",
+        "city": "Montpellier",
+        "start_datetime": "2025-10-18T08:00:00+00:00",
+        "url": "https://openagenda.com/planlibre/events/visites-de-leglise-du-saint-esprit-labellisee-architecture-contemporaine-remarquable"
+      }
+    ],
+    "ground_truth": "Des événements ont lieu en mars 2025 à Montpellier, incluant des ateliers et des événements culturels."
+  },
+  {
+    "question": "Y a-t-il des événements intergénérationnels à Montpellier ?",
+    "answer": "- **Avec Ensemble2générations Montpellier - Jeux Intergénérationnels à la médiathèque Émile Zola de Montpellier Méditerranée Métropole**\n  - Ville : Montpellier\n  - Date et heure : 2025-04-29T11:00:00+00:00\n  - Description courte : Après-midi de jeux intergénérationnels dans l'espace ludothèque de la médiathèque Émile Zola.",
+    "contexts": [
+      {
+        "title": "Avec Ensemble2générations Montpellier - Jeux Intergénérationnels à la médiathèque Émile Zola de Montpellier Méditerranée Métropole",
+        "city": "Montpellier",
+        "start_datetime": "2025-04-29T11:00:00+00:00",
+        "url": "https://openagenda.com/rencontres-entre-generations-2025/events/jeux-intergenerationnels-a-la-mediatheque-emile-zola-de-montpellier-espace-ludotheque"
+      },
+      {
+        "title": "SÉANCE CINÉ-RELAX / SHAUN LE MOUTON, LA FERME EN FOLIE",
+        "city": "Montpellier",
+        "start_datetime": "2025-09-21T12:00:00+00:00",
+        "url": "https://openagenda.com/scare/events/seance-cine-relax-shaun-le-mouton-la-ferme-en-folie"
+      },
+      {
+        "title": "Conférence historique « Montpellier, siège de la Cour des Comptes, Aydes et Finances, de sa création à la Révolution française »",
+        "city": "Montpellier",
+        "start_datetime": "2025-09-20T12:00:00+00:00",
+        "url": "https://openagenda.com/jep-2025-occitanie/events/conference-historique-montpellier-siege-de-la-cour-des-comptes-aydes-et-finances-de-sa-creation-a-la-revolution-francaise"
+      }
+    ],
+    "ground_truth": "Oui, des événements intergénérationnels sont organisés à Montpellier, notamment des activités favorisant les échanges entre générations."
+  },
+  {
+    "question": "Quels événements autour du patrimoine sont proposés dans l’Hérault ?",
+    "answer": "- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  Ville : Cessenon-sur-Orb\n  Date et heure : 21 septembre 2025 à 12h30\n  Description courte : Visite guidée autour du Plan-Objet Sud-Hérault (Patrimoine).\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  Ville : Quarante\n  Date et heure : 21 septembre 2025 à 8h00\n  Description courte : Visite guidée autour du Plan-Objet Sud-Hérault (Patrimoine).\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  Ville : Saint-Chinian\n  Date et heure : 20 septembre 2025 à 8h30\n  Description courte : Visite guidée autour du Plan-Objet Sud-Hérault.",
+    "contexts": [
+      {
+        "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
+        "city": "Cessenon-sur-Orb",
+        "start_datetime": "2025-09-21T12:30:00+00:00",
+        "url": "https://openagenda.com/jep-2025-occitanie/events/visite-guidee-autour-du-plan-objet-sud-herault-3388744"
+      },
+      {
+        "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
+        "city": "Quarante",
+        "start_datetime": "2025-09-21T08:00:00+00:00",
+        "url": "https://openagenda.com/jep-2025-occitanie/events/visite-guidee-autour-du-plan-objet-sud-herault-5646194"
+      },
+      {
+        "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
+        "city": "Saint-Chinian",
+        "start_datetime": "2025-09-20T08:30:00+00:00",
+        "url": "https://openagenda.com/jep-2025-occitanie/events/visite-guidee-autour-du-plan-objet-sud-herault-4720333"
+      }
+    ],
+    "ground_truth": "Des événements autour du patrimoine sont proposés dans l’Hérault, incluant des visites guidées et des découvertes de sites historiques."
+  },
+  {
+    "question": "Quels événements liés à la photographie sont organisés à Béziers ?",
+    "answer": "- **Hors Cadre - Festival de photographie à Béziers**\n  - Ville : Béziers\n  - Date et heure : 2025-10-10T08:00:00+00:00\n  - Description courte : La Mediatèca du CIRDOC participe à la deuxième édition avec l'exposition d'Alice Traisnel",
+    "contexts": [
+      {
+        "title": "Hors Cadre - Festival de photographie à Béziers",
+        "city": "Béziers",
+        "start_datetime": "2025-10-10T08:00:00+00:00",
+        "url": "https://openagenda.com/o-agenda-des-tiers-lieux/events/hors-cadre-festival-de-photographie-a-beziers"
       },
       {
         "title": "PORTES OUVERTES TRIANGLE INTERIM BEZIERS",
@@ -66,118 +166,24 @@
         "url": "https://openagenda.com/francetravail/events/portes-ouvertes-triangle-interim-beziers"
       },
       {
-        "title": "ATELIERS OUVERTS",
+        "title": "VISITE D'ENTREPRISE",
         "city": "Béziers",
-        "start_datetime": "2025-11-18T08:00:00+00:00",
-        "url": "https://openagenda.com/semaine-industrie-2025/events/ateliers-ouverts-3496597"
+        "start_datetime": "2025-11-24T13:00:00+00:00",
+        "url": "https://openagenda.com/semaine-industrie-2025/events/visite-dentreprise-1619869"
       }
     ],
-    "ground_truth": "Des événements sont organisés à Béziers, incluant des manifestations culturelles, professionnelles ou associatives."
-  },
-  {
-    "question": "Existe-t-il des événements culturels dans l’Hérault ?",
-    "answer": "- **Atelier \"Mets en scène ta ville de demain\"**\n  - Ville : Montpellier\n  - Date et heure : 17 octobre 2025 à 09h30 (heure locale)\n  - Description courte : Atelier participatif sur la planification urbaine et la sobriété foncière.\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Prades-sur-Vernazobre\n  - Date et heure : 20 septembre 2025 à 14h30 (heure locale)\n  - Description courte : Visite de l’exposition *\"L’eau à la bouche\"* (17 pierres peintes) suivie d’un atelier sur la préservation du patrimoine.\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Quarante\n  - Date et heure : 21 septembre 2025 à 10h00 (heure locale)\n  - Description courte : Visite de l’exposition *\"L’eau à la bouche\"* (17 pierres peintes) dans le cadre des Journées européennes du Patrimoine.",
-    "contexts": [
-      {
-        "title": "Atelier \"Mets en scène ta ville de demain\"",
-        "city": "Montpellier",
-        "start_datetime": "2025-10-17T07:30:00+00:00",
-        "url": "https://openagenda.com/planlibre/events/atelier-mets-en-scene-ta-ville-de-demain"
-      },
-      {
-        "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
-        "city": "Prades-sur-Vernazobre",
-        "start_datetime": "2025-09-20T12:30:00+00:00",
-        "url": "https://openagenda.com/jep/events/visite-guidee-autour-du-plan-objet-sud-herault-7751215"
-      },
-      {
-        "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
-        "city": "Quarante",
-        "start_datetime": "2025-09-21T08:00:00+00:00",
-        "url": "https://openagenda.com/jep/events/visite-guidee-autour-du-plan-objet-sud-herault-5646194"
-      }
-    ],
-    "ground_truth": "Des événements culturels sont présents dans l’Hérault, incluant des festivals, expositions et manifestations artistiques."
-  },
-  {
-    "question": "Quels événements sont organisés en mars 2025 dans l’Hérault ?",
-    "answer": "- **Atelier Kapla ou comment repousser les limites de l'architecture !**\n  - Ville / lieu : Montpellier – Halle Tropisme, salle B\n  - Date et heure : 15 mars 2025, 14h30 à 16h00\n  - Description courte : Atelier de construction avec des Kapla pour les enfants, suivi d'un goûter.\n\n- **Préparation du JOB TROTTEUR saisonnier à Pézenas !**\n  - Ville / lieu : Pézenas\n  - Date et heure : 11 mars 2025, 14h00 (durée non précisée)\n  - Description courte : Atelier d'accompagnement pour maximiser ses chances de décrocher un poste saisonnier.",
-    "contexts": [
-      {
-        "title": "Atelier Kapla ou comment repousser les limites de l'architecture !",
-        "city": "Montpellier",
-        "start_datetime": "2025-03-15T13:30:00+00:00",
-        "url": "https://openagenda.com/planlibre/events/atelier-kapla-ou-comment-repousser-les-limites-de-larchitecture-8378932"
-      },
-      {
-        "title": "Rejoignez SYSCO et devenez chauffeur livreur PL : 16 postes à pourvoir avec formation incluse !",
-        "city": "Béziers",
-        "start_datetime": "2025-09-15T12:00:00+00:00",
-        "url": "https://openagenda.com/francetravail/events/rejoignez-sysco-et-devenez-chauffeur-livreur-pl-16-postes-a-pourvoir-avec-formation-incluse-77555"
-      },
-      {
-        "title": "Préparation du JOB TROTTEUR saisonnier à Pézenas !",
-        "city": "Pézenas",
-        "start_datetime": "2025-03-11T13:00:00+00:00",
-        "url": "https://openagenda.com/semaine-des-metiers-du-tourisme/events/preparation-du-job-trotteur-saisonnier-a-pezenas"
-      }
-    ],
-    "ground_truth": "Des événements sont organisés en mars 2025 dans l’Hérault, incluant différentes activités culturelles, professionnelles ou associatives."
-  },
-  {
-    "question": "Y a-t-il des événements associatifs autour de Montpellier ?",
-    "answer": "- **Ciné Rencontre RIRE SE BATTRE ET DEVENIR**\n  Ville : Montpellier\n  Date et heure : 2025-10-27T19:30:00+00:00\n  Description courte : Soirée spéciale Rainbow Screen - Madrediosa autour du documentaire d'Adrien Cotonat en présence du réalisateur et des protagonistes. Tarif unique 4 €.",
-    "contexts": [
-      {
-        "title": "Balade ethno-botanique",
-        "city": "Castries",
-        "start_datetime": "2025-09-21T13:00:00+00:00",
-        "url": "https://openagenda.com/jep/events/balade-ethno-botanique"
-      },
-      {
-        "title": "Concert d'orgue",
-        "city": "Montpellier",
-        "start_datetime": "2025-09-20T15:45:00+00:00",
-        "url": "https://openagenda.com/jep/events/concert-dorgue-2903813"
-      },
-      {
-        "title": "Ciné Rencontre RIRE SE BATTRE ET DEVENIR",
-        "city": "Montpellier",
-        "start_datetime": "2025-10-27T19:30:00+00:00",
-        "url": "https://openagenda.com/scare/events/cine-rencontre-rire-se-battre-et-devenir"
-      }
-    ],
-    "ground_truth": "Des événements associatifs sont présents autour de Montpellier, impliquant des associations locales et des initiatives citoyennes."
-  },
-  {
-    "question": "Existe-t-il des événements liés à l’emploi dans l’Hérault ?",
-    "answer": "Je ne trouve pas cette information dans les données disponibles.",
-    "contexts": [
-      {
-        "title": "Atelier \"Mets en scène ta ville de demain\"",
-        "city": "Montpellier",
-        "start_datetime": "2025-10-17T07:30:00+00:00",
-        "url": "https://openagenda.com/planlibre/events/atelier-mets-en-scene-ta-ville-de-demain"
-      },
-      {
-        "title": "Tout le monde sur le pont",
-        "city": "Saint-Jean-de-Fos",
-        "start_datetime": "2025-09-21T08:00:00+00:00",
-        "url": "https://openagenda.com/jep/events/tout-le-monde-sur-le-pont-2181915"
-      },
-      {
-        "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
-        "city": "Saint-Chinian",
-        "start_datetime": "2025-09-20T08:30:00+00:00",
-        "url": "https://openagenda.com/jep/events/visite-guidee-autour-du-plan-objet-sud-herault-4720333"
-      }
-    ],
-    "ground_truth": "Des événements liés à l’emploi sont présents dans l’Hérault, incluant des forums, salons et rencontres professionnelles."
+    "ground_truth": "Des événements liés à la photographie sont organisés à Béziers, notamment des festivals dédiés à cet art."
   },
   {
     "question": "Quels événements sont organisés à Paris ce week-end ?",
     "answer": "Je ne trouve pas cette information dans les données disponibles.",
     "contexts": [
+      {
+        "title": "Sport Tambourin - Coupe de France (phases finales)",
+        "city": "Gignac",
+        "start_datetime": "2025-08-15T13:00:00+00:00",
+        "url": "https://openagenda.com/pci-occitanie/events/sport-tambourin-coupe-de-france-phases-finales"
+      },
       {
         "title": "Sport Tambourin - Vendémian - Cournonterral",
         "city": "Vendémian",
@@ -185,16 +191,10 @@
         "url": "https://openagenda.com/pci-occitanie/events/sport-tambourin-vendemian-cournonterral-8346595"
       },
       {
-        "title": "Sport Tambourin - Vendémian - Cournonterral",
-        "city": "Vendémian",
-        "start_datetime": "2025-05-07T19:30:00+00:00",
-        "url": "https://openagenda.com/pci-occitanie/events/sport-tambourin-vendemian-cournonterral"
-      },
-      {
-        "title": "Sport Tambourin - Cournonterral - Gignac",
-        "city": "Cournonterral",
-        "start_datetime": "2025-05-24T15:00:00+00:00",
-        "url": "https://openagenda.com/pci-occitanie/events/sport-tambourin-cournonterral-gignac"
+        "title": "Sport Tambourin - Notre-Dame-de-Londres - Florensac",
+        "city": "Notre-Dame-de-Londres",
+        "start_datetime": "2025-05-01T09:00:00+00:00",
+        "url": "https://openagenda.com/pci-occitanie/events/sport-tambourin-notre-dame-de-londres-florensac"
       }
     ],
     "ground_truth": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles."
@@ -204,22 +204,22 @@
     "answer": "Je ne trouve pas cette information dans les données disponibles.",
     "contexts": [
       {
-        "title": "ça bouge près de chez vous",
-        "city": "Mauguio",
-        "start_datetime": "2025-11-13T08:00:00+00:00",
-        "url": "https://openagenda.com/semaine-industrie-2025/events/ca-bouge-pres-de-chez-vous"
+        "title": "Découvrez le Métier d'Auxiliaire Ambulancier et Ambulancier : Une Opportunité d'Avenir pour Tous !",
+        "city": "Pézenas",
+        "start_datetime": "2025-09-23T11:30:00+00:00",
+        "url": "https://openagenda.com/francetravail/events/decouvrez-le-metier-dauxiliaire-ambulancier-et-ambulancier-une-opportunite-davenir-pour-tous"
       },
       {
-        "title": "Visites guidées du port de commerce et des services portuaires",
-        "city": "Sète",
-        "start_datetime": "2025-09-21T08:00:00+00:00",
-        "url": "https://openagenda.com/jep/events/visites-du-port-de-commerce-et-des-services-portuaires"
-      },
-      {
-        "title": "100% des perdants ont tenté leur chance",
+        "title": "Atelier DUODAY: emploi et handicap",
         "city": "Montpellier",
-        "start_datetime": "2026-03-25T13:00:00+00:00",
-        "url": "https://openagenda.com/le-printemps-de-lesprit-critique/events/100percent-des-perdants-ont-tente-leur-chance"
+        "start_datetime": "2025-09-22T12:00:00+00:00",
+        "url": "https://openagenda.com/francetravail/events/atelier-duoday-emploi-et-handicap-7604370"
+      },
+      {
+        "title": "atelier DUODAY: emploi et handicap",
+        "city": "Montpellier",
+        "start_datetime": "2025-09-22T12:00:00+00:00",
+        "url": "https://openagenda.com/francetravail/events/atelier-duoday-emploi-et-handicap"
       }
     ],
     "ground_truth": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles."
@@ -229,22 +229,22 @@
     "answer": "Je ne trouve pas cette information dans les données disponibles.",
     "contexts": [
       {
-        "title": "Créer un jeu d'arcade [avec Coder Dojo]",
+        "title": "SÉANCE CINÉ-RELAX / SHAUN LE MOUTON, LA FERME EN FOLIE",
         "city": "Montpellier",
-        "start_datetime": "2025-10-04T08:00:00+00:00",
-        "url": "https://openagenda.com/biblis-en-folie-2025/events/creer-un-jeu-darcade-avec-coder-dojo"
+        "start_datetime": "2025-09-21T12:00:00+00:00",
+        "url": "https://openagenda.com/scare/events/seance-cine-relax-shaun-le-mouton-la-ferme-en-folie"
       },
       {
         "title": "Visite guidée de la Faculté de Droit de Montpellier",
         "city": "Montpellier",
         "start_datetime": "2025-09-20T08:00:00+00:00",
-        "url": "https://openagenda.com/jep/events/la-faculte-de-droit-de-montpellier-7513991"
+        "url": "https://openagenda.com/jep-2025-occitanie/events/la-faculte-de-droit-de-montpellier-7513991"
       },
       {
-        "title": "L'attaque de la chose géante",
+        "title": "Conférence historique « Montpellier, siège de la Cour des Comptes, Aydes et Finances, de sa création à la Révolution française »",
         "city": "Montpellier",
-        "start_datetime": "2026-04-03T14:00:00+00:00",
-        "url": "https://openagenda.com/le-printemps-de-lesprit-critique/events/lattaque-de-la-chose-geante"
+        "start_datetime": "2025-09-20T12:00:00+00:00",
+        "url": "https://openagenda.com/jep-2025-occitanie/events/conference-historique-montpellier-siege-de-la-cour-des-comptes-aydes-et-finances-de-sa-creation-a-la-revolution-francaise"
       }
     ],
     "ground_truth": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles."

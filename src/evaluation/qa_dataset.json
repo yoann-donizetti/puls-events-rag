@@ -1,52 +1,83 @@
 [
   {
-    "question": "Quels événements professionnels sont organisés à Montpellier ?",
-    "reference_answer": "Des événements professionnels sont organisés à Montpellier, incluant des salons, forums et rencontres liés à l'emploi et aux entreprises.",
+    "question": "Quels événements liés au tourisme sont organisés à Montpellier ?",
+    "reference_answer": "Des événements liés au tourisme sont organisés à Montpellier, notamment des salons du voyage et des rencontres autour des métiers du tourisme.",
+    "expected_sources": [
+      "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER",
+      "SALON DU VOYAGE : Les destinations au départ de Montpellier !"
+    ],
     "type": "positive"
   },
   {
-    "question": "Y a-t-il des événements liés au tourisme à Montpellier ?",
-    "reference_answer": "Des événements liés au tourisme sont présents à Montpellier, notamment des salons ou rencontres autour du voyage et de l’attractivité touristique.",
+    "question": "Quels événements culturels ont lieu dans l’Hérault ?",
+    "reference_answer": "Des événements culturels sont organisés dans l’Hérault, incluant des visites patrimoniales, des expositions et des manifestations artistiques.",
+    "expected_sources": [
+      "Visite de la préfecture de l'Hérault",
+      "Visite guidée autour du Plan-Objet Sud-Hérault"
+    ],
     "type": "positive"
   },
   {
-    "question": "Quels événements ont lieu à Béziers ?",
-    "reference_answer": "Des événements sont organisés à Béziers, incluant des manifestations culturelles, professionnelles ou associatives.",
+    "question": "Quels événements sont proposés à Béziers ?",
+    "reference_answer": "Plusieurs événements sont proposés à Béziers, notamment des portes ouvertes, des festivals et des événements culturels.",
+    "expected_sources": [
+      "PORTES OUVERTES TRIANGLE INTERIM BEZIERS",
+      "Hors Cadre - Festival de photographie à Béziers",
+      "Lou Bastimen - présentation publique de la création"
+    ],
     "type": "positive"
   },
   {
-    "question": "Existe-t-il des événements culturels dans l’Hérault ?",
-    "reference_answer": "Des événements culturels sont présents dans l’Hérault, incluant des festivals, expositions et manifestations artistiques.",
+    "question": "Quels événements ont lieu en mars 2025 à Montpellier ?",
+    "reference_answer": "Des événements ont lieu en mars 2025 à Montpellier, incluant des ateliers et des événements culturels.",
+    "expected_sources": [
+      "Atelier Kapla ou comment repousser les limites de l'architecture !",
+      "SALON DU VOYAGE : Les destinations au départ de Montpellier !"
+    ],
     "type": "positive"
   },
   {
-    "question": "Quels événements sont organisés en mars 2025 dans l’Hérault ?",
-    "reference_answer": "Des événements sont organisés en mars 2025 dans l’Hérault, incluant différentes activités culturelles, professionnelles ou associatives.",
+    "question": "Y a-t-il des événements intergénérationnels à Montpellier ?",
+    "reference_answer": "Oui, des événements intergénérationnels sont organisés à Montpellier, notamment des activités favorisant les échanges entre générations.",
+    "expected_sources": [
+      "Jeux Intergénérationnels à la médiathèque Émile Zola"
+    ],
     "type": "positive"
   },
   {
-    "question": "Y a-t-il des événements associatifs autour de Montpellier ?",
-    "reference_answer": "Des événements associatifs sont présents autour de Montpellier, impliquant des associations locales et des initiatives citoyennes.",
+    "question": "Quels événements autour du patrimoine sont proposés dans l’Hérault ?",
+    "reference_answer": "Des événements autour du patrimoine sont proposés dans l’Hérault, incluant des visites guidées et des découvertes de sites historiques.",
+    "expected_sources": [
+      "Visite de la préfecture de l'Hérault",
+      "Visite guidée autour du Plan-Objet Sud-Hérault"
+    ],
     "type": "positive"
   },
   {
-    "question": "Existe-t-il des événements liés à l’emploi dans l’Hérault ?",
-    "reference_answer": "Des événements liés à l’emploi sont présents dans l’Hérault, incluant des forums, salons et rencontres professionnelles.",
+    "question": "Quels événements liés à la photographie sont organisés à Béziers ?",
+    "reference_answer": "Des événements liés à la photographie sont organisés à Béziers, notamment des festivals dédiés à cet art.",
+    "expected_sources": [
+      "Hors Cadre - Festival de photographie à Béziers"
+    ],
     "type": "positive"
   },
+
   {
     "question": "Quels événements sont organisés à Paris ce week-end ?",
     "reference_answer": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
+    "expected_sources": [],
     "type": "negative"
   },
   {
     "question": "Y a-t-il des événements sur la Lune ?",
     "reference_answer": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
+    "expected_sources": [],
     "type": "negative"
   },
   {
     "question": "Peux-tu me donner la météo à Montpellier aujourd’hui ?",
     "reference_answer": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
+    "expected_sources": [],
     "type": "negative"
   }
 ]
