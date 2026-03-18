@@ -1,32 +1,52 @@
 [
   {
-    "question": "Quels concerts sont prévus à Montpellier ?",
-    "reference_answer": "Le système doit identifier les événements musicaux organisés à Montpellier présents dans la base.",
+    "question": "Quels événements professionnels sont organisés à Montpellier ?",
+    "reference_answer": "Des événements professionnels sont organisés à Montpellier, incluant des salons, forums et rencontres liés à l'emploi et aux entreprises.",
     "type": "positive"
   },
   {
-    "question": "Y a-t-il des événements liés au tourisme dans l'Hérault ?",
-    "reference_answer": "Le système doit proposer les événements liés au tourisme présents dans les données.",
+    "question": "Y a-t-il des événements liés au tourisme à Montpellier ?",
+    "reference_answer": "Des événements liés au tourisme sont présents à Montpellier, notamment des salons ou rencontres autour du voyage et de l’attractivité touristique.",
     "type": "positive"
   },
   {
-    "question": "Existe-t-il des événements en ligne ?",
-    "reference_answer": "Le système doit identifier les événements disponibles en ligne présents dans la base.",
+    "question": "Quels événements ont lieu à Béziers ?",
+    "reference_answer": "Des événements sont organisés à Béziers, incluant des manifestations culturelles, professionnelles ou associatives.",
     "type": "positive"
   },
   {
-    "question": "Quels événements sont organisés à Béziers ?",
-    "reference_answer": "Le système doit proposer les événements présents à Béziers dans les données.",
+    "question": "Existe-t-il des événements culturels dans l’Hérault ?",
+    "reference_answer": "Des événements culturels sont présents dans l’Hérault, incluant des festivals, expositions et manifestations artistiques.",
     "type": "positive"
   },
   {
-    "question": "Quels salons liés au voyage sont organisés dans la région ?",
-    "reference_answer": "Le système doit identifier les événements liés au voyage présents dans le dataset.",
+    "question": "Quels événements sont organisés en mars 2025 dans l’Hérault ?",
+    "reference_answer": "Des événements sont organisés en mars 2025 dans l’Hérault, incluant différentes activités culturelles, professionnelles ou associatives.",
     "type": "positive"
   },
   {
-    "question": "Existe-t-il un festival manga sous-marin à Lodève ?",
-    "reference_answer": "Il n'existe pas d'événement correspondant dans les données. Le système doit indiquer qu'il ne trouve pas d'information pertinente.",
+    "question": "Y a-t-il des événements associatifs autour de Montpellier ?",
+    "reference_answer": "Des événements associatifs sont présents autour de Montpellier, impliquant des associations locales et des initiatives citoyennes.",
+    "type": "positive"
+  },
+  {
+    "question": "Existe-t-il des événements liés à l’emploi dans l’Hérault ?",
+    "reference_answer": "Des événements liés à l’emploi sont présents dans l’Hérault, incluant des forums, salons et rencontres professionnelles.",
+    "type": "positive"
+  },
+  {
+    "question": "Quels événements sont organisés à Paris ce week-end ?",
+    "reference_answer": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
+    "type": "negative"
+  },
+  {
+    "question": "Y a-t-il des événements sur la Lune ?",
+    "reference_answer": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
+    "type": "negative"
+  },
+  {
+    "question": "Peux-tu me donner la météo à Montpellier aujourd’hui ?",
+    "reference_answer": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
     "type": "negative"
   }
 ]

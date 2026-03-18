@@ -1,50 +1,46 @@
+import os
 import json
 from pathlib import Path
 
 from dotenv import load_dotenv
 from datasets import Dataset
 from ragas import evaluate
-from ragas.metrics import answer_similarity
 from ragas.metrics import (
     Faithfulness,
     AnswerSimilarity,
     ContextPrecision,
     ContextRecall,
-    _ContextRelevance,
 )
+
 from ragas.llms import LangchainLLMWrapper
 from ragas.embeddings import LangchainEmbeddingsWrapper
 
 from langchain_mistralai import ChatMistralAI
 from langchain_huggingface import HuggingFaceEmbeddings
 
-from src.rag.rag_pipeline import ask_rag
-
 
 load_dotenv()
 
-DATASET_PATH = Path("src/evaluation/qa_dataset.json")
+MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
+
+DATASET_PATH = Path("src/evaluation/rag_answers.json")
 OUTPUT_PATH = Path("src/evaluation/evaluation_results_ragas.json")
 
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 
-def load_dataset() -> list[dict]:
-    with DATASET_PATH.open("r", encoding="utf-8") as f:
-        return json.load(f)
+def load_dataset() -> Dataset:
+    with DATASET_PATH.open("r", encoding="utf-8-sig") as f:
+        data = json.load(f)
 
-
-def build_ragas_dataset(qa_data: list[dict]) -> Dataset:
     questions = []
     answers = []
     contexts = []
     ground_truths = []
 
-    for item in qa_data:
-        question = item["question"]
-        reference = item["reference_answer"]
-
-        rag_result = ask_rag(question)
+    for item in data:
+        questions.append(item["question"])
+        answers.append(item["answer"])
 
         context_list = [
             " | ".join(
@@ -58,13 +54,11 @@ def build_ragas_dataset(qa_data: list[dict]) -> Dataset:
                     ],
                 )
             )
-            for source in rag_result["sources"]
+            for source in item["contexts"]
         ]
 
-        questions.append(question)
-        answers.append(rag_result["answer"])
         contexts.append(context_list)
-        ground_truths.append(reference)
+        ground_truths.append(item["ground_truth"])
 
     return Dataset.from_dict(
         {
@@ -77,12 +71,17 @@ def build_ragas_dataset(qa_data: list[dict]) -> Dataset:
 
 
 def main() -> None:
-    qa_data = load_dataset()
-    ragas_dataset = build_ragas_dataset(qa_data)
+    if not MISTRAL_API_KEY:
+        raise ValueError("MISTRAL_API_KEY introuvable dans le fichier .env")
+
+    print("Clé Mistral chargée :", MISTRAL_API_KEY[:8] + "...")
+
+    ragas_dataset = load_dataset()
 
     mistral_llm = ChatMistralAI(
         model="mistral-small-latest",
         temperature=0,
+        api_key=MISTRAL_API_KEY,
     )
     evaluator_llm = LangchainLLMWrapper(mistral_llm)
 
@@ -91,8 +90,6 @@ def main() -> None:
     )
     evaluator_embeddings = LangchainEmbeddingsWrapper(hf_embeddings)
 
-    
-
     result = evaluate(
         dataset=ragas_dataset,
         metrics=[
@@ -100,7 +97,6 @@ def main() -> None:
             AnswerSimilarity(),
             ContextPrecision(),
             ContextRecall(),
-            _ContextRelevance(),
         ],
         llm=evaluator_llm,
         embeddings=evaluator_embeddings,
@@ -109,7 +105,6 @@ def main() -> None:
     print("\n===== RAGAS EVALUATION =====\n")
     print(result)
 
-    # Sauvegarde propre via pandas
     df = result.to_pandas()
     df.to_json(OUTPUT_PATH, orient="records", force_ascii=False, indent=2)
 

@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-
+import time
 from src.rag.rag_pipeline import ask_rag
 
 
