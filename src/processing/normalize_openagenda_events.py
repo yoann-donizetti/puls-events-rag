@@ -82,43 +82,35 @@ def strip_html(text):
 
 def build_retrieval_text(event):
     """
-    Construit une chaîne de texte concaténant les informations principales d'un événement pour faciliter la recherche ou l'indexation.
-
-    Args:
-        event (dict): Dictionnaire contenant les champs d'un événement normalisé.
-
-    Returns:
-        str: Texte concaténé avec titre, description, localisation, dates et tags.
+    Construit un texte structuré et sémantiquement riche
+    pour améliorer la recherche vectorielle.
     """
+
     parts = []
 
-    parts.append(event.get("title", ""))#Ajouter le titre de l'événement à la liste des parties du texte de récupération. Si le titre n'est pas présent, ajouter une chaîne vide pour éviter les erreurs.
-    parts.append(event.get("description", ""))#Ajouter la description de l'événement à la liste des parties du texte de récupération. Si la description n'est pas présente, ajouter une chaîne vide pour éviter les erreurs.
+    if event.get("tags"):
+        parts.append(f"Type d'événement : {', '.join(event['tags'])}")
+
+    if event.get("title"):
+        parts.append(f"Titre : {event['title']}")
+
+    if event.get("summary"):
+        parts.append(f"Résumé : {event['summary']}")
+
+    if event.get("description"):
+        parts.append(f"Détails : {event['description']}")
 
     location = " ".join(filter(None, [
-        #Construire une chaîne de localisation en concaténant les différents champs de localisation de l'événement. 
-        # Utiliser filter(None, [...]) pour ignorer les champs vides ou None.
         event.get("location_name"),
         event.get("city"),
-        event.get("postal_code"),
-        event.get("department_code")
     ]))
+    if location:
+        parts.append(f"Lieu : {location}")
 
-    parts.append(location)
-    #Ajouter la date de début de l'événement à la liste des parties du texte de récupération si elle est présente.
     if event.get("start_datetime"):
-        parts.append(event["start_datetime"])
+        parts.append(f"Date : {event['start_datetime']}")
 
-    #Ajouter la date de fin de l'événement à la liste des parties du texte de récupération si elle est présente.
-    if event.get("end_datetime"):
-        parts.append(event["end_datetime"])
-
-    #Ajouter les tags de l'événement à la liste des parties du texte de récupération si ils sont présents.
-    # Les tags sont joints en une seule chaîne séparée par des virgules pour éviter d'avoir une liste de tags dans le texte de récupération, ce qui pourrait compliquer la recherche.
-    if event.get("tags"):
-        parts.append(", ".join(event["tags"]))
-
-    return sanitize_line_separators(" ".join(filter(None, parts)).strip())
+    return sanitize_line_separators("\n".join(parts).strip())
 
 
 def find_latest_raw_file():
@@ -153,12 +145,10 @@ def normalize_event(raw):
     title = strip_html(raw.get("title_fr", ""))
 
 
-    # Construire la description complète de l'événement en concaténant les champs "description_fr" 
-    # et "longdescription_fr" après les avoir nettoyés.
-    description = " ".join([
-        strip_html(raw.get("description_fr")),
-        strip_html(raw.get("longdescription_fr"))
-    ]).strip()
+
+    summary = strip_html(raw.get("description_fr"))
+    long_description = strip_html(raw.get("longdescription_fr"))
+    description = long_description  
 
     # Extraire les dates de début et de fin de l'événement à partir des champs "firstdate_begin" et "firstdate_end" du dictionnaire brut.
     start_datetime = raw.get("firstdate_begin")
@@ -172,6 +162,7 @@ def normalize_event(raw):
     event = {
         "event_id": event_id,
         "title": title,
+        "summary": summary,
         "description": description,
         "start_datetime": start_datetime,
         "end_datetime": end_datetime,
