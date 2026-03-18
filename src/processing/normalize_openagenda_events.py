@@ -173,7 +173,6 @@ def normalize_event(raw):
         "url": raw.get("canonicalurl"),
         "tags": raw.get("keywords_fr") or [],
         "source": SOURCE,
-        "summary": strip_html(raw.get("description_fr")),
         "organizer": raw.get("contributor_organization"),
         "image_url": raw.get("image"),
         "price": raw.get("conditions_fr"),
