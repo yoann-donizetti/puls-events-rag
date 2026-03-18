@@ -1,7 +1,7 @@
 [
   {
     "question": "Quels événements liés au tourisme sont organisés à Montpellier ?",
-    "answer": "Voici les événements liés au tourisme organisés à Montpellier selon les données disponibles :\n\n- **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER**\n  - Ville : Montpellier\n  - Date et heure : 13 février 2026 à 08h30\n  - Description courte : Salon du voyage sur le thème *\"Patrimoine culturel et immatériel des DROM-COM\"*, organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n- **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER**\n  - Ville : Montpellier\n  - Date et heure : 14 février 2026 à 08h00\n  - Description courte : Salon du voyage sur le thème *\"Patrimoine culturel et immatériel des DROM-COM\"*, organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n- **Tourisme et mobilité : métiers et activités en Occitanie**\n  - Ville : Montpellier\n  - Date et heure : 21 mars 2025 à 09h00\n  - Description courte : Réunion d'information sur les métiers et activités du tourisme en Occitanie, incluant des opportunités d'emploi et des informations sur les formations.",
+    "answer": "- **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER**\n  - Ville : Montpellier\n  - Date et heure : 13 février 2026 à 08h30\n  - Description courte : Salon du voyage sur le thème *\"Patrimoine culturel et immatériel des DROM-COM\"*, organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n- **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER**\n  - Ville : Montpellier\n  - Date et heure : 14 février 2026 à 08h00\n  - Description courte : Salon du voyage sur le thème *\"Patrimoine culturel et immatériel des DROM-COM\"*, organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n- **Tourisme et mobilité : métiers et activités en Occitanie**\n  - Ville : Montpellier\n  - Date et heure : 21 mars 2025 à 09h00\n  - Description courte : Réunion d'information sur les métiers et activités du tourisme et de la mobilité en Occitanie, ouverte à tous les publics.",
     "contexts": [
       {
         "title": "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER",
@@ -26,7 +26,7 @@
   },
   {
     "question": "Quels événements culturels ont lieu dans l’Hérault ?",
-    "answer": "- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Cessenon-sur-Orb\n  - Date et heure : 2025-09-21T12:30:00+00:00\n  - Description courte : Visite guidée de l’église Saint-Pierre Saint-Paul mettant en avant le mobilier liturgique restauré et l’exposition de l’œuvre *\"L’eau à la bouche\"* de Valérie du Chéné (17 pierres peintes en hommage aux 17 communes du Sud-Hérault).",
+    "answer": "- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Cessenon-sur-Orb\n  - Date et heure : 2025-09-21T12:30:00+00:00\n  - Description courte : Visite guidée de l’église Saint-Pierre Saint-Paul mettant en avant le mobilier liturgique restauré dans le cadre du Plan-objet Sud-Hérault, avec une exposition de l’œuvre *\"L’eau à la bouche\"* de Valérie du Chéné.",
     "contexts": [
       {
         "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
@@ -51,7 +51,7 @@
   },
   {
     "question": "Quels événements sont proposés à Béziers ?",
-    "answer": "- **Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en visioconférence secteur Commerce/Vente**\n  - Ville : Béziers\n  - Date et heure : 2025-09-23T07:30:00+00:00\n  - Description courte : Atelier préparatoire à l'action Poly 'Job en visioconférence pour le secteur Commerce/Vente.\n\n- **Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en visioconférence secteur restauration**\n  - Ville : Béziers\n  - Date et heure : 2025-09-22T07:30:00+00:00\n  - Description courte : Atelier préparatoire à l'action Poly 'Job en visioconférence pour le secteur restauration.\n\n- **Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en physique**\n  - Ville : Béziers\n  - Date et heure : 2025-09-26T07:30:00+00:00\n  - Description courte : Atelier préparatoire à l'action Poly 'Job en physique.",
+    "answer": "- **Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en visioconférence secteur Commerce/Vente**\n  - Ville : Béziers\n  - Date et heure : 2025-09-23 à 07:30\n  - Description courte : Atelier de préparation au recrutement pour le secteur Commerce/Vente en visioconférence.\n\n- **Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en visioconférence secteur restauration**\n  - Ville : Béziers\n  - Date et heure : 2025-09-22 à 07:30\n  - Description courte : Atelier de préparation au recrutement pour le secteur restauration en visioconférence.\n\n- **Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en physique**\n  - Ville : Béziers\n  - Date et heure : 2025-09-26 à 07:30\n  - Description courte : Atelier de préparation au recrutement en présentiel.",
     "contexts": [
       {
         "title": "Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en visioconférence secteur Commerce/Vente",
@@ -85,48 +85,48 @@
         "url": "https://openagenda.com/francetravail/events/markethon-2025-tous-vers-lemploi-4630841"
       },
       {
-        "title": "MARKETHON 2025: Tous vers l'emploi!",
-        "city": "Pérols",
-        "start_datetime": "2025-09-15T07:00:00+00:00",
-        "url": "https://openagenda.com/francetravail/events/markethon-2025-tous-vers-lemploi-2725494"
-      },
-      {
-        "title": "L'attaque de la chose géante",
-        "city": "Montpellier",
-        "start_datetime": "2026-04-03T14:00:00+00:00",
-        "url": "https://openagenda.com/le-printemps-de-lesprit-critique/events/lattaque-de-la-chose-geante"
-      }
-    ],
-    "ground_truth": "Des événements ont lieu en mars 2025 à Montpellier, incluant des ateliers et des événements culturels."
-  },
-  {
-    "question": "Y a-t-il des événements intergénérationnels à Montpellier ?",
-    "answer": "Avec Ensemble2générations Montpellier - Jeux Intergénérationnels à la médiathèque Émile Zola de Montpellier Méditerranée Métropole\n- Ville : Montpellier\n- Date et heure : 2025-04-29T11:00:00+00:00\n- Description courte : Jeux intergénérationnels à la médiathèque Émile Zola.",
-    "contexts": [
-      {
         "title": "Assomption Montpellier",
         "city": "Montpellier",
         "start_datetime": "2026-04-07T08:00:00+00:00",
         "url": "https://openagenda.com/allianz-prevention-tour/events/assomption-montpellier"
       },
       {
-        "title": "SÉANCE CINÉ-RELAX / SHAUN LE MOUTON, LA FERME EN FOLIE",
+        "title": "MARKETHON 2025: Tous vers l'emploi!",
+        "city": "Pérols",
+        "start_datetime": "2025-09-15T07:00:00+00:00",
+        "url": "https://openagenda.com/francetravail/events/markethon-2025-tous-vers-lemploi-2725494"
+      }
+    ],
+    "ground_truth": "Des événements ont lieu en mars 2025 à Montpellier, incluant des ateliers et des événements culturels."
+  },
+  {
+    "question": "Y a-t-il des événements intergénérationnels à Montpellier ?",
+    "answer": "- **Avec Ensemble2générations Montpellier - Jeux Intergénérationnels à la médiathèque Émile Zola de Montpellier Méditerranée Métropole**\n  - Ville : Montpellier\n  - Date et heure : 2025-04-29T11:00:00+00:00\n  - Description courte : Jeux intergénérationnels à la médiathèque Émile Zola.",
+    "contexts": [
+      {
+        "title": "Conférence historique « Montpellier, siège de la Cour des Comptes, Aydes et Finances, de sa création à la Révolution française »",
         "city": "Montpellier",
-        "start_datetime": "2025-09-21T12:00:00+00:00",
-        "url": "https://openagenda.com/scare/events/seance-cine-relax-shaun-le-mouton-la-ferme-en-folie"
+        "start_datetime": "2025-09-20T12:00:00+00:00",
+        "url": "https://openagenda.com/jep-2025-occitanie/events/conference-historique-montpellier-siege-de-la-cour-des-comptes-aydes-et-finances-de-sa-creation-a-la-revolution-francaise"
       },
       {
         "title": "Avec Ensemble2générations Montpellier - Jeux Intergénérationnels à la médiathèque Émile Zola de Montpellier Méditerranée Métropole",
         "city": "Montpellier",
         "start_datetime": "2025-04-29T11:00:00+00:00",
         "url": "https://openagenda.com/rencontres-entre-generations-2025/events/jeux-intergenerationnels-a-la-mediatheque-emile-zola-de-montpellier-espace-ludotheque"
+      },
+      {
+        "title": "Assomption Montpellier",
+        "city": "Montpellier",
+        "start_datetime": "2026-04-07T08:00:00+00:00",
+        "url": "https://openagenda.com/allianz-prevention-tour/events/assomption-montpellier"
       }
     ],
     "ground_truth": "Oui, des événements intergénérationnels sont organisés à Montpellier, notamment des activités favorisant les échanges entre générations."
   },
   {
     "question": "Quels événements autour du patrimoine sont proposés dans l’Hérault ?",
-    "answer": "Voici les événements autour du patrimoine proposés dans l’Hérault selon les données disponibles :\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  Ville : Cessenon-sur-Orb\n  Date et heure : 21 septembre 2025 à 12h30\n  Description courte : Visite guidée autour du Plan-Objet Sud-Hérault (Patrimoine).\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  Ville : Quarante\n  Date et heure : 21 septembre 2025 à 08h00\n  Description courte : Visite guidée autour du Plan-Objet Sud-Hérault (Patrimoine).\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  Ville : Saint-Chinian\n  Date et heure : 20 septembre 2025 à 08h30\n  Description courte : Visite guidée autour du Plan-Objet Sud-Hérault.",
+    "answer": "Voici les événements autour du patrimoine proposés dans l’Hérault selon les données disponibles :\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Cessenon-sur-Orb\n  - Date et heure : 21 septembre 2025 à 12h30\n  - Description courte : Visite guidée autour du Plan-Objet Sud-Hérault (Patrimoine).\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Quarante\n  - Date et heure : 21 septembre 2025 à 8h00\n  - Description courte : Visite guidée autour du Plan-Objet Sud-Hérault (Patrimoine).\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Saint-Chinian\n  - Date et heure : 20 septembre 2025 à 8h30\n  - Description courte : Visite guidée autour du Plan-Objet Sud-Hérault.",
     "contexts": [
       {
         "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
@@ -160,16 +160,16 @@
         "url": "https://openagenda.com/o-agenda-des-tiers-lieux/events/hors-cadre-festival-de-photographie-a-beziers"
       },
       {
-        "title": "Soirée Delpastre",
+        "title": "Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en physique",
         "city": "Béziers",
-        "start_datetime": "2025-11-26T17:30:00+00:00",
-        "url": "https://openagenda.com/o-agenda-des-tiers-lieux/events/serada-delpastre"
+        "start_datetime": "2025-09-26T07:30:00+00:00",
+        "url": "https://openagenda.com/francetravail/events/atelier-preparatoire-a-laction-poly-job-recrutement-polygone-de-beziers-en-physique"
       },
       {
-        "title": "PORTES OUVERTES TRIANGLE INTERIM BEZIERS",
+        "title": "Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en visioconférence secteur Commerce/Vente",
         "city": "Béziers",
-        "start_datetime": "2025-09-23T07:00:00+00:00",
-        "url": "https://openagenda.com/francetravail/events/portes-ouvertes-triangle-interim-beziers"
+        "start_datetime": "2025-09-23T07:30:00+00:00",
+        "url": "https://openagenda.com/francetravail/events/atelier-preparatoire-a-laction-poly-job-recrutement-polygone-de-beziers-en-visioconference-secteur-commercevente"
       }
     ],
     "ground_truth": "Des événements liés à la photographie sont organisés à Béziers, notamment des festivals dédiés à cet art."
@@ -185,16 +185,16 @@
         "url": "https://openagenda.com/pci-occitanie/events/sport-tambourin-coupe-de-france-phases-finales"
       },
       {
+        "title": "Sport Tambourin - Vendémian - Monceaux sur Dordogne",
+        "city": "Vendémian",
+        "start_datetime": "2025-05-03T15:00:00+00:00",
+        "url": "https://openagenda.com/pci-occitanie/events/sport-tambourin-vendemian-monceaux-sur-dordogne"
+      },
+      {
         "title": "Sport Tambourin - Florensac - Cournonsec",
         "city": "Florensac",
         "start_datetime": "2025-05-02T19:30:00+00:00",
         "url": "https://openagenda.com/pci-occitanie/events/sport-tambourin-florensac-cournonsec-4186460"
-      },
-      {
-        "title": "Sport Tambourin - Cournonterral - Cazouls d'Hérault",
-        "city": "Cournonterral",
-        "start_datetime": "2025-05-02T19:30:00+00:00",
-        "url": "https://openagenda.com/pci-occitanie/events/sport-tambourin-cournonterral-cazouls-dherault"
       }
     ],
     "ground_truth": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles."
@@ -229,6 +229,12 @@
     "answer": "Je ne trouve pas cette information dans les données disponibles.",
     "contexts": [
       {
+        "title": "Conférence historique « Montpellier, siège de la Cour des Comptes, Aydes et Finances, de sa création à la Révolution française »",
+        "city": "Montpellier",
+        "start_datetime": "2025-09-20T12:00:00+00:00",
+        "url": "https://openagenda.com/jep-2025-occitanie/events/conference-historique-montpellier-siege-de-la-cour-des-comptes-aydes-et-finances-de-sa-creation-a-la-revolution-francaise"
+      },
+      {
         "title": "SÉANCE CINÉ-RELAX / SHAUN LE MOUTON, LA FERME EN FOLIE",
         "city": "Montpellier",
         "start_datetime": "2025-09-21T12:00:00+00:00",
@@ -239,12 +245,6 @@
         "city": "Montpellier",
         "start_datetime": "2025-09-20T08:00:00+00:00",
         "url": "https://openagenda.com/jep-2025-occitanie/events/la-faculte-de-droit-de-montpellier-7513991"
-      },
-      {
-        "title": "L'attaque de la chose géante",
-        "city": "Montpellier",
-        "start_datetime": "2026-04-03T14:00:00+00:00",
-        "url": "https://openagenda.com/le-printemps-de-lesprit-critique/events/lattaque-de-la-chose-geante"
       }
     ],
     "ground_truth": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles."
