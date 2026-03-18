@@ -7,7 +7,7 @@ load_dotenv()
 API_KEY = os.getenv("MISTRAL_API_KEY")
 MODEL = "mistral-small-latest"
 TEMPERATURE = 0
-TOP_P = 0.9
+TOP_P = 1
 MAX_TOKENS = 300
 
 
