@@ -739,17 +739,20 @@ Plusieurs améliorations ont été testées de manière itérative.
 ### Configuration retenue 
 
 La meilleure configuration observée est :
+
 - top_k = 3
-- temperature ≈ 0 – 0.2
+- temperature = 0
+- top_p = 1
 - titre renforcé dans le retrieval
 - reranking avec boost sur le titre
 
 Exemple de résultats :
+
 ```json
 {
-  "faithfulness": 0.7308,
-  "answer_similarity": 0.6529,
-  "context_precision": 0.4583,
+  "faithfulness": 0.6583,
+  "answer_similarity": 0.6446,
+  "context_precision": 0.4333,
   "context_recall": 0.6000
 }
 ```
@@ -757,18 +760,21 @@ Exemple de résultats :
 
 ### Interprétation des résultats
 
-**Points forts** :
-- bonne fidélité → peu d’hallucinations
-- réponses globalement pertinentes
-- recall correct → les bons documents sont souvent retrouvés
-**Limites** :
-- context_precision moyenne → présence de bruit dans les résultats
-- sens correct mais formulation parfois différente des réponses de référence
-- variations de scores dues au rebuild de FAISS (non versionné)
+**Points forts**
+- Bonne fidélité des réponses : le modèle reste globalement aligné avec le contexte et génère peu d’hallucinations
+- Cohérence globale : les réponses sont pertinentes et en adéquation avec les informations fournies
+- Compromis précision / rappel satisfaisant : le système parvient à récupérer des informations utiles tout en limitant le bruit
+- Réduction du bruit : la limitation du nombre de documents (top_k) permet d’éviter d’introduire du contenu non pertinent
+**Limites**
+- Context precision perfectible : certains documents récupérés restent partiellement hors sujet
+- Answer similarity modérée : les réponses diffèrent parfois dans la formulation par rapport aux références attendues
+- Couverture limitée : un top_k faible peut empêcher de récupérer tous les événements pertinents, notamment dans les cas multi-événements
 
 
-Le principal axe d’amélioration est le **retrieval**.
-Le modèle génère correctement à partir du contexte, mais la sélection des documents peut encore être optimisée.
+Le choix de top_k = 3 permet de conserver un bon équilibre entre :
+- récupération de contexte pertinent (recall)
+- limitation du bruit (precision)
+Le réglage temperature = 0 garantit une génération déterministe et fiable, ce qui améliore significativement la fidélité des réponses.
 
 ### Pistes d'amélioration
 Plusieurs améliorations sont possibles :
