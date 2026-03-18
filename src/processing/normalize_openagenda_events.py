@@ -81,18 +81,24 @@ def strip_html(text):
 
 
 def build_retrieval_text(event):
-    """
-    Construit un texte structuré et sémantiquement riche
-    pour améliorer la recherche vectorielle.
-    """
-
     parts = []
 
-    if event.get("tags"):
-        parts.append(f"Type d'événement : {', '.join(event['tags'])}")
 
     if event.get("title"):
         parts.append(f"Titre : {event['title']}")
+        parts.append(event["title"])
+
+
+    if event.get("city"):
+        parts.append(f"Ville : {event['city']}")
+
+
+    if event.get("location_name"):
+        parts.append(f"Lieu : {event['location_name']}")
+
+
+    if event.get("tags"):
+        parts.append(f"Type d'événement : {', '.join(event['tags'])}")
 
     if event.get("summary"):
         parts.append(f"Résumé : {event['summary']}")
@@ -100,18 +106,10 @@ def build_retrieval_text(event):
     if event.get("description"):
         parts.append(f"Détails : {event['description']}")
 
-    location = " ".join(filter(None, [
-        event.get("location_name"),
-        event.get("city"),
-    ]))
-    if location:
-        parts.append(f"Lieu : {location}")
-
     if event.get("start_datetime"):
         parts.append(f"Date : {event['start_datetime']}")
 
     return sanitize_line_separators("\n".join(parts).strip())
-
 
 def find_latest_raw_file():
     '''
