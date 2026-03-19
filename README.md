@@ -21,6 +21,46 @@ Le système combine :
 - API **FastAPI**
 - conteneurisation **Docker**
 
+---
+
+## Sommaire 
+[Contexte métier](#contexte-métier)
+[Demo rapide](#démo-rapide)
+[Objectif](#objectif)
+[Choix techniques](#choix-techniques)
+[Structure du projet](#structure-du-projet)
+[Pipeline du projet](#pipeline-du-projet)
+[[Prérequis](#prérequis)
+[Installation](#installation)
+[Collecte des événements OpenAgenda](#collecte-des-événements-openagenda)
+[Paramètres d'ingestion OpenAgenda](#paramètres-dingestion-openagenda)
+[Schéma du dataset](#schéma-du-dataset)
+[Pipeline data](#pipeline-data)
+[Validation qualité des données](#validation-qualité-des-données)
+[Vectorisation et indexation FAISS](#vectorisation-et-indexation-faiss)
+[Pipeline RAG](#pipeline-rag)
+[Pipeplines automatisés](#pipelines-automatisés)
+[API REST](#api-rest)
+[Tests](#tests)
+[Architecture  globale](#architecture-globale)
+[Schéma UML de l'architecture](#schéma-uml-de-larchitecture)
+[Architecture RAG](#architecture-rag)
+[Evaluation du système RAG](#évaluation-du-système-rag)
+[Résultat globaux RAGAS](#résultats-globaux-ragas)
+[Secrets](#secrets)
+[Dataset](#dataset)
+[Exécution avec Docker](#exécution-avec-docker)
+[Roadmap](#roadmap)
+
+
+## Contexte métier
+
+Les plateformes d’événements culturels proposent souvent un grand volume d’informations difficile à exploiter pour un utilisateur.
+
+L’objectif est de permettre à un utilisateur de poser une question en langage naturel (ex : "atelier cuisine à Béziers") et d’obtenir une réponse pertinente basée sur des événements réels issus d’OpenAgenda.
+
+---
+
 ## Démo rapide
 
 ```bash
@@ -42,68 +82,90 @@ Le système s’appuie sur :
 
 ---
 
+## Choix techniques
+
+Les choix technologiques ont été faits pour répondre aux contraintes de performance, de simplicité et de reproductibilité :
+
+- FAISS : moteur de recherche vectorielle rapide et local, adapté à un POC
+- LangChain : orchestration du pipeline RAG
+- Mistral : modèle de génération performant avec un bon compromis coût/qualité
+- sentence-transformers/all-MiniLM-L6-v2 : embeddings rapides et efficaces
+- FastAPI : API légère avec documentation automatique
+- Docker : reproductibilité de l’environnement
+
+---
+
+
 ## Structure du projet
 
 ```bash
 puls-events-rag/
-
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── data/
+│   ├── processed/
+│   │   ├── data_quality_report.json
+│   │   ├── data_quality_report.md
+│   │   └── events_2026-03-18.jsonl
+│   ├── raw/
+│   │   └── openagenda_events_2026-03-18.jsonl
+│   └── vectorstore/
+│       ├── index.faiss
+│       └── index.pkl
+├── docs/
+│   ├── dataset_schema.md
+│   ├── data_quality_report_example.md
+│   ├── openagenda_query_params.md
+│   ├── openagenda_scope.md
+│   └── vectorization_strategy.md
 ├── src/
-│
+│   ├── api/
+│   │   ├── main.py
+│   │   ├── manual_api_check.py
+│   │   └── schemas.py
+│   ├── embeddings/
+│   │   ├── build_faiss_index.py
+│   │   ├── chunk_documents.py
+│   │   ├── generate_embeddings.py
+│   │   └── prepare_documents.py
+│   ├── evaluation/
+│   │   ├── evaluate_rag.py
+│   │   ├── evaluate_rag_ragas.py
+│   │   ├── evaluation_results.json
+│   │   ├── evaluation_results_ragas.json
+│   │   ├── generate_rag_answers.py
+│   │   ├── qa_dataset.json
+│   │   └── rag_answers.json
 │   ├── ingestion/
 │   │   └── fetch_openagenda_events.py
-│
+│   ├── pipelines/
+│   │   ├── data_pipeline.py
+│   │   ├── rag_demo_pipeline.py
+│   │   └── vector_pipeline.py
 │   ├── processing/
 │   │   ├── normalize_openagenda_events.py
 │   │   └── validate_dataset_quality.py
-│
-│   ├── embeddings/
-│   │   ├── prepare_documents.py
-│   │   ├── chunk_documents.py
-│   │   ├── generate_embeddings.py
-│   │   └── build_faiss_index.py
-│
+│   ├── rag/
+│   │   ├── mistral_client.py
+│   │   ├── prompt_builder.py
+│   │   └── rag_pipeline.py
 │   ├── retrieval/
 │   │   └── semantic_search_demo.py
-│
-│   ├── pipelines/
-│   │   ├── data_pipeline.py
-│   │   ├── vector_pipeline.py
-│   │   └── rag_demo_pipeline.py
-│
-│   ├── rag/
-│   │   ├── prompt_builder.py
-│   │   ├── mistral_client.py
-│   │   └── rag_pipeline.py
-│
-│   ├── api/
-│   │   ├── main.py
-│   │   ├── schemas.py
-│   │   └── manual_api_check.py
-│
-│   └── evaluation/
-│       ├── qa_dataset.json
-│       ├── evaluate_rag.py
-│       ├── evaluation_results.json
-│       ├── evaluate_rag_ragas.py
-│       └── evaluation_results_ragas.json
-│
+│   ├── check_imports.py
+│   └── __init__.py
 ├── tests/
-│   ├── test_pipeline.py
-│   ├── test_vector_pipeline.py
-│   ├── test_rag_pipeline.py
+│   ├── data/
+│   │   └── sample_events.jsonl
 │   ├── test_api.py
-│   └── data/
-│       └── sample_events.jsonl
-│
-├── docs/
-│   ├── dataset_schema.md
-│   ├── openagenda_scope.md
-│   ├── openagenda_query_params.md
-│   └── data_quality_report_example.md
-│
-├── requirements.txt
+│   ├── test_pipeline.py
+│   ├── test_rag_pipeline.py
+│   └── test_vector_pipeline.py
+├── .coveragerc
+├── .gitignore
+├── Dockerfile
 ├── README.md
-└── .env (non versionné)
+└── requirements.txt
 
 
 ```
@@ -157,7 +219,7 @@ pip install -r requirements.txt
 Vérifier que les dépendances sont correctement installées :
 
 ```bash
-python src/test_imports.py
+python src/check_imports.py
 ```
 
 Ce script vérifie les imports des bibliothèques principales :
@@ -270,6 +332,10 @@ Exemple de rapport :
 
 ## Vectorisation et indexation FAISS
 Les événements normalisés sont transformés en embeddings sémantiques afin de permettre la recherche vectorielle.
+Les embeddings sont générés avec le modèle :
+sentence-transformers/all-MiniLM-L6-v2
+
+Le modèle Mistral est utilisé uniquement pour la génération de réponses.
 
 
 events → documents → chunks → embeddings → index FAISS
@@ -460,6 +526,8 @@ LLM (Mistral)
 Le système RAG est exposé via une API REST construite avec FastAPI afin de permettre aux équipes produit et métier de tester facilement le chatbot.
 L’API permet de poser une question sur les événements culturels et de recevoir une réponse générée à partir des données indexées.
 
+L’API est conçue pour être directement exploitable par des applications métiers (frontend, chatbot, outils internes) via des réponses JSON structurées.
+
 ### Lancer l'API
 ```bash
 uvicorn src.api.main:app --reload
@@ -475,10 +543,20 @@ http://127.0.0.1:8000/docs
 Cette interface Swagger permet de tester les endpoints directement depuis le navigateur.
 
 ### Endpoints disponibles
+
+#### **GET /health**
+Permet de vérifier que l’API est disponible.
+
+Exemple de réponse :
+```json
+{
+  "status": "ok"
+}
+
 #### **POST /ask**
 Permet de poser une question au système RAG.
 Exemple de requête
-```Json
+```json
 
 {
   "question": "concert à Montpellier"
@@ -486,7 +564,7 @@ Exemple de requête
 ```
 Exemple de réponse
 
-```Json
+```json
 {
   "question": "concert à Montpellier",
   "answer": "Voici les concerts à Montpellier mentionnés dans le contexte...",
@@ -504,9 +582,10 @@ Exemple de réponse
 Permet de reconstruire l’index vectoriel FAISS à partir du dataset traité.
 Cela exécute automatiquement le pipeline de vectorisation.
 Exemple de réponse
-```Json
+```json
 {
-  "status": "vector index rebuilt successfully"
+  "status": "success",
+  "message": "Index FAISS reconstruit avec succès."
 }
 ```
 
@@ -555,7 +634,7 @@ Ils vérifient :
 - le fonctionnement du endpoint POST /rebuild
 
 Ces tests utilisent **FastAPI TestClient** afin de tester l’API sans avoir besoin de lancer un serveur.
-
+Une couverture de tests supérieure à 90% a été atteinte sur l’API, garantissant la robustesse des endpoints et la gestion des cas limites.
 
 ### Dataset de test
 Les tests utilisent un dataset fictif versionné :
@@ -710,7 +789,7 @@ Quatre métriques principales ont été utilisées :
 
 Le script d'évaluation est situé dans :
 src/evaluation/evaluate_rag_ragas.py
-Copier le code
+
 
 Lancer l'évaluation :
 
@@ -723,7 +802,7 @@ Les résultats sont sauvegardés dans :
 src/evaluation/evaluation_results_ragas.json
 
 
-### Optimisation réalisées
+### Optimisations réalisées
 
 Plusieurs améliorations ont été testées de manière itérative.
 **Retrieval** : 
@@ -750,25 +829,33 @@ Exemple de résultats :
 
 ```json
 {
-  "faithfulness": 0.6583,
-  "answer_similarity": 0.6446,
-  "context_precision": 0.4333,
+  "faithfulness": 0.7581,
+  "answer_similarity": 0.6506,
+  "context_precision": 0.4083,
   "context_recall": 0.6000
 }
 ```
+## Résultats globaux RAGAS
 
+Le système obtient les scores suivants :
+
+- Faithfulness : 0.758
+- Answer Similarity : 0.651
+- Context Precision : 0.408
+- Context Recall : 0.600
+
+Ces résultats montrent un bon compromis entre pertinence des réponses et qualité du retrieval.
 
 ### Interprétation des résultats
 
-**Points forts**
-- Bonne fidélité des réponses : le modèle reste globalement aligné avec le contexte et génère peu d’hallucinations
-- Cohérence globale : les réponses sont pertinentes et en adéquation avec les informations fournies
-- Compromis précision / rappel satisfaisant : le système parvient à récupérer des informations utiles tout en limitant le bruit
-- Réduction du bruit : la limitation du nombre de documents (top_k) permet d’éviter d’introduire du contenu non pertinent
-**Limites**
-- Context precision perfectible : certains documents récupérés restent partiellement hors sujet
-- Answer similarity modérée : les réponses diffèrent parfois dans la formulation par rapport aux références attendues
-- Couverture limitée : un top_k faible peut empêcher de récupérer tous les événements pertinents, notamment dans les cas multi-événements
+**Points forts** :
+- bonne fidélité des réponses au contexte (faithfulness = 0.758), ce qui traduit un faible niveau d’hallucination ;
+- réponses globalement cohérentes avec les attentes (answer similarity = 0.651) ;
+- rappel satisfaisant (context recall = 0.600), montrant que le système retrouve une partie importante des informations pertinentes.
+**Limites** :
+- la précision du contexte reste perfectible (context precision = 0.408), ce qui indique la présence de bruit dans certains résultats récupérés ;
+- certaines requêtes larges, temporelles ou ambiguës restent plus difficiles à traiter ;
+- les performances dépendent fortement de la qualité et de la spécialisation des données indexées.
 
 
 Le choix de top_k = 3 permet de conserver un bon équilibre entre :
