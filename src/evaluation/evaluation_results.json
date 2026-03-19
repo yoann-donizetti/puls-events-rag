@@ -3,7 +3,7 @@
     "question": "Quels événements liés au tourisme sont organisés à Montpellier ?",
     "reference_answer": "Des événements liés au tourisme sont organisés à Montpellier, notamment des salons du voyage et des rencontres autour des métiers du tourisme.",
     "type": "positive",
-    "generated_answer": "- **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER**\n  - Ville : Montpellier\n  - Date et heure : 13 février 2026 à 09h30\n  - Description courte : Salon du voyage sur le thème *\"Patrimoine culturel et immatériel des DROM-COM\"*, organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n- **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER**\n  - Ville : Montpellier\n  - Date et heure : 14 février 2026 à 09h00\n  - Description courte : Salon du voyage sur le thème *\"Patrimoine culturel et immatériel des DROM-COM\"*, organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n- **Tourisme et mobilité : métiers et activités en Occitanie**\n  - Ville : Montpellier\n  - Date et heure : 21 mars 2025 à 10h00\n  - Description courte : Réunion d'information sur les métiers et activités du tourisme en Occitanie, incluant des opportunités d'emploi et des informations sur les formations.",
+    "generated_answer": "Voici les événements liés au tourisme organisés à Montpellier :\n\n**Salon du Voyage \"Patrimoine culturel et immatériel des DROM-COM\"**\nLes étudiants de 1ère année de BTS Tourisme du lycée Georges Frêche organisent chaque année un salon du voyage. Cet événement leur permet de mettre en pratique leurs compétences en conception d'événements, organisation d'espaces d'accueil et promotion. Cette année, le thème porte sur le patrimoine culturel et immatériel des DROM-COM.\n- **Dates** : 13 février 2026 (à partir de 8h30) et 14 février 2026 (à partir de 8h00).\n\n**Tourisme et mobilité : métiers et activités en Occitanie**\nUne réunion d'information sur les métiers et activités du tourisme en Occitanie, ouverte à tous. Cet événement s'inscrit dans le cadre de la Semaine du Tourisme et propose des opportunités d'emploi, des informations sur les formations et des échanges sur le secteur.\n- **Date** : 21 mars 2025 à 9h00.\n\nSi tu veux plus de détails sur l'un de ces événements, n'hésite pas à demander !",
     "sources": [
       {
         "title": "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER",
@@ -31,7 +31,7 @@
     "question": "Quels événements culturels ont lieu dans l’Hérault ?",
     "reference_answer": "Des événements culturels sont organisés dans l’Hérault, incluant des visites patrimoniales, des expositions et des manifestations artistiques.",
     "type": "positive",
-    "generated_answer": "- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  - Ville : Cessenon-sur-Orb\n  - Date et heure : 21 septembre 2025 à 12h30\n  - Description courte : Visite guidée de l’église Saint-Pierre Saint-Paul mettant en avant le mobilier liturgique restauré et l’exposition de l’œuvre *\"L’eau à la bouche\"* de Valérie du Chéné.",
+    "generated_answer": "Voici les événements culturels qui ont lieu dans l’Hérault :\n\n**Visite guidée autour du Plan-Objet Sud-Hérault**\nÀ Cessenon-sur-Orb, le 21 septembre 2025 à 12h30, découvrez une visite guidée de l’église Saint-Pierre Saint-Paul mettant en lumière le mobilier liturgique restauré dans le cadre du Plan-objet Sud-Hérault. L’événement présentera également l’exposition *\"L’eau à la bouche\"* de Valérie du Chéné, une série de 17 pierres peintes en hommage aux communes du territoire, exceptionnellement exposées pour les Journées européennes du Patrimoine.\n\n*(Les autres événements mentionnés concernent des visites professionnelles ou des immersions métiers, et ne relèvent pas du domaine culturel.)*",
     "sources": [
       {
         "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
@@ -59,7 +59,7 @@
     "question": "Quels événements sont proposés à Béziers ?",
     "reference_answer": "Plusieurs événements sont proposés à Béziers, notamment des portes ouvertes, des festivals et des événements culturels.",
     "type": "positive",
-    "generated_answer": "- **Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en visioconférence secteur Commerce/Vente**\n  - Ville : Béziers\n  - Date et heure : 23 septembre 2025 à 07h30\n  - Description courte : Atelier de préparation au recrutement pour le secteur Commerce/Vente en visioconférence.\n\n- **Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en visioconférence secteur restauration**\n  - Ville : Béziers\n  - Date et heure : 22 septembre 2025 à 07h30\n  - Description courte : Atelier de préparation au recrutement pour le secteur restauration en visioconférence.\n\n- **Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en physique**\n  - Ville : Béziers\n  - Date et heure : 26 septembre 2025 à 07h30\n  - Description courte : Atelier de préparation au recrutement en présentiel.",
+    "generated_answer": "À Béziers, plusieurs événements sont proposés pour vous aider dans votre recherche d'emploi ou votre orientation professionnelle :\n\n- **Un atelier préparatoire en visioconférence** pour le secteur **Commerce/Vente**, le **23 septembre 2025** à 7h30.\n- **Un autre atelier en visioconférence** dédié au secteur **Restauration**, le **22 septembre 2025** à 7h30.\n- **Un atelier en présentiel** (en physique) ouvert à tous, le **26 septembre 2025** à 7h30.\n\nCes événements se déroulent tous à l'**Agence BEZIERS COURONDELLE** et s'adressent à un **public varié**, avec des opportunités d'emploi (CDI, CDD, temps plein ou partiel) et des informations sur la création d'entreprise ou les aides à l'emploi.",
     "sources": [
       {
         "title": "Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en visioconférence secteur Commerce/Vente",
@@ -109,13 +109,13 @@
       }
     ],
     "n_results": 3,
-    "auto_label": "success"
+    "auto_label": "failure"
   },
   {
     "question": "Y a-t-il des événements intergénérationnels à Montpellier ?",
     "reference_answer": "Oui, des événements intergénérationnels sont organisés à Montpellier, notamment des activités favorisant les échanges entre générations.",
     "type": "positive",
-    "generated_answer": "- **Avec Ensemble2générations Montpellier - Jeux Intergénérationnels à la médiathèque Émile Zola de Montpellier Méditerranée Métropole**\n  - Ville : Montpellier\n  - Date et heure : 2025-04-29T11:00:00+00:00\n  - Description courte : Jeux intergénérationnels à la médiathèque Émile Zola (Espace Ludothèque).",
+    "generated_answer": "Oui, il y a un événement intergénérationnel à Montpellier :\n\n**Jeux Intergénérationnels à la médiathèque Émile Zola**\nLe 29 avril 2025 à 11h, la médiathèque Émile Zola accueille des jeux intergénérationnels organisés par Ensemble2générations Montpellier. Une belle occasion de partager des moments ludiques entre générations, dans un cadre convivial et accessible à tous.\n\nSi tu veux plus de détails, tu peux consulter l'événement ici : [Jeux Intergénérationnels à la médiathèque Émile Zola](https://openagenda.com/rencontres-entre-generations-2025/events/jeux-intergenerationnels-a-la-mediatheque-emile-zola-de-montpellier-espace-ludotheque).",
     "sources": [
       {
         "title": "Conférence historique « Montpellier, siège de la Cour des Comptes, Aydes et Finances, de sa création à la Révolution française »",
@@ -143,7 +143,7 @@
     "question": "Quels événements autour du patrimoine sont proposés dans l’Hérault ?",
     "reference_answer": "Des événements autour du patrimoine sont proposés dans l’Hérault, incluant des visites guidées et des découvertes de sites historiques.",
     "type": "positive",
-    "generated_answer": "- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  Ville : Cessenon-sur-Orb\n  Date et heure : 2025-09-21 à 12h30\n  Description courte : Visite guidée autour du Plan-Objet Sud-Hérault (Patrimoine).\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  Ville : Quarante\n  Date et heure : 2025-09-21 à 08h00\n  Description courte : Visite guidée autour du Plan-Objet Sud-Hérault (Patrimoine).\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault**\n  Ville : Saint-Chinian\n  Date et heure : 2025-09-20 à 08h30\n  Description courte : Visite guidée autour du Plan-Objet Sud-Hérault.",
+    "generated_answer": "Voici les événements autour du patrimoine proposés dans l’Hérault :\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault** à **Cessenon-sur-Orb** le **21 septembre 2025 à 12h30**.\n- **Visite guidée autour du Plan-Objet Sud-Hérault** à **Quarante** le **21 septembre 2025 à 8h00**.\n- **Visite guidée autour du Plan-Objet Sud-Hérault** à **Saint-Chinian** le **20 septembre 2025 à 8h30**.\n\nCes visites sont organisées par le service Patrimoine de la Communauté de communes Sud-Hérault. Pour plus d’informations, vous pouvez contacter le **04 67 25 00 25** ou consulter le site [www.domainederoueire.fr](http://www.domainederoueire.fr).",
     "sources": [
       {
         "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
@@ -171,7 +171,7 @@
     "question": "Quels événements liés à la photographie sont organisés à Béziers ?",
     "reference_answer": "Des événements liés à la photographie sont organisés à Béziers, notamment des festivals dédiés à cet art.",
     "type": "positive",
-    "generated_answer": "- **Hors Cadre - Festival de photographie à Béziers**\n  - Ville : Béziers\n  - Date et heure : 2025-10-10T08:00:00+00:00\n  - Description courte : La Mediatèca du CIRDOC participe à la deuxième édition avec l'exposition d'Alice Traisnel.",
+    "generated_answer": "À Béziers, il y a un événement lié à la photographie :\n\n**Hors Cadre - Festival de photographie à Béziers**\n- **Date** : 10 octobre 2025\n- **Lieu** : CIRDÒC - Institut occitan de cultura - Béziers\n- **Description** : La deuxième édition du festival propose une exposition d'Alice Traisnel organisée par la Médiathèque du CIRDÒC.\n\n*(Je ne trouve pas d'autres événements photographiques à Béziers dans les données disponibles.)*",
     "sources": [
       {
         "title": "Hors Cadre - Festival de photographie à Béziers",
@@ -221,7 +221,7 @@
       }
     ],
     "n_results": 3,
-    "auto_label": "failure"
+    "auto_label": "success"
   },
   {
     "question": "Y a-t-il des événements sur la Lune ?",
@@ -249,7 +249,7 @@
       }
     ],
     "n_results": 3,
-    "auto_label": "failure"
+    "auto_label": "success"
   },
   {
     "question": "Peux-tu me donner la météo à Montpellier aujourd’hui ?",
@@ -277,6 +277,6 @@
       }
     ],
     "n_results": 3,
-    "auto_label": "failure"
+    "auto_label": "success"
   }
 ]

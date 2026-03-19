@@ -1,3 +1,6 @@
+"""Ce module contient le code d'évaluation du pipeline RAG en utilisant la bibliothèque RAGAS.
+Il charge un dataset de questions-réponses, exécute le pipeline RAG pour chaque question, compare la réponse générée avec la réponse de référence en utilisant plusieurs métriques d'évaluation (faithfulness, answer similarity, context precision et context recall) et sauvegarde les résultats dans un fichier JSON pour une analyse ultérieure.
+"""
 import os
 import json
 from pathlib import Path
@@ -30,6 +33,10 @@ EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 
 def load_dataset() -> Dataset:
+    """Charge le dataset de questions-réponses à partir d'un fichier JSON et le convertit en un objet Dataset de Hugging Face.
+    Le fichier JSON doit être une liste de dictionnaires avec les champs question, answer, contexts et ground_truth.
+    La fonction extrait les questions, les réponses, les contextes et les réponses de référence, puis les organise dans un format compatible avec le Dataset de Hugging Face pour une utilisation ultérieure dans l'évaluation.
+    """
     with DATASET_PATH.open("r", encoding="utf-8-sig") as f:
         data = json.load(f)
 
