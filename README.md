@@ -861,16 +861,31 @@ Ces résultats montrent un bon compromis entre pertinence des réponses et quali
 Le choix de top_k = 3 permet de conserver un bon équilibre entre :
 - récupération de contexte pertinent (recall)
 - limitation du bruit (precision)
-Le réglage temperature = 0 garantit une génération déterministe et fiable, ce qui améliore significativement la fidélité des réponses.
+
+Le réglage temperature = 0.2 et top_p = 0.9 permet de trouver un équilibre entre stabilité et naturalité des réponses.
+
+Cela améliore la fluidité du langage tout en conservant une bonne fidélité au contexte.
 
 ### Pistes d'amélioration
-Plusieurs améliorations sont possibles :
-- reranking avancé (cross-encoder)
-- filtrage plus strict des documents
-- amélioration du chunking
-- enrichissement du dataset d’évaluation
-- ajout de métriques Ragas supplémentaires
-- meilleure reproductibilité des index FAISS
+Plusieurs axes d’amélioration ont été identifiés :
+
+- Améliorer le classement des résultats (reranking)  
+  → utiliser des méthodes plus avancées pour mieux prioriser les événements pertinents
+
+- Renforcer le filtrage des documents  
+  → réduire les résultats hors sujet et le bruit
+
+- Optimiser le découpage des textes (chunking)  
+  → mieux segmenter les données pour améliorer la recherche
+
+- Enrichir le dataset d’évaluation  
+  → ajouter davantage de questions pour tester le système dans des cas variés
+
+- Étendre les métriques d’évaluation (RAGAS)  
+  → analyser plus finement la qualité des réponses
+
+- Améliorer la reproductibilité  
+  → garantir une reconstruction fiable des index FAISS
 
 ## Secrets
 Ne pas versionner la clé API Mistral.
