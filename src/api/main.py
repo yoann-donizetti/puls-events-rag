@@ -1,3 +1,10 @@
+"""API REST pour interroger le système RAG Puls-Events.
+Endpoints:
+- POST /ask : Pose une question et reçoit une réponse générée par le système RAG
+- POST /rebuild : Reconstruit l'index FAISS à partir des données sources
+- GET /health : Vérifie la santé de l'API
+- GET / : Redirige vers la documentation Swagger
+"""
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import RedirectResponse
 from mistralai.models.sdkerror import SDKError

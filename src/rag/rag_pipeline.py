@@ -1,3 +1,13 @@
+"""Pipeline de question-réponse avec récupération de contexte (RAG) pour le système Puls-Events.
+Ce module implémente la fonction ask_rag qui prend une question en entrée, récupère les documents pertinents depuis l'index FAISS, construit un contexte à partir de ces documents, génère un prompt structuré et envoie ce prompt au modèle de langage Mistral pour obtenir une réponse générée. La fonction gère également les cas où la question est vide, où aucun résultat n'est trouvé ou où le contexte ne peut pas être construit, en retournant des réponses informatives sans appeler le LLM dans ces cas.
+Étapes :
+1. Validation de la question : Vérifie que la question n'est pas vide ou composée uniquement d'espaces.
+2. Récupération des documents pertinents : Utilise la fonction retrieve_context pour obtenir les documents les plus pertinents depuis l'index FAISS, avec déduplication et reranking simple.
+3. Construction du contexte : Transforme les documents récupérés en un texte de contexte structuré.
+4. Génération du prompt : Utilise la fonction build_prompt pour créer un prompt structuré à partir de la question et du contexte.
+5. Appel au modèle de langage : Envoie le prompt au modèle Mistral via la fonction generate_answer et retourne la réponse générée.
+6. Formatage des sources : Formate les sources utilisées pour la réponse afin de les inclure dans la sortie finale.
+Le module utilise les bibliothèques LangChain pour la gestion de l'index FAISS et des embeddings, ainsi que la bibliothèque mistralai pour interagir avec le modèle de langage Mistral. Les fonctions de ce module sont conçues pour être facilement testables et maintenables, avec une séparation claire des responsabilités entre la récupération de contexte, la construction du prompt et l'appel au modèle de langage."""
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 
@@ -27,6 +37,10 @@ def load_vectorstore():
 
 
 def deduplicate_results(results):
+    """Déduplication des résultats basés sur l'URL ou une combinaison de titre, ville et date.
+    Args:        results (list): Liste de documents retournés par la recherche de similarité.
+    Returns:        list: Liste de documents dédupliqués.
+    """
     unique_results = []
     seen = set()
 
@@ -44,6 +58,11 @@ def deduplicate_results(results):
 
 
 def simple_score(question: str, doc) -> int:
+    """Score simple basé sur la présence de mots de la question dans le titre et le contenu du document.
+    Args:        question (str): La question posée par l'utilisateur.
+        doc: Document LangChain avec page_content et metadata.
+    Returns:        int: Score de pertinence simple pour le document.
+    Note: Ce score est très basique et peut être amélioré avec des techniques plus sophistiquées de reranking."""
     q_words = set(question.lower().split())
     
     title = doc.metadata.get("title", "").lower()

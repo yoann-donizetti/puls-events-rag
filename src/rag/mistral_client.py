@@ -1,3 +1,9 @@
+"""Client pour interagir avec le modèle de langage Mistral dans le cadre du système RAG Puls-Events.
+Ce module utilise la bibliothèque mistralai pour envoyer des prompts au modèle Mistral et récupérer les réponses générées. La clé API de Mistral doit être définie dans un fichier .env à la racine du projet avec la variable MISTRAL_API_KEY.
+Fonction principale :   generate_answer(prompt: str) -> str
+- Envoie un prompt au modèle Mistral et retourne la réponse générée.
+- Raise une erreur si la clé API n'est pas trouvée dans le fichier .env.
+"""
 import os
 from dotenv import load_dotenv
 from mistralai import Mistral

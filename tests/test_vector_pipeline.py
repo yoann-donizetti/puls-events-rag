@@ -1,3 +1,11 @@
+"""Tests unitaires pour la pipeline de vectorisation et d'indexation.
+Fonctions testées :
+- load_sample_events : Fonction qui charge un échantillon d'événements à partir d'un fichier JSONL pour les tests.
+- test_chunks_generated : Test qui vérifie que les chunks sont générés correctement à partir des documents.
+- test_build_faiss_index : Test qui vérifie que l'index FAISS est construit correctement à partir des chunks de documents.
+- test_semantic_search_returns_results : Test qui vérifie que la recherche sémantique retourne des résultats pertinents pour une requête donnée.
+- test_metadata_present : Test qui vérifie que les métadonnées sont présentes dans les résultats de la recherche sémantique.
+Les tests vérifient que les différentes étapes de la pipeline de vectorisation et d'indexation fonctionnent correctement, depuis le chargement des événements jusqu'à la construction de l'index FAISS et la recherche sémantique. Les tests utilisent un échantillon d'événements pour simuler le processus de préparation des documents, de génération de chunks, de construction de l'index et de recherche, afin de s'assurer que chaque étape fonctionne comme prévu et que les résultats sont structurés et pertinents."""
 import json
 from pathlib import Path
 
