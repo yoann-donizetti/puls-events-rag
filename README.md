@@ -13,6 +13,8 @@
 
 POC de système **Retrieval Augmented Generation (RAG)** permettant de répondre à des questions en langage naturel sur des événements culturels à partir des données OpenAgenda.
 
+Ce projet démontre la faisabilité d’un moteur de recherche intelligent basé sur des données réelles, prêt à être intégré dans une application métier.
+
 Le système combine :
 
 - recherche vectorielle **FAISS**
@@ -30,7 +32,7 @@ Le système combine :
 [Choix techniques](#choix-techniques)
 [Structure du projet](#structure-du-projet)
 [Pipeline du projet](#pipeline-du-projet)
-[[Prérequis](#prérequis)
+[Prérequis](#prérequis)
 [Installation](#installation)
 [Collecte des événements OpenAgenda](#collecte-des-événements-openagenda)
 [Paramètres d'ingestion OpenAgenda](#paramètres-dingestion-openagenda)
@@ -528,6 +530,8 @@ L’API permet de poser une question sur les événements culturels et de recevo
 
 L’API est conçue pour être directement exploitable par des applications métiers (frontend, chatbot, outils internes) via des réponses JSON structurées.
 
+L’API permet une intégration simple avec tout type d’application (web, chatbot, outils internes).
+
 ### Lancer l'API
 ```bash
 uvicorn src.api.main:app --reload
@@ -552,6 +556,7 @@ Exemple de réponse :
 {
   "status": "ok"
 }
+```
 
 #### **POST /ask**
 Permet de poser une question au système RAG.
@@ -820,8 +825,8 @@ Plusieurs améliorations ont été testées de manière itérative.
 La meilleure configuration observée est :
 
 - top_k = 3
-- temperature = 0
-- top_p = 1
+- temperature = 0,2
+- top_p = 0.9
 - titre renforcé dans le retrieval
 - reranking avec boost sur le titre
 
@@ -839,14 +844,24 @@ Exemple de résultats :
 
 Le système obtient les scores suivants :
 
-- Faithfulness : 0.758
-- Answer Similarity : 0.651
-- Context Precision : 0.408
+- Faithfulness : 0.748
+- Answer Similarity : 0.693
+- Context Precision : 0.433
 - Context Recall : 0.600
 
 Ces résultats montrent un bon compromis entre pertinence des réponses et qualité du retrieval.
 
+Les résultats d’évaluation du système RAG sont disponibles dans le dossier [`src/evaluation`](./src/evaluation/) :
+
+- [`evaluation_results.json`](./src/evaluation/evaluation_results.json)
+- [`evaluation_results_ragas.json`](./src/evaluation/evaluation_results_ragas.json)
+- [`rag_answers.json`](./src/evaluation/rag_answers.json)
+
+Ces fichiers permettent d’analyser les performances du système et d’identifier les axes d’amélioration.
+
 ### Interprétation des résultats
+
+Globalement, le système répond correctement, limite les hallucinations, mais peut encore améliorer la pertinence des résultats récupérés.
 
 **Points forts** :
 - bonne fidélité des réponses au contexte (faithfulness = 0.758), ce qui traduit un faible niveau d’hallucination ;
