@@ -5,3 +5,8 @@ data/raw/
 .env
 data/processed/
 data/vectorstore/
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.ipynb_checkpoints/

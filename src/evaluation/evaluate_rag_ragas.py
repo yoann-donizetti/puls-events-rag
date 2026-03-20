@@ -1,43 +1,53 @@
+"""Ce module contient le code d'évaluation du pipeline RAG en utilisant la bibliothèque RAGAS.
+Il charge un dataset de questions-réponses, exécute le pipeline RAG pour chaque question, compare la réponse générée avec la réponse de référence en utilisant plusieurs métriques d'évaluation (faithfulness, answer similarity, context precision et context recall) et sauvegarde les résultats dans un fichier JSON pour une analyse ultérieure.
+"""
+import os
 import json
 from pathlib import Path
 
 from dotenv import load_dotenv
 from datasets import Dataset
 from ragas import evaluate
-from ragas.metrics import faithfulness, SemanticSimilarity
+from ragas.metrics import (
+    Faithfulness,
+    AnswerSimilarity,
+    ContextPrecision,
+    ContextRecall,
+)
+
 from ragas.llms import LangchainLLMWrapper
 from ragas.embeddings import LangchainEmbeddingsWrapper
 
 from langchain_mistralai import ChatMistralAI
 from langchain_huggingface import HuggingFaceEmbeddings
 
-from src.rag.rag_pipeline import ask_rag
-
 
 load_dotenv()
 
-DATASET_PATH = Path("src/evaluation/qa_dataset.json")
+MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
+
+DATASET_PATH = Path("src/evaluation/rag_answers.json")
 OUTPUT_PATH = Path("src/evaluation/evaluation_results_ragas.json")
 
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 
-def load_dataset() -> list[dict]:
-    with DATASET_PATH.open("r", encoding="utf-8") as f:
-        return json.load(f)
+def load_dataset() -> Dataset:
+    """Charge le dataset de questions-réponses à partir d'un fichier JSON et le convertit en un objet Dataset de Hugging Face.
+    Le fichier JSON doit être une liste de dictionnaires avec les champs question, answer, contexts et ground_truth.
+    La fonction extrait les questions, les réponses, les contextes et les réponses de référence, puis les organise dans un format compatible avec le Dataset de Hugging Face pour une utilisation ultérieure dans l'évaluation.
+    """
+    with DATASET_PATH.open("r", encoding="utf-8-sig") as f:
+        data = json.load(f)
 
-
-def build_ragas_dataset(qa_data: list[dict]) -> Dataset:
     questions = []
     answers = []
     contexts = []
     ground_truths = []
 
-    for item in qa_data:
-        question = item["question"]
-        reference = item["reference_answer"]
-
-        rag_result = ask_rag(question)
+    for item in data:
+        questions.append(item["question"])
+        answers.append(item["answer"])
 
         context_list = [
             " | ".join(
@@ -51,13 +61,11 @@ def build_ragas_dataset(qa_data: list[dict]) -> Dataset:
                     ],
                 )
             )
-            for source in rag_result["sources"]
+            for source in item["contexts"]
         ]
 
-        questions.append(question)
-        answers.append(rag_result["answer"])
         contexts.append(context_list)
-        ground_truths.append(reference)
+        ground_truths.append(item["ground_truth"])
 
     return Dataset.from_dict(
         {
@@ -70,12 +78,17 @@ def build_ragas_dataset(qa_data: list[dict]) -> Dataset:
 
 
 def main() -> None:
-    qa_data = load_dataset()
-    ragas_dataset = build_ragas_dataset(qa_data)
+    if not MISTRAL_API_KEY:
+        raise ValueError("MISTRAL_API_KEY introuvable dans le fichier .env")
+
+    print("Clé Mistral chargée :", MISTRAL_API_KEY[:8] + "...")
+
+    ragas_dataset = load_dataset()
 
     mistral_llm = ChatMistralAI(
         model="mistral-small-latest",
         temperature=0,
+        api_key=MISTRAL_API_KEY,
     )
     evaluator_llm = LangchainLLMWrapper(mistral_llm)
 
@@ -84,13 +97,13 @@ def main() -> None:
     )
     evaluator_embeddings = LangchainEmbeddingsWrapper(hf_embeddings)
 
-    semantic_similarity = SemanticSimilarity()
-
     result = evaluate(
         dataset=ragas_dataset,
         metrics=[
-            faithfulness,
-            semantic_similarity,
+            Faithfulness(),
+            AnswerSimilarity(),
+            ContextPrecision(),
+            ContextRecall(),
         ],
         llm=evaluator_llm,
         embeddings=evaluator_embeddings,
@@ -99,9 +112,19 @@ def main() -> None:
     print("\n===== RAGAS EVALUATION =====\n")
     print(result)
 
-    # Sauvegarde propre via pandas
     df = result.to_pandas()
-    df.to_json(OUTPUT_PATH, orient="records", force_ascii=False, indent=2)
+    global_scores = df.mean(numeric_only=True).to_dict()
+
+    print("\n===== SCORES GLOBAUX =====\n")
+    print(global_scores)
+
+    output = {
+        "global_scores": global_scores,
+        "detailed_results": df.to_dict(orient="records"),
+    }
+
+    with OUTPUT_PATH.open("w", encoding="utf-8") as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
 
     print(f"\nRésultats sauvegardés dans : {OUTPUT_PATH}")
 

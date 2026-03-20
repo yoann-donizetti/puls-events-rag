@@ -1,74 +1,150 @@
-[
-  {
-    "user_input":"Quels concerts sont prévus à Montpellier ?",
-    "retrieved_contexts":[
-      "Concert \"Douce dame sans pitié\" | Montpellier | 2025-09-21T13:00:00+00:00 | https:\/\/openagenda.com\/jep\/events\/concert-douce-dame-sans-pitie",
-      "La Nuit Batucada : Rythmes de Bahia à Montpellier | Montpellier | 2025-06-21T16:00:00+00:00 | https:\/\/openagenda.com\/fetedelamusique2025\/events\/fete-de-la-musique-2025-batucada-bahia",
-      "Immersion : Vivez l'expérience métier en direct ! | Montpellier | 2025-09-19T07:00:00+00:00 | https:\/\/openagenda.com\/francetravail\/events\/immersion-vivez-lexperience-metier-en-direct-806460"
-    ],
-    "response":"D'après le contexte fourni, deux concerts sont prévus à Montpellier :\n\n1. **Concert \"Douce dame sans pitié\"** le 21 septembre 2025 à 13h00, avec Cristina Alis Raurich (organetto) et Brice Duisit (chant, vièle).\n2. **La Nuit Batucada : Rythmes de Bahia** le 21 juin 2025 à partir de 22h, avec une ambiance festive et conviviale.\n\nAucune autre information sur des concerts n'est présente dans le contexte.",
-    "reference":"Le système doit identifier les événements musicaux organisés à Montpellier présents dans la base.",
-    "faithfulness":0.625,
-    "semantic_similarity":0.5077338663
+{
+  "global_scores": {
+    "faithfulness": 0.747564935064935,
+    "answer_similarity": 0.6927770072927706,
+    "context_precision": 0.4333333333075,
+    "context_recall": 0.6
   },
-  {
-    "user_input":"Y a-t-il des événements liés au tourisme dans l'Hérault ?",
-    "retrieved_contexts":[
-      "Visite de la préfecture de l'Hérault | Montpellier | 2025-09-20T08:00:00+00:00 | https:\/\/openagenda.com\/jep\/events\/visite-de-la-prefecture-de-lherault-9830536",
-      "Atelier \"Mets en scène ta ville de demain\" | Montpellier | 2025-10-17T07:30:00+00:00 | https:\/\/openagenda.com\/planlibre\/events\/atelier-mets-en-scene-ta-ville-de-demain",
-      "Tourisme et mobilité : métiers et activités en Occitanie | Montpellier | 2025-03-21T09:00:00+00:00 | https:\/\/openagenda.com\/semaine-des-metiers-du-tourisme\/events\/tourisme-et-mobilite-metiers-et-activites-en-occitanie"
-    ],
-    "response":"Oui, il y a un événement lié au tourisme dans l'Hérault :\n- **Tourisme et mobilité : métiers et activités en Occitanie** (Montpellier, 2025-03-21).\n\nLes autres événements mentionnés ne sont pas directement liés au tourisme.",
-    "reference":"Le système doit proposer les événements liés au tourisme présents dans les données.",
-    "faithfulness":0.8,
-    "semantic_similarity":0.6983181773
-  },
-  {
-    "user_input":"Existe-t-il des événements en ligne ?",
-    "retrieved_contexts":[
-      "Forum de Formation : Rencontrez les Experts et Boostez Votre Carrière ! | Saint-Jean-de-Védas | 2025-09-25T07:30:00+00:00 | https:\/\/openagenda.com\/francetravail\/events\/forum-de-formation-rencontrez-les-experts-et-boostez-votre-carriere",
-      "Conférence alimentation & écologie suivie d'un apéro-buffet (repas partagé) vegan | Montpellier | 2025-06-06T17:00:00+00:00 | https:\/\/openagenda.com\/jna2025\/events\/conference-alimentation-and-ecologie-suivie-dapero-buffet-repas-partage-vegan",
-      "Je participe aux ateliers de réparations collectives | Montpellier | 2025-10-18T07:00:00+00:00 | https:\/\/openagenda.com\/repaircafe\/events\/je-participe-aux-ateliers-de-reparations-collectives"
-    ],
-    "response":"Non, aucun des événements mentionnés dans le contexte n'est en ligne. Tous sont des événements physiques se déroulant dans des lieux spécifiques (Saint-Jean-de-Védas, Montpellier).",
-    "reference":"Le système doit identifier les événements disponibles en ligne présents dans la base.",
-    "faithfulness":1.0,
-    "semantic_similarity":0.6130115005
-  },
-  {
-    "user_input":"Quels événements sont organisés à Béziers ?",
-    "retrieved_contexts":[
-      "Visite de l'usine OI de Béziers | Béziers | 2025-11-19T08:00:00+00:00 | https:\/\/openagenda.com\/semaine-industrie-2025\/events\/visite-de-lusine-oi-de-beziers",
-      "IMMERSION DANS LES METIERS DE LA CONSTRUCTION DE MAISONS INDIVIDUELLES | Béziers | 2025-09-16T07:00:00+00:00 | https:\/\/openagenda.com\/francetravail\/events\/immersion-dans-les-metiers-de-la-construction-de-maisons-individuelles",
-      "Immersions & emplois | Béziers | 2025-09-11T07:00:00+00:00 | https:\/\/openagenda.com\/francetravail\/events\/immersions-and-emplois"
-    ],
-    "response":"Les événements organisés à Béziers sont :\n1. **Visite de l'usine OI de Béziers** (19 novembre 2025, 08:00-10:00)\n2. **Immersion dans les métiers de la construction de maisons individuelles** (16 septembre 2025, 07:00-08:30)\n3. **Immersions & emplois** (11 septembre 2025, 07:00-08:15)",
-    "reference":"Le système doit proposer les événements présents à Béziers dans les données.",
-    "faithfulness":0.5,
-    "semantic_similarity":0.6741442889
-  },
-  {
-    "user_input":"Quels salons liés au voyage sont organisés dans la région ?",
-    "retrieved_contexts":[
-      "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER | Montpellier | 2026-02-13T08:30:00+00:00 | https:\/\/openagenda.com\/semaine-des-metiers-du-tourisme-2026\/events\/salon-du-voyage-drom-com-lycee-georges-freche-montpellier-8804554",
-      "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER | Montpellier | 2026-02-14T08:00:00+00:00 | https:\/\/openagenda.com\/semaine-des-metiers-du-tourisme-2026\/events\/salon-du-voyage-drom-com-lycee-georges-freche-montpellier",
-      "SALON DU VOYAGE : Les destinations au départ de Montpellier ! | Montpellier | 2025-03-07T08:30:00+00:00 | https:\/\/openagenda.com\/semaine-des-metiers-du-tourisme\/events\/salon-du-voyage-les-destinations-au-depart-de-montpellier"
-    ],
-    "response":"Dans la région de Montpellier, les salons liés au voyage organisés sont :\n\n1. **SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER** (2026-02-13 et 2026-02-14) – Axé sur le \"Patrimoine culturel et immatériel des DROM-COM\", organisé par les étudiants de BTS Tourisme du lycée Georges Frêche.\n\n2. **SALON DU VOYAGE : Les destinations au départ de Montpellier !** (2025-03-07 et 2025-03-08) – 11ème édition organisée par les étudiants en 1ère année de BTS Tourisme, avec des stands dédiés à 10 destinations au départ de Montpellier.\n\nAucune autre information n'est disponible dans le contexte fourni.",
-    "reference":"Le système doit identifier les événements liés au voyage présents dans le dataset.",
-    "faithfulness":0.25,
-    "semantic_similarity":0.3407236126
-  },
-  {
-    "user_input":"Existe-t-il un festival manga sous-marin à Lodève ?",
-    "retrieved_contexts":[
-      "Club Manga | Mauguio | 2025-10-04T13:00:00+00:00 | https:\/\/openagenda.com\/biblis-en-folie-2025\/events\/club-manga-2280018",
-      "Escape game au Musée de Lodève | Lodève | 2025-09-21T12:00:00+00:00 | https:\/\/openagenda.com\/jep\/events\/escape-game-au-musee-de-lodeve-4759851",
-      "Atelier : Le traitement des végétaux et des plantes dans l'Antiquité | Loupian | 2025-09-20T08:00:00+00:00 | https:\/\/openagenda.com\/jep\/events\/le-traitement-des-vegetaux-et-des-plantes-dans-lantiquite"
-    ],
-    "response":"Non, le contexte ne mentionne aucun festival manga sous-marin à Lodève. L'événement présent à Lodève est un \"Escape game au Musée de Lodève\".",
-    "reference":"Il n'existe pas d'événement correspondant dans les données. Le système doit indiquer qu'il ne trouve pas d'information pertinente.",
-    "faithfulness":1.0,
-    "semantic_similarity":0.3244209589
-  }
-]
+  "detailed_results": [
+    {
+      "user_input": "Quels événements liés au tourisme sont organisés à Montpellier ?",
+      "retrieved_contexts": [
+        "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER | Montpellier | 2026-02-13T08:30:00+00:00 | https://openagenda.com/semaine-des-metiers-du-tourisme-2026/events/salon-du-voyage-drom-com-lycee-georges-freche-montpellier-8804554",
+        "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER | Montpellier | 2026-02-14T08:00:00+00:00 | https://openagenda.com/semaine-des-metiers-du-tourisme-2026/events/salon-du-voyage-drom-com-lycee-georges-freche-montpellier",
+        "Tourisme et mobilité : métiers et activités en Occitanie | Montpellier | 2025-03-21T09:00:00+00:00 | https://openagenda.com/semaine-des-metiers-du-tourisme/events/tourisme-et-mobilite-metiers-et-activites-en-occitanie"
+      ],
+      "response": "Voici les événements liés au tourisme organisés à Montpellier :\n\n- **Salon du Voyage \"Patrimoine culturel et immatériel des DROM-COM\"** : Un salon organisé par les étudiants de 1ère année de BTS Tourisme du lycée Georges Frêche. Il se déroule sur deux jours, les **13 et 14 février 2026**, et met en avant le patrimoine culturel des DROM-COM (Départements et Régions d'Outre-Mer et Collectivités d'Outre-Mer).\n\n- **Tourisme et mobilité : métiers et activités en Occitanie** : Une réunion d'information sur les métiers et activités du tourisme en Occitanie, prévue le **21 mars 2025**. Cet événement s'adresse à un large public et propose des opportunités d'emploi et de formation.",
+      "reference": "Des événements liés au tourisme sont organisés à Montpellier, notamment des salons du voyage et des rencontres autour des métiers du tourisme.",
+      "faithfulness": 0.6363636363636364,
+      "answer_similarity": 0.7256067824406894,
+      "context_precision": 0.9999999999666667,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Quels événements culturels ont lieu dans l’Hérault ?",
+      "retrieved_contexts": [
+        "Visite guidée autour du Plan-Objet Sud-Hérault | Cessenon-sur-Orb | 2025-09-21T12:30:00+00:00 | https://openagenda.com/jep-2025-occitanie/events/visite-guidee-autour-du-plan-objet-sud-herault-3388744",
+        "L'immersion : l'occasion d'explorer, découvrir et confirmer votre avenir professionnel ! | Clermont-l'Hérault | 2025-09-18T09:00:00+00:00 | https://openagenda.com/francetravail/events/limmersion-loccasion-dexplorer-decouvrir-et-confirmer-votre-avenir-professionnel-9958972",
+        "L'immersion : l'occasion d'explorer, découvrir et confirmer votre avenir professionnel ! | Clermont-l'Hérault | 2025-09-04T09:00:00+00:00 | https://openagenda.com/francetravail/events/limmersion-loccasion-dexplorer-decouvrir-et-confirmer-votre-avenir-professionnel-4915906"
+      ],
+      "response": "Dans l’Hérault, voici deux événements culturels à ne pas manquer :\n\n**Visite guidée autour du Plan-Objet Sud-Hérault**\nÀ **Cessenon-sur-Orb**, le **21 septembre 2025** à 12h30, découvrez l’église Saint-Pierre Saint-Paul et son mobilier liturgique restauré dans le cadre du Plan-objet Sud-Hérault. Une occasion unique de voir l’exposition *\"L’eau à la bouche\"* de Valérie du Chéné, une série de 17 pierres peintes en hommage aux communes du territoire, spécialement présentée pour les Journées européennes du Patrimoine.\n\n*(Pour plus de détails, consultez [l’événement sur OpenAgenda](https://openagenda.com/jep-2025-occitanie/events/visite-guidee-autour-du-plan-objet-sud-herault-3388744).)*\n\n---\nSi vous cherchez d’autres types d’événements (professionnels, etc.), n’hésitez pas à préciser !",
+      "reference": "Des événements culturels sont organisés dans l’Hérault, incluant des visites patrimoniales, des expositions et des manifestations artistiques.",
+      "faithfulness": 0.3333333333333333,
+      "answer_similarity": 0.6101202714056606,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Quels événements sont proposés à Béziers ?",
+      "retrieved_contexts": [
+        "Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en visioconférence secteur Commerce/Vente | Béziers | 2025-09-23T07:30:00+00:00 | https://openagenda.com/francetravail/events/atelier-preparatoire-a-laction-poly-job-recrutement-polygone-de-beziers-en-visioconference-secteur-commercevente",
+        "Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en visioconférence secteur restauration | Béziers | 2025-09-22T07:30:00+00:00 | https://openagenda.com/francetravail/events/atelier-preparatoire-a-laction-poly-job-recrutement-polygone-de-beziers-en-visioconference-secteur-restauration",
+        "Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en physique | Béziers | 2025-09-26T07:30:00+00:00 | https://openagenda.com/francetravail/events/atelier-preparatoire-a-laction-poly-job-recrutement-polygone-de-beziers-en-physique"
+      ],
+      "response": "À Béziers, plusieurs événements sont proposés dans le cadre des ateliers préparatoires à l'action **Poly'Job** (recrutement au Polygone de Béziers) :\n\n- **Un atelier en visioconférence pour le secteur Commerce/Vente**, le **23 septembre 2025** à 7h30.\n- **Un atelier en visioconférence pour le secteur Restauration**, le **22 septembre 2025** à 7h30.\n- **Un atelier en présentiel**, le **26 septembre 2025** à 7h30.\n\nTous ces événements se déroulent à l'**Agence BEZIERS COURONDELLE** et s'adressent à un **public varié**, avec des opportunités d'emploi (CDI, CDD, temps plein ou partiel).",
+      "reference": "Plusieurs événements sont proposés à Béziers, notamment des portes ouvertes, des festivals et des événements culturels.",
+      "faithfulness": 0.625,
+      "answer_similarity": 0.5771825969171689,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Quels événements ont lieu en mars 2025 à Montpellier ?",
+      "retrieved_contexts": [
+        "MARKETHON 2025/ Tous vers l'emploi! | Pérols | 2025-09-16T07:00:00+00:00 | https://openagenda.com/francetravail/events/markethon-2025-tous-vers-lemploi-4630841",
+        "Assomption Montpellier | Montpellier | 2026-04-07T08:00:00+00:00 | https://openagenda.com/allianz-prevention-tour/events/assomption-montpellier",
+        "MARKETHON 2025: Tous vers l'emploi! | Pérols | 2025-09-15T07:00:00+00:00 | https://openagenda.com/francetravail/events/markethon-2025-tous-vers-lemploi-2725494"
+      ],
+      "response": "Je ne trouve pas cette information dans les données disponibles.",
+      "reference": "Des événements ont lieu en mars 2025 à Montpellier, incluant des ateliers et des événements culturels.",
+      "faithfulness": 1.0,
+      "answer_similarity": 0.45994986975916197,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Y a-t-il des événements intergénérationnels à Montpellier ?",
+      "retrieved_contexts": [
+        "Conférence historique « Montpellier, siège de la Cour des Comptes, Aydes et Finances, de sa création à la Révolution française » | Montpellier | 2025-09-20T12:00:00+00:00 | https://openagenda.com/jep-2025-occitanie/events/conference-historique-montpellier-siege-de-la-cour-des-comptes-aydes-et-finances-de-sa-creation-a-la-revolution-francaise",
+        "Avec Ensemble2générations Montpellier - Jeux Intergénérationnels à la médiathèque Émile Zola de Montpellier Méditerranée Métropole | Montpellier | 2025-04-29T11:00:00+00:00 | https://openagenda.com/rencontres-entre-generations-2025/events/jeux-intergenerationnels-a-la-mediatheque-emile-zola-de-montpellier-espace-ludotheque",
+        "Assomption Montpellier | Montpellier | 2026-04-07T08:00:00+00:00 | https://openagenda.com/allianz-prevention-tour/events/assomption-montpellier"
+      ],
+      "response": "Oui, il y a un événement intergénérationnel à Montpellier :\n\n**Jeux Intergénérationnels à la médiathèque Émile Zola**\nLe 29 avril 2025 à 11h, la médiathèque Émile Zola accueille des jeux intergénérationnels organisés par Ensemble2générations Montpellier. Une belle occasion de partager des moments ludiques entre générations, dans un cadre convivial et accessible à tous.\n\nSi tu cherches d'autres événements de ce type, je ne trouve pas d'autres informations dans les données disponibles.",
+      "reference": "Oui, des événements intergénérationnels sont organisés à Montpellier, notamment des activités favorisant les échanges entre générations.",
+      "faithfulness": 0.6666666666666666,
+      "answer_similarity": 0.7576883891035384,
+      "context_precision": 0.49999999995,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Quels événements autour du patrimoine sont proposés dans l’Hérault ?",
+      "retrieved_contexts": [
+        "Visite guidée autour du Plan-Objet Sud-Hérault | Cessenon-sur-Orb | 2025-09-21T12:30:00+00:00 | https://openagenda.com/jep-2025-occitanie/events/visite-guidee-autour-du-plan-objet-sud-herault-3388744",
+        "Visite guidée autour du Plan-Objet Sud-Hérault | Quarante | 2025-09-21T08:00:00+00:00 | https://openagenda.com/jep-2025-occitanie/events/visite-guidee-autour-du-plan-objet-sud-herault-5646194",
+        "Visite guidée autour du Plan-Objet Sud-Hérault | Saint-Chinian | 2025-09-20T08:30:00+00:00 | https://openagenda.com/jep-2025-occitanie/events/visite-guidee-autour-du-plan-objet-sud-herault-4720333"
+      ],
+      "response": "Voici les événements autour du patrimoine proposés dans l’Hérault :\n\nLe **service Patrimoine de la Communauté de communes Sud-Hérault** organise des **visites guidées autour du Plan-Objet Sud-Hérault** dans plusieurs villes du département :\n\n- **À Cessenon-sur-Orb**, le **21 septembre 2025 à 12h30**.\n- **À Quarante**, le **21 septembre 2025 à 8h00**.\n- **À Saint-Chinian**, le **20 septembre 2025 à 8h30**.\n\nPour plus d’informations, vous pouvez contacter le service au **04 67 25 00 25** ou consulter leur site : [www.domainederoueire.fr](http://www.domainederoueire.fr).",
+      "reference": "Des événements autour du patrimoine sont proposés dans l’Hérault, incluant des visites guidées et des découvertes de sites historiques.",
+      "faithfulness": 0.7142857142857143,
+      "answer_similarity": 0.6832942249893277,
+      "context_precision": 0.9999999999666667,
+      "context_recall": 0.0
+    },
+    {
+      "user_input": "Quels événements liés à la photographie sont organisés à Béziers ?",
+      "retrieved_contexts": [
+        "Hors Cadre - Festival de photographie à Béziers | Béziers | 2025-10-10T08:00:00+00:00 | https://openagenda.com/o-agenda-des-tiers-lieux/events/hors-cadre-festival-de-photographie-a-beziers",
+        "Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en physique | Béziers | 2025-09-26T07:30:00+00:00 | https://openagenda.com/francetravail/events/atelier-preparatoire-a-laction-poly-job-recrutement-polygone-de-beziers-en-physique",
+        "Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en visioconférence secteur Commerce/Vente | Béziers | 2025-09-23T07:30:00+00:00 | https://openagenda.com/francetravail/events/atelier-preparatoire-a-laction-poly-job-recrutement-polygone-de-beziers-en-visioconference-secteur-commercevente"
+      ],
+      "response": "À Béziers, un événement lié à la photographie est organisé :\n\n**Hors Cadre - Festival de photographie à Béziers**\n- **Date** : 10 octobre 2025\n- **Lieu** : CIRDÒC - Institut occitan de cultura - Béziers\n- **Description** : La deuxième édition du festival propose une exposition d'Alice Traisnel dans le cadre de la Mediatèca du CIRDOC.",
+      "reference": "Des événements liés à la photographie sont organisés à Béziers, notamment des festivals dédiés à cet art.",
+      "faithfulness": 0.5,
+      "answer_similarity": 0.7466622155013776,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Quels événements sont organisés à Paris ce week-end ?",
+      "retrieved_contexts": [
+        "Sport Tambourin - Coupe de France (phases finales) | Gignac | 2025-08-15T13:00:00+00:00 | https://openagenda.com/pci-occitanie/events/sport-tambourin-coupe-de-france-phases-finales",
+        "Sport Tambourin - Vendémian - Monceaux sur Dordogne | Vendémian | 2025-05-03T15:00:00+00:00 | https://openagenda.com/pci-occitanie/events/sport-tambourin-vendemian-monceaux-sur-dordogne",
+        "Sport Tambourin - Florensac - Cournonsec | Florensac | 2025-05-02T19:30:00+00:00 | https://openagenda.com/pci-occitanie/events/sport-tambourin-florensac-cournonsec-4186460"
+      ],
+      "response": "Je ne trouve pas cette information dans les données disponibles.",
+      "reference": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
+      "faithfulness": 1.0,
+      "answer_similarity": 0.7890885742702601,
+      "context_precision": 0.8333333332916666,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Y a-t-il des événements sur la Lune ?",
+      "retrieved_contexts": [
+        "Découvrez le Métier d'Auxiliaire Ambulancier et Ambulancier : Une Opportunité d'Avenir pour Tous ! | Pézenas | 2025-09-23T11:30:00+00:00 | https://openagenda.com/francetravail/events/decouvrez-le-metier-dauxiliaire-ambulancier-et-ambulancier-une-opportunite-davenir-pour-tous",
+        "Atelier DUODAY: emploi et handicap | Montpellier | 2025-09-22T12:00:00+00:00 | https://openagenda.com/francetravail/events/atelier-duoday-emploi-et-handicap-7604370",
+        "atelier DUODAY: emploi et handicap | Montpellier | 2025-09-22T12:00:00+00:00 | https://openagenda.com/francetravail/events/atelier-duoday-emploi-et-handicap"
+      ],
+      "response": "Je ne trouve pas cette information dans les données disponibles.",
+      "reference": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
+      "faithfulness": 1.0,
+      "answer_similarity": 0.7890885742702601,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    },
+    {
+      "user_input": "Peux-tu me donner la météo à Montpellier aujourd’hui ?",
+      "retrieved_contexts": [
+        "Conférence historique « Montpellier, siège de la Cour des Comptes, Aydes et Finances, de sa création à la Révolution française » | Montpellier | 2025-09-20T12:00:00+00:00 | https://openagenda.com/jep-2025-occitanie/events/conference-historique-montpellier-siege-de-la-cour-des-comptes-aydes-et-finances-de-sa-creation-a-la-revolution-francaise",
+        "SÉANCE CINÉ-RELAX / SHAUN LE MOUTON, LA FERME EN FOLIE | Montpellier | 2025-09-21T12:00:00+00:00 | https://openagenda.com/scare/events/seance-cine-relax-shaun-le-mouton-la-ferme-en-folie",
+        "Visite guidée de la Faculté de Droit de Montpellier | Montpellier | 2025-09-20T08:00:00+00:00 | https://openagenda.com/jep-2025-occitanie/events/la-faculte-de-droit-de-montpellier-7513991"
+      ],
+      "response": "Je ne trouve pas cette information dans les données disponibles.",
+      "reference": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
+      "faithfulness": 1.0,
+      "answer_similarity": 0.7890885742702601,
+      "context_precision": 0.0,
+      "context_recall": 1.0
+    }
+  ]
+}

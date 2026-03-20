@@ -1,3 +1,5 @@
+"""Module pour diviser les documents en chunks de taille gérable pour l'indexation dans le système RAG Puls-Events.
+Utilise le RecursiveCharacterTextSplitter de Langchain pour créer des chunks avec chevauchement afin de maintenir le contexte."""
 from langchain_text_splitters import RecursiveCharacterTextSplitter # recursive character text splitter pour diviser les documents en chunks de taille gérable
 
 from src.embeddings.prepare_documents import (

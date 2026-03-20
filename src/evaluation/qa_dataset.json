@@ -1,32 +1,83 @@
 [
   {
-    "question": "Quels concerts sont prévus à Montpellier ?",
-    "reference_answer": "Le système doit identifier les événements musicaux organisés à Montpellier présents dans la base.",
+    "question": "Quels événements liés au tourisme sont organisés à Montpellier ?",
+    "reference_answer": "Des événements liés au tourisme sont organisés à Montpellier, notamment des salons du voyage et des rencontres autour des métiers du tourisme.",
+    "expected_sources": [
+      "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER",
+      "SALON DU VOYAGE : Les destinations au départ de Montpellier !"
+    ],
     "type": "positive"
   },
   {
-    "question": "Y a-t-il des événements liés au tourisme dans l'Hérault ?",
-    "reference_answer": "Le système doit proposer les événements liés au tourisme présents dans les données.",
+    "question": "Quels événements culturels ont lieu dans l’Hérault ?",
+    "reference_answer": "Des événements culturels sont organisés dans l’Hérault, incluant des visites patrimoniales, des expositions et des manifestations artistiques.",
+    "expected_sources": [
+      "Visite de la préfecture de l'Hérault",
+      "Visite guidée autour du Plan-Objet Sud-Hérault"
+    ],
     "type": "positive"
   },
   {
-    "question": "Existe-t-il des événements en ligne ?",
-    "reference_answer": "Le système doit identifier les événements disponibles en ligne présents dans la base.",
+    "question": "Quels événements sont proposés à Béziers ?",
+    "reference_answer": "Plusieurs événements sont proposés à Béziers, notamment des portes ouvertes, des festivals et des événements culturels.",
+    "expected_sources": [
+      "PORTES OUVERTES TRIANGLE INTERIM BEZIERS",
+      "Hors Cadre - Festival de photographie à Béziers",
+      "Lou Bastimen - présentation publique de la création"
+    ],
     "type": "positive"
   },
   {
-    "question": "Quels événements sont organisés à Béziers ?",
-    "reference_answer": "Le système doit proposer les événements présents à Béziers dans les données.",
+    "question": "Quels événements ont lieu en mars 2025 à Montpellier ?",
+    "reference_answer": "Des événements ont lieu en mars 2025 à Montpellier, incluant des ateliers et des événements culturels.",
+    "expected_sources": [
+      "Atelier Kapla ou comment repousser les limites de l'architecture !",
+      "SALON DU VOYAGE : Les destinations au départ de Montpellier !"
+    ],
     "type": "positive"
   },
   {
-    "question": "Quels salons liés au voyage sont organisés dans la région ?",
-    "reference_answer": "Le système doit identifier les événements liés au voyage présents dans le dataset.",
+    "question": "Y a-t-il des événements intergénérationnels à Montpellier ?",
+    "reference_answer": "Oui, des événements intergénérationnels sont organisés à Montpellier, notamment des activités favorisant les échanges entre générations.",
+    "expected_sources": [
+      "Jeux Intergénérationnels à la médiathèque Émile Zola"
+    ],
     "type": "positive"
   },
   {
-    "question": "Existe-t-il un festival manga sous-marin à Lodève ?",
-    "reference_answer": "Il n'existe pas d'événement correspondant dans les données. Le système doit indiquer qu'il ne trouve pas d'information pertinente.",
+    "question": "Quels événements autour du patrimoine sont proposés dans l’Hérault ?",
+    "reference_answer": "Des événements autour du patrimoine sont proposés dans l’Hérault, incluant des visites guidées et des découvertes de sites historiques.",
+    "expected_sources": [
+      "Visite de la préfecture de l'Hérault",
+      "Visite guidée autour du Plan-Objet Sud-Hérault"
+    ],
+    "type": "positive"
+  },
+  {
+    "question": "Quels événements liés à la photographie sont organisés à Béziers ?",
+    "reference_answer": "Des événements liés à la photographie sont organisés à Béziers, notamment des festivals dédiés à cet art.",
+    "expected_sources": [
+      "Hors Cadre - Festival de photographie à Béziers"
+    ],
+    "type": "positive"
+  },
+
+  {
+    "question": "Quels événements sont organisés à Paris ce week-end ?",
+    "reference_answer": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
+    "expected_sources": [],
+    "type": "negative"
+  },
+  {
+    "question": "Y a-t-il des événements sur la Lune ?",
+    "reference_answer": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
+    "expected_sources": [],
+    "type": "negative"
+  },
+  {
+    "question": "Peux-tu me donner la météo à Montpellier aujourd’hui ?",
+    "reference_answer": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
+    "expected_sources": [],
     "type": "negative"
   }
 ]

@@ -1,3 +1,4 @@
+"""""Schemas Pydantic pour les requêtes et réponses de l'API REST du système RAG Puls-Events."""
 from pydantic import BaseModel, Field
 from typing import List
 
