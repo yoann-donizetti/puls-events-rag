@@ -1,10 +1,8 @@
 [
   {
     "question": "Quels événements liés au tourisme sont organisés à Montpellier ?",
-    "reference_answer": "Des événements liés au tourisme sont organisés à Montpellier, notamment des salons du voyage et des rencontres autour des métiers du tourisme.",
-    "type": "positive",
-    "generated_answer": "Voici les événements liés au tourisme organisés à Montpellier :\n\n**Salon du Voyage \"Patrimoine culturel et immatériel des DROM-COM\"**\nLes étudiants de 1ère année de BTS Tourisme du lycée Georges Frêche organisent chaque année un salon du voyage. Cet événement leur permet de mettre en pratique leurs compétences en conception d'événements, organisation d'espaces d'accueil et promotion. Cette année, le thème porte sur le patrimoine culturel et immatériel des DROM-COM.\n- **Dates** : 13 février 2026 (à partir de 8h30) et 14 février 2026 (à partir de 8h00).\n\n**Tourisme et mobilité : métiers et activités en Occitanie**\nUne réunion d'information sur les métiers et activités du tourisme en Occitanie, ouverte à tous. Cet événement s'inscrit dans le cadre de la Semaine du Tourisme et propose des opportunités d'emploi, des informations sur les formations et des échanges sur le secteur.\n- **Date** : 21 mars 2025 à 9h00.\n\nSi tu veux plus de détails sur l'un de ces événements, n'hésite pas à demander !",
-    "sources": [
+    "answer": "Voici les événements liés au tourisme organisés à Montpellier :\n\n- **Salon du Voyage \"Patrimoine culturel et immatériel des DROM-COM\"** : Un salon organisé par les étudiants de 1ère année de BTS Tourisme du lycée Georges Frêche. Il se déroule sur deux jours, les **13 et 14 février 2026**, et met en avant le patrimoine culturel des DROM-COM (Départements et Régions d'Outre-Mer et Collectivités d'Outre-Mer).\n\n- **Tourisme et mobilité : métiers et activités en Occitanie** : Une réunion d'information sur les métiers et activités du tourisme en Occitanie, prévue le **21 mars 2025**. Cet événement s'adresse à un large public et propose des opportunités d'emploi et de formation.",
+    "contexts": [
       {
         "title": "SALON DU VOYAGE DROM COM LYCEE GEORGES FRECHE MONTPELLIER",
         "city": "Montpellier",
@@ -24,15 +22,12 @@
         "url": "https://openagenda.com/semaine-des-metiers-du-tourisme/events/tourisme-et-mobilite-metiers-et-activites-en-occitanie"
       }
     ],
-    "n_results": 3,
-    "auto_label": "success"
+    "ground_truth": "Des événements liés au tourisme sont organisés à Montpellier, notamment des salons du voyage et des rencontres autour des métiers du tourisme."
   },
   {
     "question": "Quels événements culturels ont lieu dans l’Hérault ?",
-    "reference_answer": "Des événements culturels sont organisés dans l’Hérault, incluant des visites patrimoniales, des expositions et des manifestations artistiques.",
-    "type": "positive",
-    "generated_answer": "Voici les événements culturels qui ont lieu dans l’Hérault :\n\n**Visite guidée autour du Plan-Objet Sud-Hérault**\nÀ Cessenon-sur-Orb, le 21 septembre 2025 à 12h30, découvrez une visite guidée de l’église Saint-Pierre Saint-Paul mettant en lumière le mobilier liturgique restauré dans le cadre du Plan-objet Sud-Hérault. L’événement présentera également l’exposition *\"L’eau à la bouche\"* de Valérie du Chéné, une série de 17 pierres peintes en hommage aux communes du territoire, exceptionnellement exposées pour les Journées européennes du Patrimoine.\n\n*(Les autres événements mentionnés concernent des visites professionnelles ou des immersions métiers, et ne relèvent pas du domaine culturel.)*",
-    "sources": [
+    "answer": "Dans l’Hérault, voici deux événements culturels à ne pas manquer :\n\n**Visite guidée autour du Plan-Objet Sud-Hérault**\nÀ **Cessenon-sur-Orb**, le **21 septembre 2025** à 12h30, découvrez l’église Saint-Pierre Saint-Paul et son mobilier liturgique restauré dans le cadre du Plan-objet Sud-Hérault. Une occasion unique de voir l’exposition *\"L’eau à la bouche\"* de Valérie du Chéné, une série de 17 pierres peintes en hommage aux communes du territoire, spécialement présentée pour les Journées européennes du Patrimoine.\n\n*(Pour plus de détails, consultez [l’événement sur OpenAgenda](https://openagenda.com/jep-2025-occitanie/events/visite-guidee-autour-du-plan-objet-sud-herault-3388744).)*\n\n---\nSi vous cherchez d’autres types d’événements (professionnels, etc.), n’hésitez pas à préciser !",
+    "contexts": [
       {
         "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
         "city": "Cessenon-sur-Orb",
@@ -52,15 +47,12 @@
         "url": "https://openagenda.com/francetravail/events/limmersion-loccasion-dexplorer-decouvrir-et-confirmer-votre-avenir-professionnel-4915906"
       }
     ],
-    "n_results": 3,
-    "auto_label": "success"
+    "ground_truth": "Des événements culturels sont organisés dans l’Hérault, incluant des visites patrimoniales, des expositions et des manifestations artistiques."
   },
   {
     "question": "Quels événements sont proposés à Béziers ?",
-    "reference_answer": "Plusieurs événements sont proposés à Béziers, notamment des portes ouvertes, des festivals et des événements culturels.",
-    "type": "positive",
-    "generated_answer": "À Béziers, plusieurs événements sont proposés pour vous aider dans votre recherche d'emploi ou votre orientation professionnelle :\n\n- **Un atelier préparatoire en visioconférence** pour le secteur **Commerce/Vente**, le **23 septembre 2025** à 7h30.\n- **Un autre atelier en visioconférence** dédié au secteur **Restauration**, le **22 septembre 2025** à 7h30.\n- **Un atelier en présentiel** (en physique) ouvert à tous, le **26 septembre 2025** à 7h30.\n\nCes événements se déroulent tous à l'**Agence BEZIERS COURONDELLE** et s'adressent à un **public varié**, avec des opportunités d'emploi (CDI, CDD, temps plein ou partiel) et des informations sur la création d'entreprise ou les aides à l'emploi.",
-    "sources": [
+    "answer": "À Béziers, plusieurs événements sont proposés dans le cadre des ateliers préparatoires à l'action **Poly'Job** (recrutement au Polygone de Béziers) :\n\n- **Un atelier en visioconférence pour le secteur Commerce/Vente**, le **23 septembre 2025** à 7h30.\n- **Un atelier en visioconférence pour le secteur Restauration**, le **22 septembre 2025** à 7h30.\n- **Un atelier en présentiel**, le **26 septembre 2025** à 7h30.\n\nTous ces événements se déroulent à l'**Agence BEZIERS COURONDELLE** et s'adressent à un **public varié**, avec des opportunités d'emploi (CDI, CDD, temps plein ou partiel).",
+    "contexts": [
       {
         "title": "Atelier préparatoire à l'action Poly 'Job (recrutement polygone de Béziers) en visioconférence secteur Commerce/Vente",
         "city": "Béziers",
@@ -80,15 +72,12 @@
         "url": "https://openagenda.com/francetravail/events/atelier-preparatoire-a-laction-poly-job-recrutement-polygone-de-beziers-en-physique"
       }
     ],
-    "n_results": 3,
-    "auto_label": "success"
+    "ground_truth": "Plusieurs événements sont proposés à Béziers, notamment des portes ouvertes, des festivals et des événements culturels."
   },
   {
     "question": "Quels événements ont lieu en mars 2025 à Montpellier ?",
-    "reference_answer": "Des événements ont lieu en mars 2025 à Montpellier, incluant des ateliers et des événements culturels.",
-    "type": "positive",
-    "generated_answer": "Je ne trouve pas cette information dans les données disponibles.",
-    "sources": [
+    "answer": "Je ne trouve pas cette information dans les données disponibles.",
+    "contexts": [
       {
         "title": "MARKETHON 2025/ Tous vers l'emploi!",
         "city": "Pérols",
@@ -108,15 +97,12 @@
         "url": "https://openagenda.com/francetravail/events/markethon-2025-tous-vers-lemploi-2725494"
       }
     ],
-    "n_results": 3,
-    "auto_label": "failure"
+    "ground_truth": "Des événements ont lieu en mars 2025 à Montpellier, incluant des ateliers et des événements culturels."
   },
   {
     "question": "Y a-t-il des événements intergénérationnels à Montpellier ?",
-    "reference_answer": "Oui, des événements intergénérationnels sont organisés à Montpellier, notamment des activités favorisant les échanges entre générations.",
-    "type": "positive",
-    "generated_answer": "Oui, il y a un événement intergénérationnel à Montpellier :\n\n**Jeux Intergénérationnels à la médiathèque Émile Zola**\nLe 29 avril 2025 à 11h, la médiathèque Émile Zola accueille des jeux intergénérationnels organisés par Ensemble2générations Montpellier. Une belle occasion de partager des moments ludiques entre générations, dans un cadre convivial et accessible à tous.\n\nSi tu veux plus de détails, tu peux consulter l'événement ici : [Jeux Intergénérationnels à la médiathèque Émile Zola](https://openagenda.com/rencontres-entre-generations-2025/events/jeux-intergenerationnels-a-la-mediatheque-emile-zola-de-montpellier-espace-ludotheque).",
-    "sources": [
+    "answer": "Oui, il y a un événement intergénérationnel à Montpellier :\n\n**Jeux Intergénérationnels à la médiathèque Émile Zola**\nLe 29 avril 2025 à 11h, la médiathèque Émile Zola accueille des jeux intergénérationnels organisés par Ensemble2générations Montpellier. Une belle occasion de partager des moments ludiques entre générations, dans un cadre convivial et accessible à tous.\n\nSi tu cherches d'autres événements de ce type, je ne trouve pas d'autres informations dans les données disponibles.",
+    "contexts": [
       {
         "title": "Conférence historique « Montpellier, siège de la Cour des Comptes, Aydes et Finances, de sa création à la Révolution française »",
         "city": "Montpellier",
@@ -136,15 +122,12 @@
         "url": "https://openagenda.com/allianz-prevention-tour/events/assomption-montpellier"
       }
     ],
-    "n_results": 3,
-    "auto_label": "success"
+    "ground_truth": "Oui, des événements intergénérationnels sont organisés à Montpellier, notamment des activités favorisant les échanges entre générations."
   },
   {
     "question": "Quels événements autour du patrimoine sont proposés dans l’Hérault ?",
-    "reference_answer": "Des événements autour du patrimoine sont proposés dans l’Hérault, incluant des visites guidées et des découvertes de sites historiques.",
-    "type": "positive",
-    "generated_answer": "Voici les événements autour du patrimoine proposés dans l’Hérault :\n\n- **Visite guidée autour du Plan-Objet Sud-Hérault** à **Cessenon-sur-Orb** le **21 septembre 2025 à 12h30**.\n- **Visite guidée autour du Plan-Objet Sud-Hérault** à **Quarante** le **21 septembre 2025 à 8h00**.\n- **Visite guidée autour du Plan-Objet Sud-Hérault** à **Saint-Chinian** le **20 septembre 2025 à 8h30**.\n\nCes visites sont organisées par le service Patrimoine de la Communauté de communes Sud-Hérault. Pour plus d’informations, vous pouvez contacter le **04 67 25 00 25** ou consulter le site [www.domainederoueire.fr](http://www.domainederoueire.fr).",
-    "sources": [
+    "answer": "Voici les événements autour du patrimoine proposés dans l’Hérault :\n\nLe **service Patrimoine de la Communauté de communes Sud-Hérault** organise des **visites guidées autour du Plan-Objet Sud-Hérault** dans plusieurs villes du département :\n\n- **À Cessenon-sur-Orb**, le **21 septembre 2025 à 12h30**.\n- **À Quarante**, le **21 septembre 2025 à 8h00**.\n- **À Saint-Chinian**, le **20 septembre 2025 à 8h30**.\n\nPour plus d’informations, vous pouvez contacter le service au **04 67 25 00 25** ou consulter leur site : [www.domainederoueire.fr](http://www.domainederoueire.fr).",
+    "contexts": [
       {
         "title": "Visite guidée autour du Plan-Objet Sud-Hérault",
         "city": "Cessenon-sur-Orb",
@@ -164,15 +147,12 @@
         "url": "https://openagenda.com/jep-2025-occitanie/events/visite-guidee-autour-du-plan-objet-sud-herault-4720333"
       }
     ],
-    "n_results": 3,
-    "auto_label": "success"
+    "ground_truth": "Des événements autour du patrimoine sont proposés dans l’Hérault, incluant des visites guidées et des découvertes de sites historiques."
   },
   {
     "question": "Quels événements liés à la photographie sont organisés à Béziers ?",
-    "reference_answer": "Des événements liés à la photographie sont organisés à Béziers, notamment des festivals dédiés à cet art.",
-    "type": "positive",
-    "generated_answer": "À Béziers, il y a un événement lié à la photographie :\n\n**Hors Cadre - Festival de photographie à Béziers**\n- **Date** : 10 octobre 2025\n- **Lieu** : CIRDÒC - Institut occitan de cultura - Béziers\n- **Description** : La deuxième édition du festival propose une exposition d'Alice Traisnel organisée par la Médiathèque du CIRDÒC.\n\n*(Je ne trouve pas d'autres événements photographiques à Béziers dans les données disponibles.)*",
-    "sources": [
+    "answer": "À Béziers, un événement lié à la photographie est organisé :\n\n**Hors Cadre - Festival de photographie à Béziers**\n- **Date** : 10 octobre 2025\n- **Lieu** : CIRDÒC - Institut occitan de cultura - Béziers\n- **Description** : La deuxième édition du festival propose une exposition d'Alice Traisnel dans le cadre de la Mediatèca du CIRDOC.",
+    "contexts": [
       {
         "title": "Hors Cadre - Festival de photographie à Béziers",
         "city": "Béziers",
@@ -192,15 +172,12 @@
         "url": "https://openagenda.com/francetravail/events/atelier-preparatoire-a-laction-poly-job-recrutement-polygone-de-beziers-en-visioconference-secteur-commercevente"
       }
     ],
-    "n_results": 3,
-    "auto_label": "success"
+    "ground_truth": "Des événements liés à la photographie sont organisés à Béziers, notamment des festivals dédiés à cet art."
   },
   {
     "question": "Quels événements sont organisés à Paris ce week-end ?",
-    "reference_answer": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
-    "type": "negative",
-    "generated_answer": "Je ne trouve pas cette information dans les données disponibles.",
-    "sources": [
+    "answer": "Je ne trouve pas cette information dans les données disponibles.",
+    "contexts": [
       {
         "title": "Sport Tambourin - Coupe de France (phases finales)",
         "city": "Gignac",
@@ -220,15 +197,12 @@
         "url": "https://openagenda.com/pci-occitanie/events/sport-tambourin-florensac-cournonsec-4186460"
       }
     ],
-    "n_results": 3,
-    "auto_label": "success"
+    "ground_truth": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles."
   },
   {
     "question": "Y a-t-il des événements sur la Lune ?",
-    "reference_answer": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
-    "type": "negative",
-    "generated_answer": "Je ne trouve pas cette information dans les données disponibles.",
-    "sources": [
+    "answer": "Je ne trouve pas cette information dans les données disponibles.",
+    "contexts": [
       {
         "title": "Découvrez le Métier d'Auxiliaire Ambulancier et Ambulancier : Une Opportunité d'Avenir pour Tous !",
         "city": "Pézenas",
@@ -248,15 +222,12 @@
         "url": "https://openagenda.com/francetravail/events/atelier-duoday-emploi-et-handicap"
       }
     ],
-    "n_results": 3,
-    "auto_label": "success"
+    "ground_truth": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles."
   },
   {
     "question": "Peux-tu me donner la météo à Montpellier aujourd’hui ?",
-    "reference_answer": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles.",
-    "type": "negative",
-    "generated_answer": "Je ne trouve pas cette information dans les données disponibles.",
-    "sources": [
+    "answer": "Je ne trouve pas cette information dans les données disponibles.",
+    "contexts": [
       {
         "title": "Conférence historique « Montpellier, siège de la Cour des Comptes, Aydes et Finances, de sa création à la Révolution française »",
         "city": "Montpellier",
@@ -276,7 +247,6 @@
         "url": "https://openagenda.com/jep-2025-occitanie/events/la-faculte-de-droit-de-montpellier-7513991"
       }
     ],
-    "n_results": 3,
-    "auto_label": "success"
+    "ground_truth": "Je ne trouve aucun événement correspondant à votre recherche dans les données disponibles."
   }
 ]

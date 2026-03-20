@@ -1,3 +1,12 @@
+"""Pipeline de création de l'index vectoriel pour le système RAG Puls-Events.
+Étapes :
+1. Chargement du dataset d'événements depuis le fichier JSON le plus récent
+2. Création de documents à partir des événements
+3. Division des documents en chunks
+4. Construction de l'index FAISS à partir des chunks
+5. Sauvegarde de l'index FAISS localement
+6. Génération d'un rapport d'indexation pour évaluer la qualité de l'index
+"""
 from src.embeddings.prepare_documents import (
     find_latest_processed_file,
     load_events,

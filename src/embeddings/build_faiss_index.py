@@ -1,3 +1,14 @@
+"""Script pour construire un index FAISS à partir des données d'événements traitées.
+Ce script effectue les étapes suivantes :
+1. Trouver le fichier de données le plus récent
+2. Charger les événements à partir du fichier
+3. Créer des documents à partir des événements
+4. Diviser les documents en chunks
+5. Construire l'index FAISS à partir des chunks
+6. Générer un rapport d'indexation pour évaluer la qualité de l'index
+7. Sauvegarder l'index FAISS localement
+8. Sauvegarder le rapport d'indexation au format JSON
+ """
 import os
 from langchain_community.vectorstores import FAISS # FAISS est une bibliothèque de Facebook AI Research pour la recherche de similarité rapide dans les grands ensembles de données vectorielles.
 from langchain_huggingface import HuggingFaceEmbeddings
