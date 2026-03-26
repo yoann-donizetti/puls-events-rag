@@ -26,33 +26,33 @@ Le système combine :
 ---
 
 ## Sommaire 
-[Contexte métier](#contexte-métier)
-[Demo rapide](#démo-rapide)
-[Objectif](#objectif)
-[Choix techniques](#choix-techniques)
-[Structure du projet](#structure-du-projet)
-[Pipeline du projet](#pipeline-du-projet)
-[Prérequis](#prérequis)
-[Installation](#installation)
-[Collecte des événements OpenAgenda](#collecte-des-événements-openagenda)
-[Paramètres d'ingestion OpenAgenda](#paramètres-dingestion-openagenda)
-[Schéma du dataset](#schéma-du-dataset)
-[Pipeline data](#pipeline-data)
-[Validation qualité des données](#validation-qualité-des-données)
-[Vectorisation et indexation FAISS](#vectorisation-et-indexation-faiss)
-[Pipeline RAG](#pipeline-rag)
-[Pipeplines automatisés](#pipelines-automatisés)
-[API REST](#api-rest)
-[Tests](#tests)
-[Architecture  globale](#architecture-globale)
-[Schéma UML de l'architecture](#schéma-uml-de-larchitecture)
-[Architecture RAG](#architecture-rag)
-[Evaluation du système RAG](#évaluation-du-système-rag)
-[Résultat globaux RAGAS](#résultats-globaux-ragas)
-[Secrets](#secrets)
-[Dataset](#dataset)
-[Exécution avec Docker](#exécution-avec-docker)
-[Roadmap](#roadmap)
+- [Contexte métier](#contexte-métier)
+- [Demo rapide](#démo-rapide)
+- [Objectif](#objectif)
+- [Choix techniques](#choix-techniques)
+- [Structure du projet](#structure-du-projet)
+- [Pipeline du projet](#pipeline-du-projet)
+- [Prérequis](#prérequis)
+- [Installation](#installation)
+- [Collecte des événements OpenAgenda](#collecte-des-événements-openagenda)
+- [Paramètres d'ingestion OpenAgenda](#paramètres-dingestion-openagenda)
+- [Schéma du dataset](#schéma-du-dataset)
+- [Pipeline data](#pipeline-data)
+- [Validation qualité des données](#validation-qualité-des-données)
+- [Vectorisation et indexation FAISS](#vectorisation-et-indexation-faiss)
+- [Pipeline RAG](#pipeline-rag)
+- [Pipeplines automatisés](#pipelines-automatisés)
+- [API REST](#api-rest)
+- [Tests](#tests)
+- [Architecture  globale](#architecture-globale)
+- [Schéma UML de l'architecture](#schéma-uml-de-larchitecture)
+- [Architecture RAG](#architecture-rag)
+- [Evaluation du système RAG](#évaluation-du-système-rag)
+- [Résultat globaux RAGAS](#résultats-globaux-ragas)
+- [Secrets](#secrets)
+- [Dataset](#dataset)
+- [Exécution avec Docker](#exécution-avec-docker)
+- [Roadmap](#roadmap)
 
 
 ## Contexte métier
@@ -1001,12 +1001,12 @@ Le système :
 
 ## Roadmap
 Étapes du projet :
-[x] Ingestion OpenAgenda
-[x] Normalisation du dataset
-[x] Validation qualité des données
-[x] Vectorisation
-[x] Index FAISS
-[x] Pipeline RAG
-[x] API
-[x] Évaluation
-[x] Dockerisation
+- [x] Ingestion OpenAgenda
+- [x] Normalisation du dataset
+- [x] Validation qualité des données
+- [x] Vectorisation
+- [x] Index FAISS
+- [x] Pipeline RAG
+- [x] API
+- [x] Évaluation
+- [x] Dockerisation
